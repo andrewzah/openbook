@@ -1,0 +1,186 @@
+\header {
+  title = "The Song Is You"
+  composer = "Music by Jerome Kern & Oscar Hammerstein II"
+  poet = ""
+  meter = "Medium Up Swing"
+  tagline = ""
+  footer = ""
+}
+%% copyright: Copyright (c) 1932 Universal - Polygram International Publishing, Inc - Copyright Renewed
+
+\score {
+  <<
+    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
+      \set chordChanges = ##f
+      \set chordNameExceptions = #jazzChordExceptions
+      \set Score.currentBarNumber = #4
+
+      \chordmode {
+
+        \boxMark "A"
+        \set Score.voltaSpannerDuration = #(ly:make-moment 4/4)
+        \repeat volta 2 {
+          c1:maj7 | ees1:dim7 | d1:min7 | g1:7
+          c1:maj7 | a1:7 | d1:min7 | g1:7
+        }
+        \alternative {
+          {
+            e1:m7 | a1:7 | d1:m7 | g1:7
+            f1:m7 | bes1:7 | e2:m7 a2:7 | d2:m7 g2:7
+          }
+          {
+            e1:m7 | a1:7 | d1:m7 | g1:7
+            c1:maj6 | f1:7 | c1:maj7 | fis2:m7.5- b2:7
+          }
+        }
+
+        \boxMark "B"
+        e1:maj7 | e1:maj7 | fis1:m7 | b1:7
+        e1:maj7 | e1:maj7 | ais1:m7.5- | dis1:7
+        gis1:m7 | gis1:m7 | cis1:7 | cis1:7
+        fis1:7 | cis1:7.11+ | b1:7 | g1:7
+
+        \boxMark "A"
+        c1:maj7 | ees:dim7 | d1:m7 | g1:7
+        c1:maj7 | g2:m7 c2:7 | f1:maj7 | bes1:9
+        e1:m7 | a1:7 | d1:m7 | g1:7
+        c1:6 | \LPC f1:7 | c1:6 | d2:m7 \RPC g2:7
+      }
+    }
+
+  \new Voice="Voice" \with { \consists #(custom-line-breaks-engraver '(4 4 4)) } {
+  %\new Voice="Voice" {
+    \transpose c c {
+      \relative c'' {
+        \key c \major
+        \time 4/4
+        \numericTimeSignature
+        %\tempo 4 = 88
+
+        \repeat volta 2 {
+          \bar "[|:"
+
+          b4 c4 c4 b4
+          b4 c4 c4 b4
+          f1~
+          f4 a4 \tuplet 3/2 { a4 aes4 g4 } | \endLine
+
+          g4 a4 a4 g4
+          g4 a4 a4 g4
+          d1~
+          d4 f4 \tuplet 3/2 { f4 dis4 e4 } | \endLine
+
+        } \alternative {
+          {
+            g1~
+            g4 e4 f4 e4
+            g1~
+            g4 d4 e4 d4 | \endLine
+
+            f1~
+            f4 c4 d4 c4
+            e1~
+            e2 r2 \voltaEndBar \endLine
+          }
+          {
+            g1~
+            g4 e4 f4 e4
+            a1~
+            a4 g4 a4 g4 | \endLine
+
+            c1~
+            c1
+            r1
+            r1 | \endLine
+          }
+        }
+
+        e,4 b'4 b2~
+        b4 b4 b4 b4
+        b4 a4 a2~
+        a1 | \endLine
+
+        e4 dis'4 dis2~
+        dis4 dis4 dis4 dis4
+        dis4 cis4 cis2~
+        cis1 | \endLine
+
+        dis,4 b'4 gis2~
+        gis4 dis4 \tuplet 3/2 { fis4 f4 e4 }
+        dis4 b'4 gis2~
+        gis4 dis4 dis4 dis4 | \endLine
+
+        dis4 fis4 fis2~
+        fis4 fis4 fis4 fis4
+        gis4 b4 b2~
+        b4 b4 b4 b4 | \endLine
+
+        b4 c4 c4 b4
+        b4 c4 c4 b4
+        f'1~
+        f4 a,4 \tuplet 3/2 { a4 aes4 g4 } | \endLine
+
+        g4 a4 a4 g4
+        g4 a4 a4 g4
+        c1~
+        c4 f,4 \tuplet 3/2 { f4 dis4 e4 } | \endLine
+
+        g1~
+        g4 e4 f4 e4
+        a1~
+        a4 g4 a4 g4 | \endLine
+
+        c1
+        r1
+        r1
+        r1
+
+        \songEndBar
+      }
+    }
+  }
+
+  \new Lyrics="Lyrics" \lyricsto "Voice" {
+    \lyricmode {
+      %% 1st time
+      I hear mu- -- sic when I look at you, __
+      a beau -- ti -- ful theme of ev -- 'ry dream I ev -- er knew. __
+      Down deep in my heart, __ I hear it play. __ I feel it start, __ then melt a -- way. __
+
+      %% 2nd time
+      heart, __ I hear it say, __ ''Is this the day?'' __
+      I a -- lone __ have hear this love -- ly strain, __
+      I al -- one __ have heard this glad re -- frain. __
+      Must it be __ for -- ev -- er in -- side of me? __
+      Why can't I let it go? __ Why can't I let you know? __
+      Why can't I let you know the song my heart would sing, __
+      that bea -- ti -- ful rhap -- so --dy of love and youth and spring? __
+
+      The mu -- sic is sweet, __ the words are true, __ the song is you.
+    }
+  }
+  \new Lyrics="Lyrics" \lyricsto "Voice" {
+    \lyricmode {
+      I hear mu- -- sic when I touch your hand, __
+      a beau -- ti -- ful mel -- o -- dy from some en -- chan -- ted land. __
+      Down deep in my 
+    }
+  }
+
+  >>
+  \layout {
+    %\context {
+    %  \override Score.NonMusicalPaperColumn.line-break-permission = ##f
+    %  \consists #(bars-per-line-engraver '(4))
+    %}
+
+    % make only the first clef visible
+    \override Score.Clef #'break-visibility = #'#(#f #f #f)
+
+    % make only the first time signature visible
+    \override Score.KeySignature #'break-visibility = #'#(#f #f #f) 
+
+    % allow single-staff system bars
+    \override Score.SystemStartBar #'collapse-height = #1 
+  }
+}

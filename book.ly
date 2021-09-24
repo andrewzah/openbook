@@ -51,7 +51,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   }
 
   \bookpart {
-    \tocItem \markup "Misty - Erroll Garner"
+    \tocItem \markup "Misty - Errol Garner"
     \include "songs/realbook/misty.ly"
   }
 
@@ -70,8 +70,14 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     \include "songs/realbook/stella_by_starlight.ly"
   }
 
+  % TODO: fix "warning: cannot end volta spanner"
   \bookpart {
     \tocItem \markup "The Song Is You - Jerome Kern & Oscar Hammerstein II"
     \include "songs/realbook/the_song_is_you.ly"
+  }
+
+  \bookpart {
+    \tocItem \markup "2:00 AM - Kazumi Totaka & Asuka Ota"
+    \include "songs/videogames/animal_crossing/2_am.ly"
   }
 }

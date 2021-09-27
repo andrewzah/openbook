@@ -3,46 +3,51 @@
   composer = "Music by Errol Garner"
   poet = "Lyrics by Johnny Burke"
   meter = "Ballad"
-  tagline = "tagline"
-  footer = "1955. Renewed 1983 Marke Music, Limerick Music, Reganesque"
+  tagline = ""
+  footer = ""
 }
+
+% copyright: 1955. Renewed 1983 Marke Music, Limerick Music, Reganesque
 
 \score {
   <<
     \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
-      \set chordChanges = ##f
-      \set chordNameExceptions = #jazzChordExceptions
-      \set Score.currentBarNumber = #4
+      \transpose c c {
+        \set chordChanges = ##f
+        \set chordNameExceptions = #jazzChordExceptions
+        \set Score.currentBarNumber = #4
 
-      \chordmode {
-        \partial 4 s4
+        \chordmode {
+          \partial 4 s4
 
-        \boxMark "A"
-        \repeat volta 2 {
+          \boxMark "A"
+          \repeat volta 2 {
+            ees1:maj7 | bes2:m7 ees:7 | aes1:maj7 | aes2:m7 des:7
+            ees:maj7 c:m7 | f:m7 bes:7
+          }
+          \alternative {
+            {
+              g:m7 c:7 | f:m7 bes:7
+            }
+            {
+              ees2:6 des2:9 | ees1:maj7
+            }
+          }
+
+          \boxMark "B"
+          bes1:m7 | ees:7.9- | aes1*2:maj7
+          a1:m7 | d2:7 f:7 | g2:m7.5- c:7.9- | f:m7 bes:7
+
+          \boxMark "A"
           ees1:maj7 | bes2:m7 ees:7 | aes1:maj7 | aes2:m7 des:7
-          ees:maj7 c:m7 | f:m7 bes:7
+          ees:maj7 c:m7 | f:m7 bes:7 | ees2:6 \LPC c2:m7 | f2:m7 \RPC bes2:7
         }
-        \alternative {
-          {
-            g:m7 c:7 | f:m7 bes:7
-          }
-          {
-            ees2:6 des2:9 | ees1:maj7
-          }
-        }
-
-        \boxMark "B"
-        bes1:m7 | ees:7.9- | aes1*2:maj7
-        a1:m7 | d2:7 f:7 | g2:m7.5- c:7.9- | f:m7 bes:7
-
-        \boxMark "A"
-        ees1:maj7 | bes2:m7 ees:7 | aes1:maj7 | aes2:m7 des:7
-        ees:maj7 c:m7 | f:m7 bes:7 | ees2:6 \LPC c2:m7 | f2:m7 \RPC bes2:7
       }
     }
 
   %\new Voice="Voice" \with { \consists #(custom-line-breaks-engraver '(4 4 4)) } {
   \new Voice="Voice" {
+    % for bb instruments, -> \tranpose c d
     \transpose c c {
       \relative c' {
         \key ees \major
@@ -52,7 +57,7 @@
 
         \partial 4 bes'8 g
 
-        %% A
+        %% A Section
         \repeat volta 2 {
           \bar "[|:"
 
@@ -72,7 +77,7 @@
           }
         }
 
-        %% B
+        %% B Section
         des8 des des des~ des2~
         des4 des8 ees \tuplet 3/2 { fes4 ees des }
         c8 c c c~ c2
@@ -83,7 +88,7 @@
         bes1~
         bes2. bes8 g | \endLine
 
-        %% A
+        %% A Section
         d2. bes8 c
         des c' c c c bes g ees
         c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g }

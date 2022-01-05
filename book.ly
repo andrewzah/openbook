@@ -1,14 +1,24 @@
 \version "2.22.1"
 
-\include "swing.ly"
+%% for midi
+%\include "swing.ly"
 
 \include "includes/globals.ily"
 \include "includes/symbols.ily"
 \include "includes/functions.ily"
 \include "includes/chords.ily"
 
-\header { tagline = ##f }
 buildtime = #(strftime "%c" (localtime (current-time)))
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PREPROCESS FILES %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+#(begin
+  (use-modules (ice-9 ftw))
+
+  ;(define a (scandir "./songs" ".ly"))
+  ;(display a)
+)
 
 \book {
   %\bookpart {
@@ -47,10 +57,40 @@ buildtime = #(strftime "%c" (localtime (current-time)))
  %  \include "songs/realbook/all_of_me.ly"
  %}
 
- \bookpart {
-   \tocItem \markup "Donna Lee - Charlie Parker"
-   \include "songs/realbook/donna_lee.ly"
- }
+  \bookpart {
+    \tocItem \markup "April Joy - Pat Metheny"
+    \include "songs/realbook/april_joy.ly"
+  }
+
+ %\bookpart {
+ %  \tocItem \markup "Donna Lee - Charlie Parker"
+ %  \include "songs/realbook/donna_lee.ly"
+ %}
+
+ %\bookpart {
+ %  \tocItem \markup "[WIP] Full House - ?"
+ %  \include "songs/jazz/full_house.ly"
+ %}
+
+%\bookpart {
+% \tocItem \markup "Crazeology - Bennie Harris"
+% \include "songs/realbook/crazeology.ly"
+%}
+
+%\bookpart {
+% \tocItem \markup "Embraceable You - George Gershwin"
+% \include "songs/realbook/embraceable_you.ly"
+%}
+
+%\bookpart {
+% \tocItem \markup "Emily - Johnny Mandel"
+% \include "songs/realbook/emily.ly"
+%}
+
+ %\bookpart {
+ %  \tocItem \markup "[WIP] I Got Rhythm - George & Ira Gershwin"
+ %  \include "songs/realbook/i_got_rhythm.ly"
+ %}
 
  %\bookpart {
  %  \tocItem \markup "Misty - Errol Garner"
@@ -61,6 +101,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
  %  \tocItem \markup "Naima - John Coltrane"
  %  \include "songs/realbook/naima.ly"
  %}
+
+%\bookpart {
+% \tocItem \markup "Nardis - Miles Davis"
+% \include "songs/realbook/nardis.ly"
+%}
 
  %\bookpart {
  %  \tocItem \markup "Now's The Time - Charlie Parker"

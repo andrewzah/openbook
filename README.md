@@ -56,6 +56,9 @@ These projects either provided examples or are just similar in nature.
 - The Real Vocal Bbook (I & II) by Hal Leonard
 - The Charlie Parker Omnibook
 
+### issues
+* lilypond doesn't seem to render "%" on chord repeats, even with `Percent_repeat_engraver` enabled.
+
 ### contributors
 - Andrew Zah - <zah@andrewzah.com>
 

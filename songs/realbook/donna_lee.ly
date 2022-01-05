@@ -9,10 +9,11 @@
 
 \score {
   <<
-    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
-      \set chordNameExceptions = #jazzChordExceptions
-      \set chordChanges = ##f
-      \set Score.currentBarNumber = #4
+    \new ChordNames="Chords" \with { \consists Percent_repeat_engraver } {
+    %\new ChordNames="Chords" {
+      %\set chordNameExceptions = #jazzChordExceptions
+      %\set chordChanges = ##f
+      %\set Score.currentBarNumber = #4
 
       \chordmode {
         \transpose c c {
@@ -31,13 +32,17 @@
       }
     }
 
-  \new Voice="Voice" \with { \consists #(custom-line-breaks-engraver '(4 4 4)) } {
+  \new Voice="Voice" {
     \transpose c c {
       \relative c' {
         \key aes \major
         \time 4/4
         \numericTimeSignature
         \tempo 4 = 130
+
+        %% override mark font
+        %\set Score.markFormatter = #format-mark-box-alphabet
+        %\override Score.RehearsalMark.font-size = #+4
 
         %% part "A"
         r2 \tuplet 3/2 { g''8 aes8 g8 } f8 e8
@@ -86,8 +91,12 @@
   \layout {
     \context {
       % snippet id 838
-      \override Score.NonMusicalPaperColumn.line-break-permission = ##f
-      \consists #(bars-per-line-engraver '(4))
+      %\override Score.NonMusicalPaperColumn.line-break-permission = ##f
+
+      %\consists #(bars-per-line-engraver '(4))
+      \consists Percent_repeat_engraver
+      %\consists "Slash_repeat_engraver"
+      %\consists "Double_percent_repeat_engraver"
     }
   }
 }

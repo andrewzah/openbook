@@ -130,19 +130,4 @@
   }
 
   >>
-  \layout {
-    %\context {
-    %  \override Score.NonMusicalPaperColumn.line-break-permission = ##f
-    %  \consists #(bars-per-line-engraver '(4))
-    %}
-
-    % make only the first clef visible
-    \override Score.Clef #'break-visibility = #'#(#f #f #f)
-
-    % make only the first time signature visible
-    \override Score.KeySignature #'break-visibility = #'#(#f #f #f) 
-
-    % allow single-staff system bars
-    \override Score.SystemStartBar #'collapse-height = #1 
-  }
 }

@@ -13,9 +13,9 @@
 
 \score {
   <<
-    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } { 
-      \set chordChanges = ##f
-      \set chordNameExceptions = #jazzChordExceptions
+    \new ChordNames="Chords" \with { \consists Percent_repeat_engraver } {
+      %\set chordChanges = ##f
+      %\set chordNameExceptions = #jazzChordExceptions
 
       \chordmode {
         \boxMark "A"
@@ -111,11 +111,5 @@
   Ba -- by take all of me.
     }
   }
-
   >>
-  \layout {
-    \override Score.Clef #'break-visibility = #'#(#f #f #f)  % make only the first clef visible
-    \override Score.KeySignature #'break-visibility = #'#(#f #f #f)  % make only the first time signature visible
-    \override Score.SystemStartBar #'collapse-height = #1  % allow single-staff system bars
-  }
 }

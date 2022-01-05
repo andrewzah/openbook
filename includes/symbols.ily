@@ -1,3 +1,5 @@
+again = \once \override ChordName.text = "%"
+
 boxMark =
 #(define-music-function
  (parser location mark)

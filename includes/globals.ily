@@ -1,5 +1,3 @@
-\version "2.22.1"
-
 \include "functions.ily"
 
 % Don't have textedit:// links for every note in the pdf file.
@@ -13,7 +11,7 @@
 
  #(define fonts
     (set-global-fonts
-      ;#:roman "JazzText"
+      ;#:roman "SwingText"
       ;#:sans "JazzCord"
       ;#:typewriter "SwingText"
       ;#:music "lilyjazz"
@@ -79,6 +77,10 @@
 }
 
 \layout {
+    \override Score.Clef #'break-visibility = #'#(#f #f #f)  % make only the first clef visible
+    \override Score.KeySignature #'break-visibility = #'#(#f #f #f)  % make only the first time signature visible
+    \override Score.SystemStartBar #'collapse-height = #1  % allow single-staff system bars
+
   \context {
     \Score {
       % 4-bars per line

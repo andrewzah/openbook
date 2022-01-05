@@ -1,6 +1,10 @@
 % https://lists.gnu.org/archive/html/lilypond-user/2017-01/msg00475.html
 % simpler form: again =\once \override ChordName.text = "%"
 
+%%%%%%%%%%%%%%
+%%% CHORDS %%%
+%%%%%%%%%%%%%%
+
 #(define percent-repeated-chords
   (lambda (context)
    (let ((chord '()))
@@ -15,6 +19,7 @@
              (set! chord (ly:grob-property grob 'text)))))
         (finalize . ,(lambda (translator) (set! chord '())))))))
 
+
 embiggenChordNames = #(define-scheme-function (size) (number?)
    #{ \with {
      chordNameFunction = #(lambda (in-pitches bass inversion context)
@@ -28,6 +33,9 @@ embiggenChordNames = #(define-scheme-function (size) (number?)
          (markup (#:fontsize size (helper orig)))))
    } #} )
 
+%%%%%%%%%%%%%%%%%%%
+%%% LINE BREAKS %%%
+%%%%%%%%%%%%%%%%%%%
 
 #(define (custom-line-breaks-engraver bar-list)
   (let ((total (1+ (car bar-list)))) ;; not sure why increment necessary
@@ -64,3 +72,27 @@ embiggenChordNames = #(define-scheme-function (size) (number?)
                          (begin
                            (set! working-copy (cdr working-copy))))
                            (set! total (+ total (car working-copy))))))))))))
+
+%%%%%%%%%%%%%%%%%%%
+%%% PARENTHESES %%%
+%%%%%%%%%%%%%%%%%%%
+ 
+%%http://lsr.di.unimi.it/LSR/Item?id=902
+
+%=> http://lilypond.1069038.n5.nabble.com/parenthesize-groups-of-notes-td501.html
+%LSR by Gilles Thibault
+%I take the way of how works ParenthesesItem #'stencils from here
+%http://lsr.di.unimi.it/LSR/Item?id=564
+%It's probably possible to automate a bit more but that is the general idea.
+
+startParenthesis = {
+  \once \override ParenthesesItem.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+          (list (car par-list) point-stencil )))
+}
+
+endParenthesis = {
+  \once \override ParenthesesItem.stencils = #(lambda (grob)
+        (let ((par-list (parentheses-item::calc-parenthesis-stencils grob)))
+          (list point-stencil (cadr par-list))))
+        } 

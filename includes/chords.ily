@@ -1,5 +1,3 @@
-\version "2.22.1"
-
 #(define (chordNamer pitch)
     (let* ((alt (ly:pitch-alteration pitch)))
   (make-line-markup
@@ -15,16 +13,21 @@
 
 jazzChordDefinitions={
 	%% basic
+	
 	%<c e g a>-\markup { "maj" \super { "6" } }
-	%<c e g b>-\markup { "maj" \super { "7" } }
+	<c e g b>-\markup { \super { "△7" } }
 
         %% major
 	%<c e g b>-\markup { "maj" \super { "7" } }
 	
 	%% minor
 	<c ees g>-\markup { "-" }
-	<c ees g bes>-\markup { "-" \super { "7" } }
+	<c ees g bes>-\markup { \super { "-7" } }
+	<c ees g bes d>-\markup { \super { "-9" } }
 	<c ees ges bes>-\markup { "-" \super { "7 " \flat "5" } }
+	
+	%% minor-major7
+	<c ees g b>-\markup { "-" \super { "△7" } }
 	
 	%% dim
 	<c ees ges>-\markup { \super "o" }
@@ -42,7 +45,7 @@ jazzChordDefinitions={
   < c ees ges > -\markup \super "dim."
   < c es ges beses > -\markup \super "7dim"
   < c e ges> -\markup \super "5>"
-  < c e gis> -\markup \super "aug."
+  < c e gis> -\markup \super "+"
 }
 
 jazzChordExceptions=#(append

@@ -1,0 +1,38 @@
+\version "2.22.1"
+
+\include "./test/includes/globals.ily"
+\include "./test/includes/symbols.ily"
+\include "./test/includes/functions.ily"
+\include "./test/includes/chords.ily"
+
+buildtime = #(strftime "%c" (localtime (current-time)))
+
+\book {
+  \bookpart {
+    \markup {
+      \column {
+        \null
+        \fill-line { \fontsize #11 \bold "OpenBook (%%TRANSPOSE%% Instruments)" }
+        \null
+        \null
+        \fill-line { \larger \larger \bold "An open source music book." }
+        \null
+        \null
+        \null
+        \null
+        \fill-line {
+          \huge \bold \concat {
+            "Website: "
+            \with-url #"https://andrewzah.com/openbook" https://andrewzah.com/openbook
+          }
+        }
+        \null
+        \fill-line { \huge \bold "Tune copyright: © belong to their respective holders." }
+        \null
+        \null
+        \null
+        \fill-line { \small \buildtime }
+      }
+    }
+  }
+

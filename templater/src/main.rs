@@ -1,0 +1,115 @@
+// goals of this project
+// * automatically parse frontmatter in the songfiles
+// * generate a `book.ly` from templates
+//   -> book cover / title page
+//   -> alphabetical (by song name) table of contents
+//   -> extra ToCs (by composer name, meter, bpm)
+// * setup each song from template
+//   -> name, composer, etc
+//   -> transposing_instrument (default to c)
+
+use std::fs::{self, File};
+use std::io::Write;
+
+use extract_frontmatter::{Extractor};
+use once_cell::sync::OnceCell;
+
+static INTRO_TEMPLATE: OnceCell<String> = OnceCell::new();
+static BOOKPART_TEMPLATE: OnceCell<String> = OnceCell::new();
+static SONG_BODY_TEMPLATE: OnceCell<String> = OnceCell::new();
+static SONG_HEADER_TEMPLATE: OnceCell<String> = OnceCell::new();
+static CHORDS_TEMPLATE: OnceCell<String> = OnceCell::new();
+static VOICE_TEMPLATE: OnceCell<String> = OnceCell::new();
+static LYRICS_TEMPLATE: OnceCell<String> = OnceCell::new();
+
+pub struct TemplaterConfig {
+    transpose: String,
+}
+
+fn init_static(conf: &TemplaterConfig) {
+    let intro_template = fs::read_to_string("./templates/intro")
+        .expect("Unable to read intro template")
+        .replace("%%TRANSPOSE%%", &conf.transpose);
+    INTRO_TEMPLATE.set(intro_template).expect("Unable to set INTRO_TEMPLATE");
+
+    let bookpart_template = fs::read_to_string("./templates/bookpart")
+        .expect("Unable to read bookpart template");
+    BOOKPART_TEMPLATE.set(bookpart_template).expect("Unable to set BOOKPART_TEMPLATE");
+
+    let song_body_template = fs::read_to_string("./templates/song-body")
+        .expect("Unable to read song body template");
+    SONG_BODY_TEMPLATE.set(song_body_template).expect("Unable to set SONG_BODY_TEMPLATE");
+
+    let mut song_header_template = fs::read_to_string("./templates/song-header")
+        .expect("Unable to read song header template");
+    if conf.transpose != "c" {
+        song_header_template = song_header_template
+            .replace("subtitle = \"\"", &format!("subtitle = \"\"({} instruments)\"", &conf.transpose));
+    }
+    SONG_HEADER_TEMPLATE.set(song_header_template).expect("Unable to set SONG_HEADER_TEMPLATE");
+
+    let voice_template = fs::read_to_string("./templates/voice")
+        .expect("Unable to read voice template")
+        .replace("%%TRANSPOSE%%", &conf.transpose);
+    VOICE_TEMPLATE.set(voice_template).expect("Unable to set VOICE_TEMPLATE");
+
+    let lyrics_template = fs::read_to_string("./templates/lyrics")
+        .expect("Unable to read lyrics template");
+    LYRICS_TEMPLATE.set(lyrics_template).expect("Unable to set LYRICS_TEMPLATE");
+
+    let chords_template = fs::read_to_string("./templates/chords")
+        .expect("Unable to read chords template");
+    CHORDS_TEMPLATE.set(chords_template).expect("Unable to set CHORDS_TEMPLATE");
+}
+
+fn main() {
+    // TODO: make configurable via flags
+    let conf = TemplaterConfig {
+        transpose: String::from("c"),
+    };
+    init_static(&conf);
+
+    let input = fs::read_to_string("./test/crazeology.ly").unwrap();
+
+    let mut extractor = Extractor::new(&input);
+    extractor.select_by_terminator("---");
+
+    let (front_matter, document): (Vec<&str>, &str) = extractor.split();
+
+    // right now we assume the following order from a .ly songfile
+    //   see: ../test/crazeology.ly
+    // 1. chords
+    // 2. notes
+    // 3+. (optional) lyrics
+    // TODO: make smarter
+    let parts = document.split("---").collect::<Vec<&str>>();
+
+    let mut outfile = File::create("book.ly").expect("Unable to create book.ly");
+
+    let chords = CHORDS_TEMPLATE.get().unwrap()
+            .replace("%%TRANSPOSE%%", &conf.transpose)
+            .replace("%%CHORDS%%", parts[0]);
+
+    let voice = VOICE_TEMPLATE.get().unwrap()
+            .replace("%%NOTES%%", parts[1]);
+
+    let song_header = SONG_HEADER_TEMPLATE.get().unwrap();
+            //.replace(" title = \"\"", &format!(" title = \"{}\"", front_matter[0]))
+            //.replace("composer = \"\"", &format!("composer = \"{}\"", front_matter[1]));
+
+    let song_body = SONG_BODY_TEMPLATE.get().unwrap()
+            .replace("%%CHORDS%%", &chords)
+            .replace("%%VOICES%%", &voice);
+
+    //let title = format!("{} - {}", front_matter[0], front_matter[1]);
+    let title = "TODO";
+    let bookpart = BOOKPART_TEMPLATE.get().unwrap()
+            .replace("%%TITLE%%", &title)
+            .replace("%%SONG_HEADER%%", &song_header)
+            .replace("%%SONG_BODY%%", &song_body);
+
+    write!(outfile, "{}", INTRO_TEMPLATE.get().expect("unable to get() INTRO_TEMPLATE")).expect("unable to write to file");
+    write!(outfile, "{}", &bookpart).expect("Unable to write to file");
+    write!(outfile, "{}", "}").expect("Unable to write to file");
+
+}

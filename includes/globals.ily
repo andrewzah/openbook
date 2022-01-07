@@ -1,7 +1,7 @@
 \include "functions.ily"
 
 % Don't have textedit:// links for every note in the pdf file.
-% This reduces the size of the pdf by a lot
+% This reduces the size of the pdf by a lot (1m -> 330k)
 \pointAndClickOff
 
 #(set-global-staff-size 19)
@@ -71,22 +71,22 @@
 \layout {
   \context {
     \Score
-    % 4-bars per line
-    %\consists #(bars-per-line-engraver '(4))
     \remove "Bar_number_engraver"
   }
 }
 
 \layout {
-    \override Score.Clef #'break-visibility = #'#(#f #f #f)  % make only the first clef visible
-    \override Score.KeySignature #'break-visibility = #'#(#f #f #f)  % make only the first time signature visible
-    \override Score.SystemStartBar #'collapse-height = #1  % allow single-staff system bars
+  % make only the first clef visible
+  \override Score.Clef #'break-visibility = #'#(#f #f #f)
+
+  % make only the first time signature visible
+  \override Score.KeySignature #'break-visibility = #'#(#f #f #f)  
+
+  % allow single-staff system bars
+  \override Score.SystemStartBar #'collapse-height = #1
 
   \context {
     \Score {
-      % 4-bars per line
-      %\override NonMusicalPaperColumn.line-break-permission = ##f
-
       % put marks at the left edge
       \override Score.RehearsalMark.break-align-symbols = #'(left-edge)
 
@@ -94,7 +94,7 @@
       \override Score.MetronomeMark.self-alignment-X = #RIGHT
 
       % chord styles
-      \override ChordNames . ChordName #'font-size = #2
+      %\override ChordNames . ChordName #'font-size = #2
       \override ChordNames . ChordName #'font-name = #"lilyjazzchord"
       %\override ChordName #'font-size = #'1
 

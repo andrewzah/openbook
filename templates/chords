@@ -1,6 +1,6 @@
 \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
-  %\set chordChanges = ##f
-  %\set chordNameExceptions = #jazzChordExceptions
+  \set chordChanges = ##f
+  \set chordNameExceptions = #jazzChordExceptions
   %\set Score.currentBarNumber = #4
 
   \transpose c %%TRANSPOSE%% {

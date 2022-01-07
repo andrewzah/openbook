@@ -7,6 +7,10 @@
   footer = "Music by Charlie Parker"
 }
 
+\paper {
+  system-system-spacing.padding = #3
+}
+
 \score {
   <<
     \new ChordNames="Chords" \with { \consists Percent_repeat_engraver } {

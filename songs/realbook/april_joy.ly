@@ -2,7 +2,7 @@
   title = "April Joy"
   composer = "Music by Pat Metheny"
   poet = ""
-  meter = "Med. Even 8ths"
+  meter = "Medium - Even 8ths"
   tagline = ""
   footer = ""
 }

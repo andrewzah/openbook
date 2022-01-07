@@ -1,3 +1,5 @@
 *.midi
 *.pdf
 /templater/target
+book.ly
+/templater/book.ly

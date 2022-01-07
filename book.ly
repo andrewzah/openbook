@@ -57,10 +57,15 @@ buildtime = #(strftime "%c" (localtime (current-time)))
  %  \include "songs/realbook/all_of_me.ly"
  %}
 
-  \bookpart {
-    \tocItem \markup "April Joy - Pat Metheny"
-    \include "songs/realbook/april_joy.ly"
-  }
+ %\bookpart {
+ %  \tocItem \markup "April Joy - Pat Metheny"
+ %  \include "songs/realbook/april_joy.ly"
+ %}
+
+ %\bookpart {
+ %  \tocItem \markup "Caravan - Duke Ellington"
+ %  \include "songs/realbook/caravan.ly"
+ %}
 
  %\bookpart {
  %  \tocItem \markup "Donna Lee - Charlie Parker"
@@ -127,6 +132,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
  %  \tocItem \markup "The Song Is You - Jerome Kern & Oscar Hammerstein II"
  %  \include "songs/realbook/the_song_is_you.ly"
  %}
+
+ \bookpart {
+   \tocItem \markup "Old Devil Moon - Burton Lane & E.Y. Harburg"
+   \include "songs/realbook/old_devil_moon.ly"
+ }
 
  %bookpart {
  % \tocItem \markup "2:00 AM - Kazumi Totaka & Asuka Ota"

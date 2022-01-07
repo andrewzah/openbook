@@ -36,3 +36,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     }
   }
 
+  \markuplist \table-of-contents
+  \pageBreak
+
+

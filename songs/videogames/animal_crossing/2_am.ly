@@ -1,5 +1,5 @@
 title: 2 AM
-subtitle: (Animal Crossing - Wild World)
+subsubtitle: From Animal Crossing - Wild World (2005)
 composer: Kazumi Totaka & Asuka Ota
 meter: Slow Waltz
 ---

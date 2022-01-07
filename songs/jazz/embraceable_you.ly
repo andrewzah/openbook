@@ -1,5 +1,5 @@
 title: Embraceable You
-subtitle: From Girl Crazy (1930)
+subsubtitle: From Girl Crazy (1930)
 composer: George Gershwin
 poet: Ira Gershwin
 meter: Ballad

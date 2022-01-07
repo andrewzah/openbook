@@ -1,5 +1,5 @@
 title: I Got Rhythm
-subtitle: From An American In Paris (1928) & Girl Crazy (1930)
+subsubtitle: From An American In Paris (1928) & Girl Crazy (1930)
 composer: George Gershwin
 poet: Ira Gershwin
 meter: Medium Up Swing

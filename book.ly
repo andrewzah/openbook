@@ -36,6 +36,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     }
   }
 
+  \markuplist \table-of-contents
+  \pageBreak
+
+
 \bookpart {
   \tocItem \markup "2 AM - Kazumi Totaka & Asuka Ota"
 
@@ -48,8 +52,8 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   instrument = ""
   meter = "Slow Waltz"
   poet = ""
-  subsubtitle = ""
-  subtitle = "(Animal Crossing - Wild World)"
+  subsubtitle = "From Animal Crossing - Wild World (2005)"
+  subtitle = ""
   tagline = ""
   title = "2 AM"
 }
@@ -727,8 +731,8 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   instrument = ""
   meter = "Ballad"
   poet = "Lyrics by Ira Gershwin"
-  subsubtitle = ""
-  subtitle = "From Girl Crazy (1930)"
+  subsubtitle = "From Girl Crazy (1930)"
+  subtitle = ""
   tagline = ""
   title = "Embraceable You"
 }
@@ -1091,6 +1095,128 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
 }
 \bookpart {
+  \tocItem \markup "How High The Moon - Morgan Lewis"
+
+  \header {
+  arranger = ""
+  composer = "Music by Morgan Lewis"
+  copyright = ""
+  dedication = ""
+  footer = "%%FOOTER%%"
+  instrument = ""
+  meter = "Medium Swing"
+  poet = "Lyrics by Nancy Hamilton"
+  subsubtitle = "From Two for the Show (1940)"
+  subtitle = ""
+  tagline = ""
+  title = "How High The Moon"
+}
+
+
+  \score {
+  <<
+    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
+  \set chordChanges = ##f
+  \set chordNameExceptions = #jazzChordExceptions
+  %\set Score.currentBarNumber = #4
+
+  \transpose c c {
+    \chordmode {
+  \partial 2. s2.
+
+  \boxMark "A"
+  g1:maj7 | g1:maj7 | g1:m7 | c1:7
+  f1:maj7 | f1:maj7 | f1:m7 | bes:7
+
+  \boxMark "B"
+  ees:maj7 | aes2:m7.5- d2:7 | g1:m7 | aes2:m7.5- d2:7
+  g1:maj7 | a2:m7 d2:7 | b2:m7 bes2:7 | a2:m7 d2:7 
+
+  \boxMark "A"
+  g1:maj7 | g1:maj7 | g1:m7 | c1:7
+  f1:maj7 | f1:maj7 | f1:m7 | bes:7
+
+  \boxMark "C"
+  ees:maj7 | aes2:m7.5- d2:7 | g1:maj7 | a2:m7 d2:7
+  b2:m7 bes2:7 | a2:m7 d2:7 | g1:6 | \LPC a2:m7 \RPC d2:7
+}
+
+  }
+}
+
+
+    \new Voice="Voice" {
+  \transpose c c {
+    
+\relative c' {
+  \key g \major
+  \time 4/4
+  \numericTimeSignature
+
+  \partial 2. d4 g4 a4
+
+  \voltaStartBar
+
+  g2 b2~
+  b4 d,4 g4 a4 bes1~
+  bes4 c,4 f4 g4 \endLine
+
+  g2 a2~ a4
+  c,4 f4 g4
+  aes1~
+  aes4 d,4 ees4 f4 \endLine
+
+  g4 g4 g4 g4
+  g4 g8 a8~ a8 g8 a4
+  bes1~
+  bes4. a8~ a8 g8 a4 \endLine
+
+  b1~
+  b4 a4 b4 c4
+  d4 d4 d4 d4
+  d8 r8 d,4 g4 a4 \endLine
+
+  a2 b2~
+  b4 d,4 g4 a4
+  bes1~
+  bes4 c,4 f4 g4 \endLine
+
+  g2 a2~
+  a4 c,4 f4 g4
+  aes1~
+  aes4 d,4 ees4 f4 \endLine
+
+  g4 g4 g4 g4
+  g4 g8 a8~ a8 g8 a4
+  b1~
+  b4 a4 b4 c4 \endLine
+
+  d4 d4 d4 d4
+  d4 d,4 g4 a4
+  g1~
+  g4 
+
+  \override ParenthesesItem.font-size = #5
+  \startParenthesis \parenthesize d4
+  g4
+  \endParenthesis \parenthesize a4
+
+  \voltaEndBar
+}
+
+  }
+}
+
+
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
+  >>
+}
+
+}
+\bookpart {
   \tocItem \markup "I Got Rhythm - George Gershwin"
 
   \header {
@@ -1102,8 +1228,8 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   instrument = ""
   meter = "Medium Up Swing"
   poet = "Lyrics by Ira Gershwin"
-  subsubtitle = ""
-  subtitle = "From An American In Paris (1928) & Girl Crazy (1930)"
+  subsubtitle = "From An American In Paris (1928) & Girl Crazy (1930)"
+  subtitle = ""
   tagline = ""
   title = "I Got Rhythm"
 }

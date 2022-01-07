@@ -1,8 +1,8 @@
-title: "Crazeology"
-composer: "<Little> Benny Harris"
-style: "Bop"
-time: "4/4"
-bpm: "240"
+title: Crazeology
+composer: 'Little' Benny Harris
+style: Bop
+time: 4/4
+bpm: 240
 ---
 \chordmode {
   \boxMark "A1"

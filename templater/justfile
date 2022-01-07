@@ -1,6 +1,9 @@
 build:
   cargo build
 
+build-release:
+  cargo build
+
 run:
   cargo run
 

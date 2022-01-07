@@ -36,7 +36,7 @@ fn main() {
     };
     init_static(&conf);
 
-    let mut songs: Vec<Song> = get_files_by_ext("./test", "ly")
+    let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from("./songs"), "ly")
         .iter_mut()
         .map(|path| {
             let input = fs::read_to_string(path).unwrap();
@@ -52,11 +52,11 @@ fn main() {
     songs.sort_by(|a, b| a.title.cmp(&b.title));
 
     let mut outfile = File::create("book.ly").expect("Unable to create book.ly");
-    // ------- begin writing
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
 
     for song in songs {
+        println!("Handling {}", song.title);
         song.write(&mut outfile);
     }
 
@@ -67,7 +67,7 @@ fn main() {
 fn init_static(conf: &TemplaterConfig) {
     let intro_template = fs::read_to_string("./templates/intro")
         .expect("Unable to read intro template")
-        .replace("%%TRANSPOSE%%", &capitalize_first_letter(&conf.transpose));
+        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose));
     INTRO_TEMPLATE.set(intro_template).expect("Unable to set INTRO_TEMPLATE");
 
     let bookpart_template = fs::read_to_string("./templates/bookpart")

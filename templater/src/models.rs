@@ -101,15 +101,19 @@ impl Song {
         let lyrics = crate::LYRICS_TEMPLATE.get().unwrap()
             .replace("%%LYRICS%%", &self.lyrics);
 
+        let poet = match self.poet {
+            Some(p) => format!("Lyrics by {}", p),
+            None => String::new(),
+        };
         let song_header = crate::SONG_HEADER_TEMPLATE.get().unwrap()
             .replace("%%TITLE%%", &self.title)
             .replace("%%COMPOSER%%", &format!("Music by {}", &self.composer))
+            .replace("%%POET%%", &poet)
             .replace("%%ARRANGER%%", &self.arranger.unwrap_or(String::new()))
             .replace("%%COPYRIGHT%%", &self.copyright.unwrap_or(String::new()))
             .replace("%%DEDICATION%%", &self.dedication.unwrap_or(String::new()))
             .replace("%%INSTRUMENT%%", &self.instrument.unwrap_or(String::new()))
             .replace("%%METER%%", &self.meter.unwrap_or(String::new()))
-            .replace("%%POET%%", &self.poet.unwrap_or(String::new()))
             .replace("%%SUBSUBTITLE%%", &self.subsubtitle.unwrap_or(String::new()))
             .replace("%%SUBTITLE%%", &self.subtitle.unwrap_or(String::new()))
             .replace("%%TAGLINE%%", &self.tagline.unwrap_or(String::new()));

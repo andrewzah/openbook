@@ -1,0 +1,5 @@
+\new Voice="Voice" {
+  \transpose c %%TRANSPOSE%% {
+    %%NOTES%%
+  }
+}

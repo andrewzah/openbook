@@ -8,6 +8,7 @@
 
 \paper {
   #(set-paper-size "a4")
+  system-system-spacing.padding = #3
 
  #(define fonts
     (set-global-fonts

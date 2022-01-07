@@ -1,0 +1,3 @@
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+  %%LYRICS%%
+}

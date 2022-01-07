@@ -1,0 +1,7 @@
+\bookpart {
+  \tocItem \markup "%%TITLE%%"
+
+  %%SONG_HEADER%%
+
+  %%SONG_BODY%%
+}

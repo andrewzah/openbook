@@ -36,7 +36,7 @@
   system-system-spacing=
     #'((basic-distance . 1)
        (minimum-distance . 1)
-       (padding . 1)
+       (padding . 3.5)
        (stretchability . 1))
 
   %% TOC
@@ -88,6 +88,10 @@
   \context {
     \Staff
     \accepts ImproVoice
+
+    \override VerticalAxisGroup
+              .default-staff-staff-spacing
+              .basic-distance = #10
   }
 }
 
@@ -109,8 +113,6 @@
   \override Score.SystemStartBar #'collapse-height = #1
 
   \context {
-
-
     \Score {
       % put marks at the left edge
       \override Score.RehearsalMark.break-align-symbols = #'(left-edge)

@@ -21,6 +21,9 @@ time: 3/4
   \key c \major
   \time 3/4
   \numericTimeSignature
+  %\override VerticalAxisGroup.default-staff-staff-spacing =
+  %  #'((basic-distance . 1)
+  %     (padding . -10))
 
   e,8 b'8 g2
   | e8 b'8 g2

@@ -45,7 +45,7 @@ meter: Medium Up Swing
     g4 r4 g4~ |
     g4 a4 b4 \endLine |
   } \alternative {
-    { g2.~ | g2. | r2. | r2. \voltaEndBar | \endLine }
+    { g2.~ | g2. | r2. | r2. \voltaEndBar |}
     { g2.~ | g2. | r2. | r2. | \endLine }
   }
 

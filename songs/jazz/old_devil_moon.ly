@@ -1,5 +1,5 @@
 title: Old Devil Moon
-composer: Music by Burton Lane
+composer: Burton Lane
 poet: E.Y. Harburg
 meter: Medium
 ---

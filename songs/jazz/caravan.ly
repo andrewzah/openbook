@@ -1,5 +1,5 @@
 title: Caravan
-composer: Music by Duke Ellington
+composer: Duke Ellington
 meter: Latin
 ---
 \chordmode {

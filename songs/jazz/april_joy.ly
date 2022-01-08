@@ -1,5 +1,5 @@
 title: April Joy
-composer: Music by Pat Metheny
+composer: Pat Metheny
 meter: Medium - Even 8ths
 ---
 \chordmode {

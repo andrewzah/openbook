@@ -1,5 +1,5 @@
 title: Full House
-composer: Music by John L. (Wes) Montgomery
+composer: John L. (Wes) Montgomery
 ---
 \chordmode {
   \partial 2 s2

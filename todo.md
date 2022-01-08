@@ -1,2 +1,3 @@
+- [ ] figure out how to control stave spacing per song (via overrides)
 - [ ] archive https://thevideogamerealbook.tumblr.com transcriptions
 - [ ] animal crossing: 5pm

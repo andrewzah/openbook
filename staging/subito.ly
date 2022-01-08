@@ -5,7 +5,7 @@
 
 \header {
   title = "Subito"
-  composer = "Music by Sonny Stitt"
+  composer = "Sonny Stitt"
   poet = ""
   meter = "Med Swing"
   tagline = ""

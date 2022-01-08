@@ -1,6 +1,5 @@
 title: Now's The Time
-subtitle: (Realbook)
-composer: Music by Charlie Parker 
+composer: Charlie Parker 
 meter: Fast Blues
 ---
 \chordmode {

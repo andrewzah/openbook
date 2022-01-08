@@ -4,19 +4,17 @@
 \include "../includes/symbols.ily"
 
 \header {
-  title = "Subito"
-  composer = "Music by Sonny Stitt"
+  title = ""
+  subsubtitle = ""
+  composer = ""
   poet = ""
-  meter = "Med Swing"
-  tagline = ""
-  footer = ""
+  meter = ""
 }
 
 \score {
   <<
     \new ChordNames="Chords" {
       \transpose c c {
-
         \chordmode {
         }
       }
@@ -25,10 +23,9 @@
   \new Voice="Voice" {
     \transpose c c {
       \relative c' {
-        \key aes \major
+        \key bes \major
         \time 4/4
-        \tempo 4 = 160
-        \numericTimeSignature     
+        \numericTimeSignature
 
         \songEndBar
       }

@@ -68,6 +68,29 @@
 }
 
 % TODO: figure out how to merge these two \Score blocks
+
+\layout {
+  \context {
+    \name ImproVoice
+    \type "Engraver_group"
+    \consists "Note_heads_engraver"
+    \consists "Text_engraver"
+    \consists "Rhythmic_column_engraver"
+    \consists "Pitch_squash_engraver"
+    squashedPosition = #0
+    \override NoteHead.style = #'slash
+    \hide Stem
+    \alias Voice
+  }
+}
+
+\layout {
+  \context {
+    \Staff
+    \accepts ImproVoice
+  }
+}
+
 \layout {
   \context {
     \Score
@@ -86,6 +109,8 @@
   \override Score.SystemStartBar #'collapse-height = #1
 
   \context {
+
+
     \Score {
       % put marks at the left edge
       \override Score.RehearsalMark.break-align-symbols = #'(left-edge)

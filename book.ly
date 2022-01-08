@@ -131,10 +131,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -383,10 +380,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -495,10 +489,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -599,10 +590,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -711,10 +699,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -821,10 +806,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -882,54 +864,54 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   \numericTimeSignature
 
   e,8 b'8 g2
-  e8 b'8 g2
-  e8 b'8 g2~
-  g4 e4. d8 \endLine
+  | e8 b'8 g2
+  | e8 b'8 g2~
+  | g4 e4. d8 \endLine
 
-  c4. d8 e4
-  a2 g4
-  c,2.~
-  c2 d4 \endLine
+  | c4. d8 e4
+  | a2 g4
+  | c,2.~
+  | c2 d4 \endLine
 
-  e8 a,8 a2
-  e'8 a,8 a2
-  e'8 a,8 a2~
-  a4 a4 b4 \endLine
+  | e8 a,8 a2
+  | e'8 a,8 a2
+  | e'8 a,8 a2~
+  | a4 a4 b4 \endLine
 
-  c4 d4 e4
-  d'4 c4 a4
-  d,2.
-  dis2. \endLine
+  | c4 d4 e4
+  | d'4 c4 a4
+  | d,2.
+  | dis2. \endLine
 
-  e8 b'8 g2
-  e8 b'8 g2
-  e8 b'8 g2~
-  g4 g4 f4 \endLine
+  | e8 b'8 g2
+  | e8 b'8 g2
+  | e8 b'8 g2~
+  | g4 g4 f4 \endLine
 
-  e4. f8 g4
-  e'4. d8 c4
-  a2.
-  b2. \endLine
+  | e4. f8 g4
+  | e'4. d8 c4
+  | a2.
+  | b2. \endLine
 
-  c4 b4 a4
-  g2 fis4
-  g8 a8 b2~
-  b4 a4 g4 \endLine
+  | c4 b4 a4
+  | g2 fis4
+  | g8 a8 b2~
+  | b4 a4 g4 \endLine
 
-  f8 g8 a2~
-  a4 g4. f8
-  e8 f8 g2~
-  g4 a4 b4 \endLine
+  | f8 g8 a2~
+  | a4 g4. f8
+  | e8 f8 g2~
+  | g4 a4 b4 \endLine
 
-  c4 b4 a4
-  g2 f4
-  e8 b'8 g2~
-  g4 g4 f4 \endLine
+  | c4 b4 a4
+  | g2 f4
+  | e8 b'8 g2~
+  | g4 g4 f4 \endLine
 
-  e8 b'8 g2
-  e8 b'8 g2
-  c2.~
-  c2 r4
+  | e8 b'8 g2
+  | e8 b'8 g2
+  | c2.~
+  | c2 r4
 
   \songEndBar
 }
@@ -938,10 +920,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -1086,10 +1065,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -1208,10 +1184,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -1226,9 +1199,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   dedication = ""
   footer = "%%FOOTER%%"
   instrument = ""
-  meter = "Medium Up Swing"
+  meter = "Medium Swing"
   poet = "Lyrics by Ira Gershwin"
-  subsubtitle = "From An American In Paris (1928) & Girl Crazy (1930)"
+  subsubtitle = "From An American In Paris (1928) and Girl Crazy (1930)"
   subtitle = ""
   tagline = ""
   title = "I Got Rhythm"
@@ -1244,21 +1217,22 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
   \transpose c c {
     \chordmode {
-  \boxMark "A1"
-  bes2:6 g2:7.9- | c2:m7 f2:7 | bes2:6 g2:7.9- | c2:m7 f2:7 \endLine
-  bes2 bes2:7 | ees2 ees2:m6 | bes2:6 g2:7.9- | c2:m7 f2:7 \endLine
-
-  \boxMark "A2"
-  bes2:6 g2:7.9- | c2:m7 f2:7 | bes2:6 g2:7.9- | c2:m7 f2:7 \endLine
-  bes2 bes2:7 | ees2 ees2:m6 | bes2:6 f2:7 | bes1:6 \endLine
+  \boxMark "A"
+  \repeat volta 2 {
+    bes2:6 g2:m7 | c2:m7 f2:7 | d2:m7 g2:m7 | c2:m7 f2:7
+    bes2:7 bes2:7/d | ees2:7 e2:dim7 | bes2:6/f f2:7
+  } \alternative {
+    { bes2:6 f2:7 }
+    { bes1:6 }
+  }
 
   \boxMark "B"
-  d1:7 | d1:7 | g1:7 | g1:7 \endLine
-  c1:7 | c1:7 | f1:7 | f1:7 \endLine
+  d1:7 | d1:7 | g1:7 | g1:7
+  c1:7 | c1:7 | f1:7 | f1:7
 
-  \boxMark "A2"
-  bes2:6 g2:7.9- | c2:m7 f2:7 | bes2:6 g2:7.9- | c2:m7 f2:7 \endLine
-  bes2 bes2:7 | ees2 ees2:m6 | bes2:6 f2:7 | bes1:6 \endLine
+  \boxMark "A"
+  bes2:6 g2:m7 | c2:7 f2:7 | d2:m7 g2:m7 | c2:m7 f2:7
+  bes2:7 bes2:7/d | ees2:7 e2:dim7 | bes2:6/f f2:7 | bes1:6
 }
 
   }
@@ -1268,12 +1242,45 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     \new Voice="Voice" {
   \transpose c c {
     
-\relative c'' {
+\relative c' {
   \key bes \major
   \time 4/4
   \numericTimeSignature
 
-  \repeat unfold 32 { r1 }
+  \repeat volta 2 {
+    r4 f4~ f8 g4.
+    | bes4. c8~ c2
+    | r4 c4~ c8 bes4.
+    | g4. f8~ f2 \endLine
+
+    | r4 f4~ f8 g4.
+    | bes4. c8 ~c8 ees4 c8
+    | d4 d4 c8 d8 c4
+
+  } \alternative {
+    { bes2 r2 \voltaEndBar }
+    { bes1 \endLine }
+  }
+
+  | r4 d4~ d8 d4.
+  | d4. e8~ e2
+  | r4 d4~ d8 d4.
+  | d4. g,8~ g2 \endLine
+
+  | r4 c4~ c8 c4.
+  | c4. d8~ d2
+  | r4 c4~ c8 c4.
+  | c4. g8~ g2 \endLine
+
+  | r4 f4~ f8 g4.
+  | bes4. c8~ c2
+  | r4 c4~ c8 bes4.
+  | g4. f8~ f2 \endLine
+
+  | r4 f4~ f8 g4.
+  | bes4. c8 ~c8 ees4 c8
+  | d4 d4 c8 d8 c4
+  | bes1
 
   \songEndBar
 }
@@ -1289,19 +1296,256 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   I __ got mu -- sic.
 
   I __ got my man.
-  Who could ask for a -- ny -- thing more?
+  Who could ask for a -- ny -- thing more? more?
 
   Old __ Man Troub -- le __
-  I __ don't mind him,
-  You won't find him
-  Round my door.
+  I __ don't mind him, __
+  You won't find him __
+  'round my door. __ \skip 1
 
-  I __ got star -- light,
-  I __ got sweet dreams,
+  I've __ got star -- light,
+  I've __ got sweet dreams,
 
-  I __ got my man.
-  Who could ask for a -- ny -- thing more,
+  I've __ got my man __
   Who could ask for a -- ny -- thing more?
+}
+
+}
+
+  >>
+}
+
+}
+\bookpart {
+  \tocItem \markup "Just In Time - Jule Styne"
+
+  \header {
+  arranger = ""
+  composer = "Music by Jule Styne"
+  copyright = ""
+  dedication = ""
+  footer = "%%FOOTER%%"
+  instrument = ""
+  meter = "Med Swing"
+  poet = "Lyrics by Betty Comden & Adolph Green"
+  subsubtitle = "From Bells Are Ringing (1956)"
+  subtitle = ""
+  tagline = ""
+  title = "Just In Time"
+}
+
+
+  \score {
+  <<
+    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
+  \set chordChanges = ##f
+  \set chordNameExceptions = #jazzChordExceptions
+  %\set Score.currentBarNumber = #4
+
+  \transpose c c {
+    \chordmode {
+  bes1:maj7 | bes1:maj7 | a1:m7 | d1:7
+  g1:7 | g1:7 | c1:7 | c1:7
+  f1:7 | f1:7 | bes1:7 | bes1:7
+  ees1:maj7 | ees1:maj7 | aes1:7 | aes2:m7.5- d2:7
+  g1:m | g1:m7+ | g1:m7 | c1:7
+  bes1:6 | bes1:6 | aes1:7 | g1:7
+  c1:7 | f1:7 | bes1:6 | g1:7
+  c1:7 | c2:7 f2:7 | bes1:6 | \LPC c2:7 \RPC f2:7
+}
+
+  }
+}
+
+
+    \new Voice="Voice" {
+  \transpose c c {
+    
+\relative c' {
+  \key bes \major
+  \time 4/4
+  \numericTimeSignature
+
+  d4 cis8 d8~ d2
+  | r8 cis4. d4 cis4
+  | d4 cis8 d8~ d2
+  | r4 r8 cis8 d4 cis4 \endLine
+
+  | d4 cis8 d8~ d2
+  | r4 cis8 d8~ d8 g4 d8~
+  | d1
+  | r1 \endLine
+
+  | d4 cis8 d8~ d2
+  | r8 cis4. d4 cis4
+  | d4 cis8 d8~ d2
+  | r4 r8 cis8 d4 f4 \endLine
+
+  | g4 fis8 g8~ g2
+  | r4 fis8 g8~ g8 bes4 c8~
+  | c1
+  | r1 \endLine
+
+  | bes4 a8 bes8~ bes2
+  | r8 a4. bes4 a4
+  | bes4 c4 c8 d4 d8~
+  | d8 c4. c4 bes4 \endLine
+
+  | g4 fis8 g8~ g2
+  | r8 fis4. g4 b4
+  | ees,1
+  | r8 d4. f4 ees4 \endLine
+
+  | d4 cis8 d8~ d2
+  | r8 cis4. d4 f4
+  | g4 fis8 g8 r2
+  | r8 fis4. g4 bes4 \endLine
+
+  | c4 b4 c8 d4.
+  | bes2 c4. bes8~
+  | bes1
+  | r1
+
+  \songEndBar
+}
+
+  }
+}
+
+
+    
+  >>
+}
+
+}
+\bookpart {
+  \tocItem \markup "Lover - Richard Rodgers"
+
+  \header {
+  arranger = ""
+  composer = "Music by Richard Rodgers"
+  copyright = ""
+  dedication = ""
+  footer = "%%FOOTER%%"
+  instrument = ""
+  meter = "Medium Up Swing"
+  poet = "Lyrics by Lorenz Hart"
+  subsubtitle = "From Love Me Tonight (1932)"
+  subtitle = ""
+  tagline = ""
+  title = "Lover"
+}
+
+
+  \score {
+  <<
+    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
+  \set chordChanges = ##f
+  \set chordNameExceptions = #jazzChordExceptions
+  %\set Score.currentBarNumber = #4
+
+  \transpose c c {
+    \chordmode {
+  \boxMark "A"
+  \repeat volta 2 {
+    c2.:maj7 | c2.:maj7 | fis2.:m7 | b2.:7
+    f2.:m7 | bes2.:7 | e2.:m7 | a2.:7
+    ees2.:7 | aes2.:7 d2.:m7 | g2.:7
+  } \alternative {
+    { e2.:m7 | a2.:7 | d2.:m7 | g2.:7 }
+    { c2.:maj7 | c2.:maj7 | fis2.:m7 | b2.:7 }
+  }
+
+  \boxMark "B"
+  e2.:maj7 | f2.:dim7 | fis2.:m7 | b2.:7
+  e2.:maj7 | f2.:dim7 | fis2.:m7 | b2.:7
+  g2.:maj7 | gis2.:dim7 | a2.:m7 | d2.:7
+  e2.:m7 | a2.:7 | d2.:m7 | g2.:7
+}
+
+  }
+}
+
+
+    \new Voice="Voice" {
+  \transpose c c {
+    
+\relative c'' {
+  \key c \major
+  \time 3/4
+  \numericTimeSignature
+
+  \repeat volta 2 {
+    \voltaStartBar
+
+    c4 r4 c4~ |
+    c4 b4. c8 |
+    b4 r4 b4~ |
+    b4 bes4. b8 \endLine |
+
+    bes4 r4 bes4~ |
+    bes4 a4. bes8 |
+    a2.~ |
+    a2 r4 \endLine |
+
+    aes4 r4 aes4~ |
+    aes4 g4. aes8 |
+    g4 r4 g4~ |
+    g4 a4 b4 \endLine |
+  } \alternative {
+    { g2.~ | g2. | r2. | r2. \voltaEndBar | \endLine }
+    { g2.~ | g2. | r2. | r2. | \endLine }
+  }
+
+  fis4 g4 fis4 |
+  a4 gis4 a4 |
+  b4 r4 b4~ |
+  b2. | \endLine
+
+  fis4 g4 fis4 |
+  a4 gis4 a4 |
+  b2.~ |
+  b2 r4 | \endLine
+
+  b4 c4 b4 |
+  c4 b4 c4 |
+  d4 r4 d4~ |
+  d4 dis4 e4 | \endLine
+
+  g,2.~ |
+  g2. |
+  r2. |
+  r2.
+
+  \songEndBar
+}
+
+  }
+}
+
+
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+\lyricmode {
+  Lov -- er, __ when I'm near you __ and I
+  hear you __ speak my name __
+  soft -- ly __ in my ear you __ breathe a flame. __ 
+
+  \skip 4
+
+  I say The De -- vil is in you,__
+  and to re -- sist you I try; __
+  but if you did -- n't cont -- tin -- ue __
+  I would die! __
+}
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+\lyricmode {
+  Lov -- er, __ it's im -- mor -- al, __ but why
+  quar -- rel __ with our bliss __
+  when two __ lips of cor - al __ want to kiss? __
 }
 
 }
@@ -1383,42 +1627,47 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     \bar "[|:"
 
     d2. bes8 c
-    des c' c c c bes g ees
-    c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g } | \endLine
+    | des c' c c c bes g ees
+    | c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g } \endLine
 
-    bes bes bes aes bes4. aes8
-    g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
-    aes8 c,4 c8 \tuplet 3/2 { d4 ees f } | \endLine
+    | bes bes bes aes bes4. aes8
+    | g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
+    | aes8 c,4 c8 \tuplet 3/2 { d4 ees f } \endLine
   } \alternative {
     {
-      g1~ | g2. bes8 g8 \bar ":|]"
+      g1~
+      | g2. bes8 g8 \bar ":|]"
     }
     {
-      ees1 | \tuplet 3/2 { r4 ees f } \tuplet 3/2 { g bes c } | \endLine
+      ees1
+      | \tuplet 3/2 { r4 ees f } \tuplet 3/2 { g bes c }
+      | \endLine
     }
   }
 
   %% B Section
-  des8 des des des~ des2~
-  des4 des8 ees \tuplet 3/2 { fes4 ees des }
-  c8 c c c~ c2
-  \tuplet 3/2 { r4 ees, f } \tuplet 3/2 {aes bes c } | \endLine
+  | des8 des des des~ des2~
+  | des4 des8 ees \tuplet 3/2 { fes4 ees des }
+  | c8 c c c~ c2
+  | \tuplet 3/2 { r4 ees, f } \tuplet 3/2 {aes bes c } \endLine
 
-  d8 d d c d2~
-  d8 d d c \tuplet 3/2 { f4 d c }
-  bes1~
-  bes2. bes8 g | \endLine
+  | d8 d d c d2~
+  | d8 d d c \tuplet 3/2 { f4 d c }
+  | bes1~
+  | bes2. bes8 g \endLine
 
   %% A Section
-  d2. bes8 c
-  des c' c c c bes g ees
-  c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g }
-  bes bes bes aes bes4. aes8 | \endLine
+  | d2. bes8 c
+  | des c' c c c bes g ees
+  | c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g }
+  | bes bes bes aes bes4. aes8 \endLine
 
-  g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
-  aes8 c,4 c8 \tuplet 3/2 { d4 ees f }
-  ees1
-  r \bar "|."
+  | g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
+  | aes8 c,4 c8 \tuplet 3/2 { d4 ees f }
+  | ees1
+  | r \bar "|."
+
+  \songEndBar
 }
 
   }
@@ -1443,6 +1692,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   __ I'm too mist -- y and too much in love.
 }
 
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+  
 \lyricmode {
   Walk my way and a thou -- sand vi -- o -- lins be -- gin to play,
   or it might be the sound of your hel -- lo, that mu -- sic I hear,
@@ -1509,45 +1761,44 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
   \repeat volta 2 {
     c'2.~ \tuplet 3/2 { c8 bes8 ees8 }
-    f,1
-    aes2 ges4~ \tuplet 3/2 { ges8 ees8 ges8 }
-    ees1 | \endLine
+    | f,1
+    | aes2 ges4~ \tuplet 3/2 { ges8 ees8 ges8 }
+    | ees1 \endLine
   }
 
   \repeat volta 2 {
-    bes'2.~ \tuplet 3/2 { bes8 bes8 bes8 }
-    g2.~ \tuplet 3/2 { g8 ees8 f8 }
-    bes2.~ \tuplet 3/2 { bes8 bes8 bes8 }
-    g2.~ \tuplet 3/2 { g8 f8 ees8 } \endLine
+    | bes'2.~ \tuplet 3/2 { bes8 bes8 bes8 }
+    | g2.~ \tuplet 3/2 { g8 ees8 f8 }
+    | bes2.~ \tuplet 3/2 { bes8 bes8 bes8 }
+    | g2.~ \tuplet 3/2 { g8 f8 ees8 } \endLine
 
-    des'2.~ \tuplet 3/2 { des8 bes8 des8 }
-    bes2.~ \tuplet 3/2 { bes8 ees8 bes8 }
-    g2.~ \tuplet 3/2 { g8 ees8 g8 }
-    ees1 \endLine
+    | des'2.~ \tuplet 3/2 { des8 bes8 des8 }
+    | bes2.~ \tuplet 3/2 { bes8 ees8 bes8 }
+    | g2.~ \tuplet 3/2 { g8 ees8 g8 }
+    | ees1 \endLine
 
-    c'2.~ \tuplet 3/2 { c8 bes8 ees8 }
-    f,1
-    aes2 ges4~ \tuplet 3/2 { ges8 ees8 ges8 }
-    ees1^\markup { \caps { D.S. al Coda } } \voltaEndBar \endLine
+    | c'2.~ \tuplet 3/2 { c8 bes8 ees8 }
+    | f,1
+    | aes2 ges4~ \tuplet 3/2 { ges8 ees8 ges8 }
+    | ees1^\markup { \caps { D.S. al Coda } } \voltaEndBar \endLine
   }
 
   %% coda
   \once \override Score.RehearsalMark #'font-size = #4
   \mark \markup { \musicglyph "scripts.coda" }
-  ees2 f2
-  g2 aes2
-  bes2 c2
-  ees2^\fermata \songEndBar
+  | ees2 f2
+  | g2 aes2
+  | bes2 c2
+  | ees2^\fermata
+
+  \songEndBar
 }
 
   }
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -1693,10 +1944,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
-}
-
+    
   >>
 }
 
@@ -1815,6 +2063,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   Back __ in __ for - ty two, Bird came to New York and he blew. Come
 }
 
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+  
 \lyricmode {
   %% 2nd time
   his time. Now's the time.
@@ -1947,10 +2198,107 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    \new Lyrics="Lyrics" \lyricsto "Voice" {
-  
+    
+  >>
 }
 
+}
+\bookpart {
+  \tocItem \markup "Scrapple From The Apple - Charlie Parker"
+
+  \header {
+  arranger = ""
+  composer = "Music by Charlie Parker"
+  copyright = ""
+  dedication = ""
+  footer = "%%FOOTER%%"
+  instrument = ""
+  meter = "Medium Bop"
+  poet = ""
+  subsubtitle = "1947"
+  subtitle = "Based on Honeysuckle Rose and Rhythm Changes"
+  tagline = ""
+  title = "Scrapple From The Apple"
+}
+
+
+  \score {
+  <<
+    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
+  \set chordChanges = ##f
+  \set chordNameExceptions = #jazzChordExceptions
+  %\set Score.currentBarNumber = #4
+
+  \transpose c c {
+    \chordmode {
+  \boxMark "A"
+  \repeat volta 2 {
+    g1:m7 | c1:7 | g1:m7 | c1:7
+    f1:maj7 | bes2:maj7 b2:dim7 | f2:maj7 g2:m7
+  } \alternative {
+    { a2:m7 d2:7 }
+    { f1:6 }
+  }
+
+  \boxMark "B"
+  a1:7 | a1:7 | d1:7 | d1:7
+  g1:7 | g1:7 | c1:7 | c1:7
+
+  \boxMark "A"
+  g1:m7 | c1:7 | g1:m7 | c1:7
+  f1:maj7 | bes2:maj7 b2:dim7 | f2:maj7 g4:m7 c4:7 | f1:6
+}
+
+  }
+}
+
+
+    \new Voice="Voice" {
+  \transpose c c {
+    
+\relative c' {
+  \key f \major
+  \time 4/4
+  \numericTimeSignature
+
+  \repeat volta 2 {
+    r8 fis8 g8 bes8 a8 g8 f8 d8 |
+    g8 c8 r4 r8 bes4 a8 |
+    bes8 f'8 \tuplet 3/2 { d8 bes8 g8 } a8 d,8 g8 des8 |
+    r4 r8 a'8~ a8 bes4 a8 | \endLine
+
+    c8 a8 \tuplet 3/2 { g8 f8 g8~ } g4 r8 f'8 |
+    d4 r8 e8~ e8 d8 \tuplet 3/2 { a8 bes8 b8 } |
+    c4. a8 bes8 a8 gis8 a8
+  } \alternative {
+    { c8 a8 bes8 c8 r2 | \voltaEndBar \endLine }
+    { f8 c8 e8 f8 r2 | }
+  }
+
+  \new ImproVoice {
+    c4^"Solo" c4 c4 c4 |
+    \repeat unfold 12 { c4 } | \endLine
+    \repeat unfold 16 { c4 } | \endLine
+  }
+
+  r8 fis,8 g8 bes8 a8 g8 f8 d8 |
+  g8 c8 r4 r8 bes4 a8 |
+  bes8 f'8 \tuplet 3/2 { d8 bes8 g8 } a8 d,8 g8 des8 |
+  r4 r8 a'8~ a8 bes4 a8 | \endLine
+
+  c8 a8 \tuplet 3/2 { g8 f8 g8~ } g4 r8 f'8 |
+  d4 r8 e8~ e8 d8 \tuplet 3/2 { a8 bes8 b8 } |
+  c4. a8 bes8 a8 gis8 a8 |
+  f8 c8 e8 f8 r2 |
+
+  \songEndBar
+}
+
+  }
+}
+
+
+    
   >>
 }
 
@@ -2088,6 +2436,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   %She's eve -- ry -- thing on_this earth to me.
 }
 
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+  
 \lyricmode {
   \repeat unfold 49 { \skip 1 }
 
@@ -2239,6 +2590,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   The mu -- sic is sweet, __ the words are true, __ the song is you.
 }
 
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+  
 \lyricmode {
   I hear mu- -- sic when I touch your hand, __
   a beau -- ti -- ful mel -- o -- dy from some en -- chan -- ted land. __

@@ -13,7 +13,7 @@ pub struct Song {
     // body
     pub chords: String,
     pub voices: String,
-    pub lyrics: String,
+    pub lyrics: Vec<String>,
 
     // header 
     pub arranger: Option<String>,
@@ -38,7 +38,7 @@ impl Song {
 
         let mut chords = String::new();
         let mut voices = String::new();
-        let mut lyrics = String::new();
+        let mut lyrics = vec![];
 
         for part in parts {
             if part.contains("chordmode") {
@@ -52,7 +52,7 @@ impl Song {
             }
 
             if part.contains("lyricmode") {
-                lyrics.push_str(part);
+                lyrics.push(part.to_string());
                 continue;
             }
         }
@@ -98,8 +98,12 @@ impl Song {
             .replace("%%TRANSPOSE%%", &self.transpose)
             .replace("%%NOTES%%", &self.voices);
 
-        let lyrics = crate::LYRICS_TEMPLATE.get().unwrap()
-            .replace("%%LYRICS%%", &self.lyrics);
+        let mut lyrics = String::new();
+        for lyricspart in &self.lyrics {
+            let formatted_lyrics = crate::LYRICS_TEMPLATE.get().unwrap()
+                .replace("%%LYRICS%%", &lyricspart);
+            lyrics.push_str(&formatted_lyrics);
+        }
 
         let poet = match self.poet {
             Some(p) => format!("Lyrics by {}", p),

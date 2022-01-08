@@ -43,42 +43,47 @@ copyright: 1955. Renewed 1983 Marke Music, Limerick Music, Reganesque
     \bar "[|:"
 
     d2. bes8 c
-    des c' c c c bes g ees
-    c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g } | \endLine
+    | des c' c c c bes g ees
+    | c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g } \endLine
 
-    bes bes bes aes bes4. aes8
-    g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
-    aes8 c,4 c8 \tuplet 3/2 { d4 ees f } | \endLine
+    | bes bes bes aes bes4. aes8
+    | g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
+    | aes8 c,4 c8 \tuplet 3/2 { d4 ees f } \endLine
   } \alternative {
     {
-      g1~ | g2. bes8 g8 \bar ":|]"
+      g1~
+      | g2. bes8 g8 \bar ":|]"
     }
     {
-      ees1 | \tuplet 3/2 { r4 ees f } \tuplet 3/2 { g bes c } | \endLine
+      ees1
+      | \tuplet 3/2 { r4 ees f } \tuplet 3/2 { g bes c }
+      | \endLine
     }
   }
 
   %% B Section
-  des8 des des des~ des2~
-  des4 des8 ees \tuplet 3/2 { fes4 ees des }
-  c8 c c c~ c2
-  \tuplet 3/2 { r4 ees, f } \tuplet 3/2 {aes bes c } | \endLine
+  | des8 des des des~ des2~
+  | des4 des8 ees \tuplet 3/2 { fes4 ees des }
+  | c8 c c c~ c2
+  | \tuplet 3/2 { r4 ees, f } \tuplet 3/2 {aes bes c } \endLine
 
-  d8 d d c d2~
-  d8 d d c \tuplet 3/2 { f4 d c }
-  bes1~
-  bes2. bes8 g | \endLine
+  | d8 d d c d2~
+  | d8 d d c \tuplet 3/2 { f4 d c }
+  | bes1~
+  | bes2. bes8 g \endLine
 
   %% A Section
-  d2. bes8 c
-  des c' c c c bes g ees
-  c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g }
-  bes bes bes aes bes4. aes8 | \endLine
+  | d2. bes8 c
+  | des c' c c c bes g ees
+  | c2 \tuplet 3/2 { r8 g aes } \tuplet 3/2 { c ees g }
+  | bes bes bes aes bes4. aes8 \endLine
 
-  g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
-  aes8 c,4 c8 \tuplet 3/2 { d4 ees f }
-  ees1
-  r \bar "|."
+  | g4~ \tuplet 3/2 { g8 aes bes } ees,4~ \tuplet 3/2 { ees8 f g }
+  | aes8 c,4 c8 \tuplet 3/2 { d4 ees f }
+  | ees1
+  | r \bar "|."
+
+  \songEndBar
 }
 ---
 \lyricmode {

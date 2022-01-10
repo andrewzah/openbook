@@ -16,12 +16,19 @@ jazzChordDefinitions={
   <c e g b>-\markup { \super { "△7" } }
 
   %% dom
+  <c e g bes des'>-\markup { \super { "7" \flat "9" } }
   <c e g bes d' a'>-\markup { \super { "13" } }
+  <c e g bes des' a'>-\markup { \super { "13 " \flat "9" } }
+  <c e ges bes des'>-\markup { "7" \super { " (" \flat "9 " \flat "5)" } }
+  <c e gis bes d'>-\markup { \super { "9(" \super { \sharp } "5)" } }
+  <c e gis bes dis'>-\markup { \super { "7(" \super { \sharp } " 9 " \super { \sharp } " 5)" } }
 
   %% minor
   <c ees g>-\markup { "-" }
+  <c ees g a>-\markup { \super { "-6" } }
   <c ees g bes>-\markup { \super { "-7" } }
   <c ees g bes d'>-\markup { \super { "-9" } }
+  <c ees g bes f'>-\markup { \super { "-7(11)" } }
   <c ees ges bes>-\markup { "-" \super { "7 " \flat "5" } }
 
   %% minor-major7
@@ -35,10 +42,9 @@ jazzChordDefinitions={
 
   %% alt/sus
   <c ees ges bes des' fes' aes'>-\markup \super {7alt}
+  <c e g d f'>-\markup \super {9sus}
   %<c e g bes f'>-\markup \super {7sus}
-  %<c e g bes d f'>-\markup \super {9sus}
   %<c e g f'>-\markup \super {sus}
-  %%<c e gis bes d'>-\markup { \super { "9 " \sharp "5" } }
   %<c e g bes d' fis'>-\markup { \super { "9 " \sharp "11" } }
 }
 

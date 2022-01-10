@@ -39,7 +39,7 @@ meter: Medium Bop
     c4. a8 bes8 a8 gis8 a8
   } \alternative {
     { c8 a8 bes8 c8 r2 | \voltaEndBar \endLine }
-    { f8 c8 e8 f8 r2 | }
+    { f,8 c8 e8 f8 r2 | }
   }
 
   \new ImproVoice {
@@ -48,7 +48,7 @@ meter: Medium Bop
     \repeat unfold 16 { c4 } | \endLine
   }
 
-  r8 fis,8 g8 bes8 a8 g8 f8 d8 |
+  r8 fis8 g8 bes8 a8 g8 f8 d8 |
   g8 c8 r4 r8 bes4 a8 |
   bes8 f'8 \tuplet 3/2 { d8 bes8 g8 } a8 d,8 g8 des8 |
   r4 r8 a'8~ a8 bes4 a8 | \endLine

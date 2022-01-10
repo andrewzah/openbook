@@ -131,7 +131,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -380,7 +383,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -478,7 +484,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -587,7 +596,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -688,7 +700,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -797,7 +812,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -904,7 +922,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -1021,7 +1042,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -1166,7 +1190,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -1285,7 +1312,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -1514,7 +1544,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -1640,9 +1673,6 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   I would die! __
 }
 
-}
-\new Lyrics="Lyrics" \lyricsto "Voice" {
-  
 \lyricmode {
   Lov -- er, __ it's im -- mor -- al, __ but why
   quar -- rel __ with our bliss __
@@ -1793,9 +1823,6 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   __ I'm too mist -- y and too much in love.
 }
 
-}
-\new Lyrics="Lyrics" \lyricsto "Voice" {
-  
 \lyricmode {
   Walk my way and a thou -- sand vi -- o -- lins be -- gin to play,
   or it might be the sound of your hel -- lo, that mu -- sic I hear,
@@ -1899,7 +1926,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -2045,7 +2075,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -2164,9 +2197,6 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   Back __ in __ for - ty two, Bird came to New York and he blew. Come
 }
 
-}
-\new Lyrics="Lyrics" \lyricsto "Voice" {
-  
 \lyricmode {
   %% 2nd time
   his time. Now's the time.
@@ -2299,7 +2329,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -2373,7 +2406,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     c4. a8 bes8 a8 gis8 a8
   } \alternative {
     { c8 a8 bes8 c8 r2 | \voltaEndBar \endLine }
-    { f8 c8 e8 f8 r2 | }
+    { f,8 c8 e8 f8 r2 | }
   }
 
   \new ImproVoice {
@@ -2382,7 +2415,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     \repeat unfold 16 { c4 } | \endLine
   }
 
-  r8 fis,8 g8 bes8 a8 g8 f8 d8 |
+  r8 fis8 g8 bes8 a8 g8 f8 d8 |
   g8 c8 r4 r8 bes4 a8 |
   bes8 f'8 \tuplet 3/2 { d8 bes8 g8 } a8 d,8 g8 des8 |
   r4 r8 a'8~ a8 bes4 a8 | \endLine
@@ -2399,7 +2432,10 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 }
 
 
-    
+    \new Lyrics="Lyrics" \lyricsto "Voice" {
+  
+}
+
   >>
 }
 
@@ -2651,9 +2687,6 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   %She's eve -- ry -- thing on_this earth to me.
 }
 
-}
-\new Lyrics="Lyrics" \lyricsto "Voice" {
-  
 \lyricmode {
   \repeat unfold 49 { \skip 1 }
 
@@ -2805,9 +2838,6 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   The mu -- sic is sweet, __ the words are true, __ the song is you.
 }
 
-}
-\new Lyrics="Lyrics" \lyricsto "Voice" {
-  
 \lyricmode {
   I hear mu- -- sic when I touch your hand, __
   a beau -- ti -- ful mel -- o -- dy from some en -- chan -- ted land. __

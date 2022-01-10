@@ -1,3 +1,5 @@
+- [ ] fix spellings for alt chords
+- [ ] fix spellings for 7sus4 / 9sus4 chords
 - [ ] figure out how to control stave spacing per song (via overrides)
 - [ ] archive https://thevideogamerealbook.tumblr.com transcriptions
   - [ ] https://thevideogamerealbook.tumblr.com/post/75931565697/so-where-i-live-the-cold-weather-is-still

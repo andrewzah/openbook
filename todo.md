@@ -2,14 +2,15 @@
 - [ ] fix spellings for 7sus4 / 9sus4 chords
 - [ ] figure out how to control stave spacing per song (via overrides)
 - [ ] standards
+  - [ ] just friends
   - thelonious
-    - [ ] Straight, No Chaser
     - [ ] in walked bud
     - [ ] hackensack
     - [ ] rhythm-a-ning
     - [ ] 'round midnight
     - [ ] well you needn't
     - [ ] pannonica
+    - [ ] Straight, No Chaser
     - [ ] bemsha swing
     - [ ] played twice
     - [ ] reflections

@@ -26,7 +26,7 @@ meter: Medium Swing
   \time 4/4
   \numericTimeSignature
 
-  \partial 2 r8 d8 f8 ges8~
+  \partial 2 r8^\markup { "FORMAT: 14-8-14" } d8 f8 ges8~
 
   ges2. d8 f8 |
   r8 ees4. b'4 des8 aes8~ |

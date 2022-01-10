@@ -1,6 +1,27 @@
 - [ ] fix spellings for alt chords
 - [ ] fix spellings for 7sus4 / 9sus4 chords
 - [ ] figure out how to control stave spacing per song (via overrides)
+- [ ] standards
+  - thelonious
+    - [ ] Straight, No Chaser
+    - [ ] in walked bud
+    - [ ] hackensack
+    - [ ] rhythm-a-ning
+    - [ ] 'round midnight
+    - [ ] well you needn't
+    - [ ] pannonica
+    - [ ] bemsha swing
+    - [ ] played twice
+    - [ ] reflections
+    - [ ] skippy
+    - [ ] blue monk
+    - [ ] bright mississippi
+    - [ ] bye-ya
+    - [ ] hornin' in
+    - [ ] evidence
+    - [ ] nutty
+    - [ ] jackie-ing
+    - [ ] work
 - [ ] archive https://thevideogamerealbook.tumblr.com transcriptions
   - [ ] https://thevideogamerealbook.tumblr.com/post/75931565697/so-where-i-live-the-cold-weather-is-still
   - [ ] https://thevideogamerealbook.tumblr.com/post/80097188248/this-is-air-mans-stage-from-megaman-ii-i

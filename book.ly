@@ -274,11 +274,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
 }
 \bookpart {
-  \tocItem \markup "April Joy - Music by Pat Metheny"
+  \tocItem \markup "April Joy - Pat Metheny"
 
   \header {
   arranger = ""
-  composer = "Music by Music by Pat Metheny"
+  composer = "Music by Pat Metheny"
   copyright = ""
   dedication = ""
   footer = "%%FOOTER%%"
@@ -442,17 +442,18 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   \repeat volta 2 {
     \voltaStartBar
 
-    f8^\markup{ \caps { After Solos, D.C. Al Coda (Take Repeat)} } e8 f8 c8 r4 a'8 gis8 |
+    f8 e8 f8 c8 r4 a'8 gis8 |
     a8 c,8 r8 e8 r8 g8 f8 c8 |
-    g'8 f8 a8 bes8 a8 f8 g8 ees8 |
-    r8 d'8 r4 r8 des4 f,8 | \endLine
+    g'8 f8 a8 bes8 a8 f8 g8 ees8 | \endLine
 
+    r8 d'8 r4 r8 des4 f,8 |
     b4. f'8 r8 b,4 bes8~ |
-    bes2 aes8 f8 g8 f8 |
-    c'4 r8 a8 bes4 r8 g8 |
-    c4 c4~ c8 a8 bes8 c8 | \endLine
+    bes2 aes8 f8 g8 f8 | \endLine
 
-    a8 g8 f8 e8 f4 r8 c'8 |
+    c'4 r8 a8 bes4 r8 g8 |
+    c4 c4~ c8 a8 bes8 c8 |
+    a8 g8 f8 e8 f4 r8 c'8 | \endLine
+
     bes4 r8 f'8~ f8 c8 e8 f8 |
     r4 r8 c8 c4. a8 |
   } \alternative {
@@ -466,11 +467,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   \once \override Score.RehearsalMark.font-size = #5
   \mark \markup { \musicglyph #"scripts.coda" }
   bes8 a8 f8 d8 a'8 a4.~ |
-  a1^\fermata |
-  r1 |
-  r1
+  a1^\fermata | \songEndBar
+  s1^\markup{ \caps { After Solos, D.C. Al Coda (Take Repeat)} } |
+  s1
 
-  \songEndBar
+  
 }
 
   }
@@ -483,11 +484,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
 }
 \bookpart {
-  \tocItem \markup "Caravan - Music by Duke Ellington"
+  \tocItem \markup "Caravan - Duke Ellington"
 
   \header {
   arranger = ""
-  composer = "Music by Music by Duke Ellington"
+  composer = "Music by Duke Ellington"
   copyright = ""
   dedication = ""
   footer = "%%FOOTER%%"
@@ -1026,11 +1027,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
 }
 \bookpart {
-  \tocItem \markup "Full House - Music by John L. (Wes) Montgomery"
+  \tocItem \markup "Full House - John L. (Wes) Montgomery"
 
   \header {
   arranger = ""
-  composer = "Music by Music by John L. (Wes) Montgomery"
+  composer = "Music by John L. (Wes) Montgomery"
   copyright = ""
   dedication = ""
   footer = "%%FOOTER%%"
@@ -2185,11 +2186,11 @@ buildtime = #(strftime "%c" (localtime (current-time)))
 
 }
 \bookpart {
-  \tocItem \markup "Old Devil Moon - Music by Burton Lane"
+  \tocItem \markup "Old Devil Moon - Burton Lane"
 
   \header {
   arranger = ""
-  composer = "Music by Music by Burton Lane"
+  composer = "Music by Burton Lane"
   copyright = ""
   dedication = ""
   footer = "%%FOOTER%%"
@@ -2392,6 +2393,120 @@ buildtime = #(strftime "%c" (localtime (current-time)))
   f8 c8 e8 f8 r2 |
 
   \songEndBar
+}
+
+  }
+}
+
+
+    
+  >>
+}
+
+}
+\bookpart {
+  \tocItem \markup "Stablemates - Benny Golson"
+
+  \header {
+  arranger = ""
+  composer = "Music by Benny Golson"
+  copyright = ""
+  dedication = ""
+  footer = "%%FOOTER%%"
+  instrument = ""
+  meter = "Medium Swing"
+  poet = ""
+  subsubtitle = "1955"
+  subtitle = ""
+  tagline = ""
+  title = "Stablemates"
+}
+
+
+  \score {
+  <<
+    \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
+  \set chordChanges = ##f
+  \set chordNameExceptions = #jazzChordExceptions
+  %\set Score.currentBarNumber = #4
+
+  \transpose c c {
+    \chordmode {
+  \partial 2 s2
+
+  \boxMark "A"
+  e2:m7 a2:7 | ees2:m7 aes2:7 | des1:maj7 | c1:7.5+ |
+  aes1:m7 | des1:7 | ges1:maj7 | g2:m7.5- c2:7.5+ | f1:m7
+  bes1:7 | ees1:m7 | aes1:7.5+ | des1:maj7 | des1:maj7 |
+
+  \boxMark "B"
+  f1:m7 | ges1:7 | g1:7.5+ | c1:7 |
+  b1:7 | bes1:7 | a1:7 | aes1:7 |
+
+  \boxMark "A"
+  e2:m7 a2:7 | ees2:m7 aes2:7 | des1:maj7 | c1:7.5+ |
+  aes1:m7 | des1:7 | ges1:maj7 | g2:m7.5- c2:7.5+ |
+  f1:m7 | bes1:7 | ees1:m7 | aes1:7.5+
+}
+
+  }
+}
+
+
+    \new Voice="Voice" {
+  \transpose c c {
+    
+\relative c' {
+  \key des \major
+  \time 4/4
+  \numericTimeSignature
+
+  \partial 2 r8 d8 f8 ges8~
+
+  ges2. d8 f8 |
+  r8 ees4. b'4 des8 aes8~ |
+  aes2. b8 aes8~ |
+  aes2. b8 aes8~ | \endLine
+
+  aes2~ \tuplet 3/2 { aes4 g4 aes4 } |
+  bes2 aes4. des8~ |
+  des2 \tuplet 3/2 { r4 bes4 b4 } |
+  c4 f,8 e8~ e4 bes'8 aes8~ |
+  aes1 | \endLine
+
+  r2 bes4 ges8 f8~ |
+  f2~^\markup{"(LATIN)"} \tuplet 3/2 { f4 d4 ees4 } |
+  e2 c2 |
+  ees1~ |
+  ees2 r2 | \bar "||" \endLine
+
+  aes4.^\markup{"(SWING)"} c8 r8 aes8 r8 f8 |
+  aes2. aes4 |
+  ees'4. b8 r8 g8 r8 b8 |
+  c2. aes4 \endLine
+
+  b2~ b4. aes8 |
+  r2 r4 aes4 |
+  cis4. a8~ a4 cis8 c8 |
+  r2 r8 d,8 f8 ges8~ | \bar "||" \endLine
+
+  ges2. d8 f8 |
+  r8 ees4. b'4 des8 aes8~ |
+  aes2. b8 aes8~ |
+  aes2. b8 aes8~ | \endLine
+
+  aes2~ \tuplet 3/2 { aes4 g4 aes4 } |
+  bes2 aes4. d8~ |
+  d2 \tuplet 3/2 { r4 bes4 b4 } |
+  c4 f,8 e8~ e4 bes'8 aes8~ | \endLine
+
+  aes1 |
+  r2 bes4 ges8 f8~ |
+  f2~^\markup{ "(LATIN)" } \tuplet 3/2 { f4 d4 ees4 }  |
+  e2 c2 | \endLine
+
+  ees1~ |
+  ees2 r2 \songEndBar s1^\markup"[SOLOS SWING THROUGHOUT]" s1
 }
 
   }

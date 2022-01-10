@@ -26,17 +26,18 @@ meter: Fast Bop
   \repeat volta 2 {
     \voltaStartBar
 
-    f8^\markup{ \caps { After Solos, D.C. Al Coda (Take Repeat)} } e8 f8 c8 r4 a'8 gis8 |
+    f8 e8 f8 c8 r4 a'8 gis8 |
     a8 c,8 r8 e8 r8 g8 f8 c8 |
-    g'8 f8 a8 bes8 a8 f8 g8 ees8 |
-    r8 d'8 r4 r8 des4 f,8 | \endLine
+    g'8 f8 a8 bes8 a8 f8 g8 ees8 | \endLine
 
+    r8 d'8 r4 r8 des4 f,8 |
     b4. f'8 r8 b,4 bes8~ |
-    bes2 aes8 f8 g8 f8 |
-    c'4 r8 a8 bes4 r8 g8 |
-    c4 c4~ c8 a8 bes8 c8 | \endLine
+    bes2 aes8 f8 g8 f8 | \endLine
 
-    a8 g8 f8 e8 f4 r8 c'8 |
+    c'4 r8 a8 bes4 r8 g8 |
+    c4 c4~ c8 a8 bes8 c8 |
+    a8 g8 f8 e8 f4 r8 c'8 | \endLine
+
     bes4 r8 f'8~ f8 c8 e8 f8 |
     r4 r8 c8 c4. a8 |
   } \alternative {
@@ -50,9 +51,9 @@ meter: Fast Bop
   \once \override Score.RehearsalMark.font-size = #5
   \mark \markup { \musicglyph #"scripts.coda" }
   bes8 a8 f8 d8 a'8 a4.~ |
-  a1^\fermata |
-  r1 |
-  r1
+  a1^\fermata | \songEndBar
+  s1^\markup{ \caps { After Solos, D.C. Al Coda (Take Repeat)} } |
+  s1
 
-  \songEndBar
+  
 }

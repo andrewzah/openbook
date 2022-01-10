@@ -1,3 +1,12 @@
 - [ ] figure out how to control stave spacing per song (via overrides)
 - [ ] archive https://thevideogamerealbook.tumblr.com transcriptions
+  - [ ] https://thevideogamerealbook.tumblr.com/post/75931565697/so-where-i-live-the-cold-weather-is-still
+  - [ ] https://thevideogamerealbook.tumblr.com/post/80097188248/this-is-air-mans-stage-from-megaman-ii-i
+  - [ ] https://thevideogamerealbook.tumblr.com/post/80290555174/this-tune-works-really-well-as-a-ragtime-tom
+  - [ ] https://thevideogamerealbook.tumblr.com/post/74979501351/so-this-melody-in-different-styles-has-been-used
+  - [ ] https://thevideogamerealbook.tumblr.com/post/75729480019/this-one-was-used-in-super-smash-bros-brawl-and
+  - [ ] https://thevideogamerealbook.tumblr.com/post/76666483906/its-valentines-day-so-i-have-the-love-theme
+  - [ ] https://thevideogamerealbook.tumblr.com/post/76460863996/from-starfox-corneria-this-one-uses-a-lot-of-5
+  - [ ] https://thevideogamerealbook.tumblr.com/post/87462265837/surprisingly-this-one-took-a-long-time-to-make-it
+  - [ ] https://thevideogamerealbook.tumblr.com/post/87923309515/when-i-was-in-10th-grade-i-discovered-an-album
 - [ ] animal crossing: 5pm

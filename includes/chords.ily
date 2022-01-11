@@ -39,6 +39,9 @@ jazzChordDefinitions={
   <c ees ges beses>-\markup { \super "o" \super { "7" } }
   < c e ges> -\markup \super "5-"
   < c e gis> -\markup \super "+"
+  % technically a hack, lilypond thinks it's a m6b5 chord with the natural 7th
+  <c ees ges a b>-\markup { "-" \super "o" \super { "7(△7)" } }
+  %<c ees ges beses b>-\markup { \super "o" \super { "7(△7)" } }
 
   %% alt/sus
   <c ees ges bes des' fes' aes'>-\markup \super {7alt}

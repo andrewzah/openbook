@@ -31,7 +31,10 @@ jazzChordDefinitions={
 	
 	%% dim
 	<c ees ges>-\markup { \super "o" }
+        %< c e ges> -\markup \super "5>"
+        %< c e gis> -\markup \super "+"
 	<c ees ges beses>-\markup { \super "o" \super { "7" } }
+        <c ees ges beses b>-\markup { \super "o7(△7)" }
 
 	%<c ees ges bes des' fes' aes'>-\markup \super {7alt}
 	%<c e g bes f'>-\markup \super {7sus}
@@ -41,11 +44,6 @@ jazzChordDefinitions={
 	%%<c e gis bes d'>-\markup { \super { "9 " \sharp "5" } }
 	%<c e g bes d' a'>-\markup \super {13}
 	%<c e g bes d' fis'>-\markup { \super { "9 " \sharp "11" } }
-
-  < c ees ges > -\markup \super "dim."
-  < c es ges beses > -\markup \super "7dim"
-  < c e ges> -\markup \super "5>"
-  < c e gis> -\markup \super "+"
 }
 
 jazzChordExceptions=#(append

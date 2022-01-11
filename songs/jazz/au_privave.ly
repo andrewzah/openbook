@@ -54,6 +54,4 @@ meter: Fast Bop
   a1^\fermata | \songEndBar
   s1^\markup{ \caps { After Solos, D.C. Al Coda (Take Repeat)} } |
   s1
-
-  
 }

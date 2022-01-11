@@ -1,5 +1,7 @@
 \new Voice="Voice" {
   \transpose c %%TRANSPOSE%% {
+    \set Staff.ottavationMarkups = #ottavation-ordinals
+
     %%NOTES%%
   }
 }

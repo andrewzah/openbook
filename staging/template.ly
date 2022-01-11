@@ -33,5 +33,11 @@
       }
     }
   }
+
+  \new Lyrics="Lyrics" \lyricsto "Voice" {
+    \lyricmode {
+    }
+  }
+
  >>
 }

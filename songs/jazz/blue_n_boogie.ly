@@ -2,7 +2,7 @@ title: Blue 'N Boogie
 subtitle: As played on Full House (1962)
 subsubtitle: 1944
 composer: John 'Dizzy' Gillespie & Frank Paparelli
-meter: Fast Bop
+meter: Bop
 ---
 \chordmode {
   \repeat unfold 4 { bes1:6 }

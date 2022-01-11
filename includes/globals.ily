@@ -86,8 +86,24 @@
 
 \layout {
   \context {
+    \name ImproVoiceTwo
+    \type "Engraver_group"
+    \consists "Note_heads_engraver"
+    \consists "Rest_engraver"
+    \consists "Script_engraver"
+    \consists "Text_engraver"
+    \consists "Pitch_squash_engraver"
+    squashedPosition = #0
+    \override NoteHead.style = #'slash
+    \alias Voice
+  }
+}
+
+\layout {
+  \context {
     \Staff
     \accepts ImproVoice
+    \accepts ImproVoiceTwo
 
     \override VerticalAxisGroup
               .default-staff-staff-spacing

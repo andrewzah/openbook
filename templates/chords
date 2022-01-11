@@ -1,7 +1,7 @@
 \new ChordNames="Chords" \with { \consists #percent-repeated-chords } {
   \set chordChanges = ##f
   \set chordNameExceptions = #jazzChordExceptions
-  %\set Score.currentBarNumber = #4
+  \set Score.voltaSpannerDuration = #(ly:make-moment 4/4)
 
   \transpose c %%TRANSPOSE%% {
     %%CHORDS%%

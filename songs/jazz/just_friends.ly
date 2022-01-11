@@ -7,7 +7,7 @@ meter: Medium. Swing
 \chordmode {
   \partial 2 s2
 
-  \bar ".."
+  \bar "|:"
 
   c1:maj7 | c2:maj7 c2:6 | c1:maj7 |
   f1:7 | g1:maj7 | g1:maj7 | bes1:m7 |
@@ -28,18 +28,17 @@ meter: Medium. Swing
   \partial 2 b2 |
   b1~ |
   b2 \tuplet 3/2 { a4 b4 a4 } |
-  ees1~ | \endLine
+  ees1~ |
+  ees2 a2 | \endLine
 
-  ees2 a2 |
   a1~ |
   a4 a4 \tuplet 3/2 { g4 a4 g4 } |
-  des1~ | \endLine
-
+  des1~ |
   des2. g4 |
-  g4. e8 g4. e8 |
-  fis2. fis4 |
-  fis4. d8 fis4. d8 | \endLine
+  g4. e8 g4. e8 | \endLine
 
+  fis2. fis4 |
+  fis4. d8 fis4. d8 |
   e4 fis4 g4 b4 |
   e2 b2~ |
   b4 e,4 \tuplet 3/2 { e4 fis4 g4 } | \endLine

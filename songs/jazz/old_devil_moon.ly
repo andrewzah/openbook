@@ -4,7 +4,6 @@ poet: E.Y. Harburg
 meter: Medium
 ---
 \chordmode {
-  \set Score.voltaSpannerDuration = #(ly:make-moment 4/4)
   \repeat volta 2 {
     f1:6 | c1:m7/f | f1:6 | c1:m7/f
     f1:maj7 | c1:m7/f | f1:maj7 | c2:m7 f2:7

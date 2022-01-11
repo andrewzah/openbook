@@ -1,7 +1,7 @@
 title: Au Privave
 subsubtitle: 1951
 composer: Charlie Parker
-meter: Fast Bop
+meter: Bop
 ---
 \chordmode {
   \repeat volta 2 {

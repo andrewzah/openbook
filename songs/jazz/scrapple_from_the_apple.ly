@@ -2,7 +2,7 @@ title: Scrapple From The Apple
 subtitle: Based on Honeysuckle Rose and Rhythm Changes
 subsubtitle: 1947
 composer: Charlie Parker
-meter: Medium Bop
+meter: Bop
 ---
 \chordmode {
   \boxMark "A"

@@ -1,6 +1,7 @@
 \version "2.22.1"
 
 \include "../includes/globals.ily"
+\include "../includes/chords.ily"
 \include "../includes/symbols.ily"
 
 \header {
@@ -16,6 +17,7 @@
     \new ChordNames="Chords" {
       \transpose c c {
         \chordmode {
+          \set chordNameExceptions = #jazzChordExceptions
         }
       }
     }

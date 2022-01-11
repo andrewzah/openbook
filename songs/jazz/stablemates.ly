@@ -27,6 +27,7 @@ meter: Medium Swing
   \numericTimeSignature
 
   \partial 2 r8^\markup { "FORMAT: 14-8-14" } d8 f8 ges8~
+  \bar ".."
 
   ges2. d8 f8 |
   r8 ees4. b'4 des8 aes8~ |
@@ -67,9 +68,9 @@ meter: Medium Swing
 
   aes1 |
   r2 bes4 ges8 f8~ |
-  f2~^\markup{ "(LATIN)" } \tuplet 3/2 { f4 d4 ees4 }  |
-  e2 c2 | \endLine
+  f2~^\markup{ "(LATIN)" } \tuplet 3/2 { f4 d4 ees4 }  | \endLine
 
+  e2 c2 |
   ees1~ |
-  ees2 r2 \songEndBar s1^\markup"[SOLOS SWING THROUGHOUT]" s1
+  ees2^\markup"[SOLOS SWING THROUGHOUT]" r2 \songEndBar
 }

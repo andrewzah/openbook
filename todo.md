@@ -9,9 +9,15 @@
   - all blues
   - blue bossa
   - cantaloupe island
+  - cariba
+  - d natural blues
+  - four on six
   - linus and lucy
   - recorda me
+  - road song
+  - twisted blues
   - watermelon man
+  - west coast blues
 
   - all of you
   - april in paris
@@ -21,6 +27,7 @@
   - blue monk
   - bluesette
   - bright mississippi
+  - bright size life
   - bye-ya
   - ceora
   - cool blues
@@ -29,7 +36,6 @@
   - e.s.p
   - evidence
   - fly me to the moon
-  - four
   - hackensack
   - here's that rainy day
   - honeysuckle rose
@@ -40,10 +46,12 @@
   - impressions
   - in walked bud
   - insensatez / how insensitive
+  - isfahan
   - it's only a paper moon
   - jackie-ing
   - jordu
   - just you, just me
+  - lush life
   - maiden voyage
   - minority
   - mr. P.C.
@@ -57,14 +65,16 @@
   - one note samba
   - out of nowhere
   - pannonica
+  - perdido
   - played twice
+  - question & answer
   - red clay
   - reflections
   - rhythm-a-ning
   - round midnight
   - skippy
-  - song for my father
   - solar
+  - song for my father
   - sophisticated lady
   - spain
   - st thomas
@@ -74,6 +84,7 @@
   - straight, No Chaser
   - sweet georgia brown
   - tea for two
+  - tenor madness
   - that's all
   - triste
   - up jumped spring

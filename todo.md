@@ -4,6 +4,7 @@
 - fix ImproVoice embellishments/markings
 - standards:
   (priority)
+  - constellation
   - afro blue
   - airegin
   - all blues
@@ -13,12 +14,19 @@
   - d natural blues
   - four on six
   - linus and lucy
+  - impressions
   - recorda me
   - road song
   - twisted blues
   - watermelon man
   - west coast blues
 
+  - Speak Low
+  - Love Is Here To Stay
+  - Slow Boat To China
+  - 64 Bars On Wilshire
+  - groovin' high
+  - kim
   - all of you
   - april in paris
   - autumn in new york
@@ -43,7 +51,6 @@
   - i don't stand a ghost of a chance
   - i remember clifford
   - if i were a bell
-  - impressions
   - in walked bud
   - insensatez / how insensitive
   - isfahan
@@ -74,6 +81,7 @@
   - round midnight
   - skippy
   - solar
+  - something tells me
   - song for my father
   - sophisticated lady
   - spain
@@ -96,6 +104,7 @@
   - when your lover has gone
   - work
   - yesterdays
+
 - archive https://thevideogamerealbook.tumblr.com transcriptions
   - https://thevideogamerealbook.tumblr.com/post/75931565697/so-where-i-live-the-cold-weather-is-still
   - https://thevideogamerealbook.tumblr.com/post/80097188248/this-is-air-mans-stage-from-megaman-ii-i

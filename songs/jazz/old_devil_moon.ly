@@ -5,19 +5,19 @@ meter: Medium
 ---
 \chordmode {
   \repeat volta 2 {
-    f1:6 | c1:m7/f | f1:6 | c1:m7/f
-    f1:maj7 | c1:m7/f | f1:maj7 | c2:m7 f2:7
+    f1:6 | ees1:6 | f1:6 | ees1:6
+    f1:maj7 | ees1:6 | f1:maj7 | c2:m7 f2:7
 
     bes1:maj7 | bes1:maj7 | bes1:m7 | ees1:7
-    aes2:m7 des2:7 | ges2:6 c2:7 | f1:6 | c1:m7/f
+    aes2:m7 des2:7 | ges2:6 c2:7 | f1:6 | ees1:6
   } \alternative {
     {
-      f1:6 | c1:m7/f | d1:maj7 | d1:maj7
+      f1:6 | ees1:6 | d1:maj7 | d1:maj7
       d1:m7 | g1:7 | g1:m7 | c1:7
     }
     {
-      f1:6 | c1:m7/f | f1:6 | c1:m7/f
-      f2:maj7 c2:m7/f | f2:maj7 c2:m7/f | f1:maj7 | \LPC g2:m7 \RPC c2:7
+      f1:6 | ees1:6 | f1:6 | ees1:6
+      f2:maj7 ees2:6 | f2:maj7 ees2:6 | f1:maj7 | \LPC g2:m7 \RPC c2:7
     }
   }
 }

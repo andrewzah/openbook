@@ -10,10 +10,10 @@
               (markup ">")
               (markup "<")))))))
 
-
+whiteTriangle = \markup { \triangle ##f }
 jazzChordDefinitions={
   %<c e g a>-\markup { \super { "6" } }
-  <c e g b>-\markup { \super { "△7" } }
+  <c e g b>-\markup { \super { \whiteTriangle "7" } }
 
   %% dom
   <c e g bes des'>-\markup { \super { "7" \flat "9" } }
@@ -25,22 +25,22 @@ jazzChordDefinitions={
 
   %% minor
   <c ees g>-\markup { "-" }
-  <c ees g a>-\markup { \super { "-6" } }
-  <c ees g bes>-\markup { \super { "-7" } }
-  <c ees g bes d'>-\markup { \super { "-9" } }
-  <c ees g bes f'>-\markup { \super { "-7(11)" } }
+  <c ees g a>-\markup { "-" \super { "6" } }
+  <c ees g bes>-\markup { "-" \super { "7" } }
+  <c ees g bes d'>-\markup { "-" \super { "9" } }
+  <c ees g bes f'>-\markup { "-" \super { "7(11)" } }
   <c ees ges bes>-\markup { "-" \super { "7 " \flat "5" } }
 
   %% minor-major7
-  <c ees g b>-\markup { "-" \super { "△7" } }
+  <c ees g b>-\markup { "-" \super { \whiteTriangle "7" } }
 
   %% dim
-  <c ees ges>-\markup { \super "o" }
-  <c ees ges beses>-\markup { \super "o" \super { "7" } }
+  <c ees ges>-\markup { \super "dim" }
+  <c ees ges beses>-\markup { \super "dim7" }
   < c e ges> -\markup \super "5-"
   < c e gis> -\markup \super "+"
   % technically a hack, lilypond thinks it's a m6b5 chord with the natural 7th
-  <c ees ges a b>-\markup { "-" \super "o" \super { "7(△7)" } }
+  <c ees ges a b>-\markup { \super "dim7(△7)" }
   %<c ees ges beses b>-\markup { \super "o" \super { "7(△7)" } }
 
   %% alt/sus

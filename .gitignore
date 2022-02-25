@@ -2,5 +2,5 @@
 *-tmp*
 *.pdf
 /templater/target
-book.ly
-/templater/book.ly
+openbook-*.ly
+/templater/openbook-*.ly

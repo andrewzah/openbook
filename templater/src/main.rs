@@ -29,15 +29,50 @@ static CHORDS_TEMPLATE: OnceCell<String> = OnceCell::new();
 static VOICE_TEMPLATE: OnceCell<String> = OnceCell::new();
 static LYRICS_TEMPLATE: OnceCell<String> = OnceCell::new();
 
+#[derive(Debug)]
+struct AppArgs {
+    transpose: Option<String>,
+}
+
+fn parse_args() -> Result<AppArgs, pico_args::Error> {
+    let mut pargs = pico_args::Arguments::from_env();
+    let args = AppArgs {
+        transpose: pargs.opt_value_from_str("--transpose")?,
+    };
+
+    // Help has a higher priority and should be handled separately.
+    if pargs.contains(["-h", "--help"]) {
+        print!("args:\n--transpose: pass in bb/eb/bass");
+        std::process::exit(0);
+    }
+
+    let remaining = pargs.finish();
+    if !remaining.is_empty() {
+        println!("Warning: unused arguments left: {:?}.", remaining);
+    }
+
+    Ok(args)
+}
+
 fn main() {
-    // TODO: make configurable via flags
-    let transpose_input = String::from("c");
-    let transpose_actual = match transpose_actual(&transpose_input) {
+    let args = match parse_args() {
+        Ok(v) => v,
+        Err(e) => {
+            eprintln!("Error: {}.", e);
+            std::process::exit(1);
+        }
+    };
+    let transpose = args.transpose.unwrap_or(String::from("c"));
+
+    let transpose_actual = match transpose_actual(&transpose) {
         Some(v) => v,
-        None => panic!("Transposing instrument key '{}' specified is invalid.", transpose_input),
+        None => {
+            eprintln!("Transposing instrument key '{}' specified is invalid.", &transpose);
+            std::process::exit(0);
+        }
     };
     let conf = TemplaterConfig {
-        transpose_display_key: transpose_input,
+        transpose_display_key: transpose,
         transpose_actual_key: transpose_actual,
     };
     init_static(&conf);
@@ -57,7 +92,8 @@ fn main() {
         .collect();
     songs.sort_by(|a, b| a.title.cmp(&b.title));
 
-    let mut outfile = File::create("book.ly").expect("Unable to create book.ly");
+    let filename = format!("openbook-{}.ly", &conf.transpose_display_key);
+    let mut outfile = File::create(filename).expect("Unable to create output file");
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
 

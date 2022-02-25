@@ -18,6 +18,7 @@
       \transpose c c {
         \chordmode {
           \set chordNameExceptions = #jazzChordExceptions
+          \set chordChanges = ##t
         }
       }
     }

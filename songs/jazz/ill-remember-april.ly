@@ -1,8 +1,9 @@
 title: I'll Remember April
 subsubtitle: Debuted in Ride 'Em Cowboy (1942)
-composer: Gene de Paul (1941)
+composer: Gene de Paul
 poet: Patricia Johnston and Don Raye
 meter: Swing
+year: 1941
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions
@@ -36,18 +37,17 @@ meter: Swing
   r4 b4 c4 d4 |
   c4 b4 a4 g4 |
   a2. g4 |
-  fis4 e2. | \endLine
+  fis4 e2. | 
+  r4 a4 bes4 c4 | \endLine
 
-  r4 a4 bes4 c4 |
   bes4 a4 g4 f4 |
   g8 a8 g2.~ |
-  g2 r8 g4. | \endLine
+  g2 r8 g4. |
+  a2. a4 
+  a4 a4 b4 c4 | \endLine
 
-  a2. a4 |
-  a4 a4 b4 c4 |
   d4. d8~ d2~ |
-  d2 e4. d8 | \endLine
-
+  d2 e4. d8 | 
   b4 c4 d4 c4~ |
   c2 b4 ais4 |
   b1~ |
@@ -56,13 +56,12 @@ meter: Swing
   g4 g4 g2~ |
   g4 a4 bes4 c4 |
   d2. c4 |
-  bes4 g2 f4 | \endLine
-
+  bes4 g2 f4 |
   g4 g4 g2~ |
-  g4 a4 bes4 c4 |
-  d2 d4 d4~ |
-  d4 d4 \tuplet 3/2 { d4 d4 d4 } | \endLine
+  g4 a4 bes4 c4 |  \endLine
 
+  d2 d4 d4~ |
+  d4 d4 \tuplet 3/2 { d4 d4 d4 } |
   d2. d4 |
   e4 c4 d4. b8 |
   a4 b2.~ |

@@ -3,7 +3,11 @@ use std::collections::HashMap;
 use std::io::Write;
 
 pub struct TemplaterConfig {
-    pub transpose: String,
+    // e.g. If someone enters 'Bb', lilypond expects
+    // 'd'. In the intro page I want to display the
+    // user-specified key (e.g. "for Bb instruments")
+    pub transpose_display_key: String,
+    pub transpose_actual_key: String,
 }
 
 #[derive(Debug)]

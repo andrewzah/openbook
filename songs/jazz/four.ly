@@ -49,7 +49,7 @@ meter: Medium Swing
 
     bes2 ees,8 g8 bes8 b8 |
     r8 e,4. dis2 |
-    r8 c'4. bes4 a8 g8~ | \endLine
+    r8 c'4. bes4 aes8 g8~ | \endLine
 
     g2 f8 g8 a8 aes8 |
   } \alternative {

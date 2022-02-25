@@ -3,7 +3,7 @@
   \set chordNameExceptions = #jazzChordExceptions
   \set Score.voltaSpannerDuration = #(ly:make-moment 4/4)
 
-  \transpose c %%TRANSPOSE%% {
+  \transpose %%TRANSPOSE%% {
     %%CHORDS%%
   }
 }

@@ -31,8 +31,14 @@ static LYRICS_TEMPLATE: OnceCell<String> = OnceCell::new();
 
 fn main() {
     // TODO: make configurable via flags
+    let transpose_input = String::from("c");
+    let transpose_actual = match transpose_actual(&transpose_input) {
+        Some(v) => v,
+        None => panic!("Transposing instrument key '{}' specified is invalid.", transpose_input),
+    };
     let conf = TemplaterConfig {
-        transpose: String::from("c"),
+        transpose_display_key: transpose_input,
+        transpose_actual_key: transpose_actual,
     };
     init_static(&conf);
 
@@ -46,7 +52,7 @@ fn main() {
                 .strip_whitespace();
             let (front_matter, document): (Vec<&str>, &str) = extractor.split();
 
-            Song::new(front_matter, document, &conf.transpose)
+            Song::new(front_matter, document, &conf.transpose_actual_key)
         })
         .collect();
     songs.sort_by(|a, b| a.title.cmp(&b.title));
@@ -63,11 +69,20 @@ fn main() {
     writeln!(outfile, "{}", "}").unwrap();
 }
 
+fn transpose_actual(input: &str) -> Option<String> {
+    match input {
+        "c" => Some("c c".into()),
+        "bb" => Some("c d".into()),
+        "eb" => Some("ees c".into()),
+        _ => None,
+    }
+}
+
 // set templates in memory
 fn init_static(conf: &TemplaterConfig) {
     let intro_template = fs::read_to_string("./templates/intro")
         .expect("Unable to read intro template")
-        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose));
+        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose_display_key));
     INTRO_TEMPLATE.set(intro_template).expect("Unable to set INTRO_TEMPLATE");
 
     let bookpart_template = fs::read_to_string("./templates/bookpart")
@@ -84,7 +99,7 @@ fn init_static(conf: &TemplaterConfig) {
 
     let voice_template = fs::read_to_string("./templates/voice")
         .expect("Unable to read voice template")
-        .replace("%%TRANSPOSE%%", &conf.transpose);
+        .replace("%%TRANSPOSE%%", &conf.transpose_actual_key);
     VOICE_TEMPLATE.set(voice_template).expect("Unable to set VOICE_TEMPLATE");
 
     let lyrics_template = fs::read_to_string("./templates/lyrics")

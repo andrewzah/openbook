@@ -1,7 +1,12 @@
-build: build-rust
-  rm -f book.pdf book.ly
+c: build-rust
+  rm -f openbook-c.*
   ./templater/target/release/templater
   lilypond openbook-c.ly
+
+bb:
+  rm -f openbook-bb.*
+  ./templater/target/release/templater --transpose bb
+  lilypond openbook-bb.ly
 
 build-rust:
   #!/bin/sh
@@ -20,4 +25,4 @@ buildall: build-rust
   lilypond openbook-eb.ly
 
 v:
-  mupdf book.pdf
+  mupdf openbook-c.pdf

@@ -1,4 +1,5 @@
 *.midi
+*.eps
 *-tmp*
 *.pdf
 /templater/target

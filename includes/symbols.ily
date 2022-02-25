@@ -14,6 +14,10 @@ songEndBar = \bar "|."
 voltaStartBar = \bar "[|:"
 voltaEndBar = \bar ":|]"
 
+overrideCodaSize = \once \override Score.RehearsalMark #'font-size = #4
+coda = \markup { \musicglyph "scripts.coda" }
+codaMark = \mark \coda
+
 %% Parentheses for optional chords
 %% https://lists.gnu.org/archive/html/lilypond-user/2009-03/msg00037.html
 #(define (left-parenthesis-ignatzek-chord-names in-pitches bass inversion context) (markup #:line ("(" (ignatzek-chord-names in-pitches bass inversion context))))
@@ -25,10 +29,15 @@ RPC = { \once \set chordNameFunction = #right-parenthesis-ignatzek-chord-names }
 %OPC = { \once \set chordNameFunction = #parenthesis-ignatzek-chord-names }
 
 %% TODO: make this work
-Triplet = \tuplet 3/2 {}
+% Triplet = \tuplet 3/2 {}
 
 %% for Stella by Starlight
 leftBrace = \markup {
   \override #'(font-encoding . fetaBraces)
   \lookup "brace80"
 }
+
+% todo: flood in franklin park
+sgo = \markup{\center-column{"Sax" "Guitar" "Organ"}}
+osgA = \markup{\center-column{"Organ" "Sax" "Guitar"}}
+osgB = \markup{\center-column{"Organ" "Sax/Guitar"}}

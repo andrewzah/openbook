@@ -13,7 +13,13 @@
 whiteTriangle = \markup { \triangle ##f }
 jazzChordDefinitions={
   %<c e g a>-\markup { \super { "6" } }
-  <c e g b>-\markup { \super { \whiteTriangle "7" } }
+  <c e g b>-\markup {
+    \super {
+      \override #'(thickness . 0.3)
+      \whiteTriangle
+      "7"
+    }
+  }
 
   %% dom
   <c e g bes des'>-\markup { \super { "7" \flat "9" } }

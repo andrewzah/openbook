@@ -18,6 +18,7 @@ pub struct Song {
     pub chords: String,
     pub voices: String,
     pub lyrics: Vec<String>,
+    pub post_section: String,
 
     // header 
     pub arranger: Option<String>,
@@ -43,6 +44,7 @@ impl Song {
         let mut chords = String::new();
         let mut voices = String::new();
         let mut lyrics = vec![];
+        let mut post_section = String::new();
 
         for part in parts {
             if part.contains("chordmode") {
@@ -59,6 +61,11 @@ impl Song {
                 lyrics.push(part.to_string());
                 continue;
             }
+
+            if part.contains("post-section") {
+                post_section.push_str(part);
+                continue;
+            }
         }
 
         Song {
@@ -67,6 +74,7 @@ impl Song {
             chords: chords,
             voices: voices,
             lyrics: lyrics,
+            post_section: post_section,
 
             title: metadata.remove("title")
                 .unwrap_or(String::from("UNKNOWN TITLE")),
@@ -129,14 +137,14 @@ impl Song {
         let song_body = crate::SONG_BODY_TEMPLATE.get().unwrap()
             .replace("%%CHORDS%%", &chords)
             .replace("%%VOICES%%", &voices)
-            .replace("%%LYRICS%%", &lyrics);
+            .replace("%%LYRICS%%", &lyrics)
+            .replace("%%POST_SECTION%%", &self.post_section);
 
         let toc_title = format!("{} - {}", self.title, self.composer);
         let bookpart = crate::BOOKPART_TEMPLATE.get().unwrap()
             .replace("%%TITLE%%", &toc_title)
             .replace("%%SONG_HEADER%%", &song_header)
             .replace("%%SONG_BODY%%", &song_body);
-
 
         write!(file, "{}", bookpart).unwrap();
     }

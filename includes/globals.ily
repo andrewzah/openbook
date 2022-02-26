@@ -128,6 +128,8 @@
   % allow single-staff system bars
   \override Score.SystemStartBar #'collapse-height = #1
 
+  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 3)
+
   \context {
     \Score {
       % put marks at the left edge

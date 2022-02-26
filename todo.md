@@ -8,25 +8,29 @@
   - afro blue
   - airegin
   - all blues
-  - blue bossa
   - cantaloupe island
   - cariba
   - d natural blues
   - four on six
   - linus and lucy
   - impressions
-  - recorda me
   - road song
   - twisted blues
   - watermelon man
   - west coast blues
 
-  - Speak Low
+  - tune up
+  - train samba
+  - take five
+  - take the 'a' train
+  - there is no greater love
+  - swedish pastry (barney kessel)
+  - sweet georgia bright (charles lloyd)
+  - 64 Bars On Wilshire
+  - 7 steps to heaven
   - Love Is Here To Stay
   - Slow Boat To China
-  - 64 Bars On Wilshire
-  - groovin' high
-  - kim
+  - Speak Low
   - all of you
   - april in paris
   - autumn in new york
@@ -44,6 +48,7 @@
   - e.s.p
   - evidence
   - fly me to the moon
+  - groovin' high
   - hackensack
   - here's that rainy day
   - honeysuckle rose
@@ -58,6 +63,7 @@
   - jackie-ing
   - jordu
   - just you, just me
+  - kim
   - lush life
   - maiden voyage
   - minority

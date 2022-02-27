@@ -23,11 +23,11 @@ meter: Funky
 }
 ---
 %% pre-section
-\markup {
-  \with-dimensions #'(-5 . 5) #'(-5 . -5) {
-    \epsfile #X #8 #"./images/flood-in-franklin-park.eps"
-  }
-}
+%\markup {
+%  \with-dimensions #'(-5 . 5) #'(-5 . -5) {
+%    \epsfile #X #10 #"./images/flood-in-franklin-park.eps"
+%  }
+%}
 ---
 \key c \major
 \time 4/4

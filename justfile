@@ -1,9 +1,9 @@
-c: build-rust
+c: build-rust qr
   rm -f openbook-c.*
   ./templater/target/release/templater
   lilypond openbook-c.ly
 
-bb:
+bb: build-rust qr
   rm -f openbook-bb.*
   ./templater/target/release/templater --transpose bb
   lilypond openbook-bb.ly
@@ -23,6 +23,9 @@ buildall: build-rust
   lilypond openbook-c.ly
   lilypond openbook-bb.ly
   lilypond openbook-eb.ly
+
+qr:
+  bash ./generate-qr-codes.sh
 
 v:
   mupdf openbook-c.pdf

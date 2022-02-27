@@ -37,7 +37,6 @@
   \new RhythmicStaff \with {
     \remove "Staff_symbol_engraver"
     \omit TimeSignature
-    \omit Barline
     \override VerticalAxisGroup.staff-staff-spacing = #'(
                             (basic-distance . 0)
                             (minimum-distance . 0.1)

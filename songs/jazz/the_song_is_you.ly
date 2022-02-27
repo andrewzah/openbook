@@ -85,7 +85,7 @@ meter: Medium Up Swing
 ---
 \lyricmode {
   %% 1st time
-  I hear mu- -- sic when I look at you, __
+  I hear mu -- sic when I look at you, __
   a beau -- ti -- ful theme of ev -- 'ry dream I ev -- er knew. __
   Down deep in my heart, __ I hear it play. __ I feel it start, __ then melt a -- way. __
 
@@ -102,7 +102,7 @@ meter: Medium Up Swing
 }
 ---
 \lyricmode {
-  I hear mu- -- sic when I touch your hand, __
+  I hear mu -- sic when I touch your hand, __
   a beau -- ti -- ful mel -- o -- dy from some en -- chan -- ted land. __
   Down deep in my
 }

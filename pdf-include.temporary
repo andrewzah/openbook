@@ -1,0 +1,29 @@
+\bookpart {
+  \tocItem \markup "Full House - John L. (Wes) Montgomery"
+
+  \markup {
+    \general-align #X #LEFT {
+      \epsfile #X #120 #"./images/full-house.eps"
+    }
+  }
+}
+
+\bookpart {
+  \tocItem \markup "Everything Happens To Me - Matt Dennis"
+
+  \markup {
+    \general-align #X #LEFT {
+      \epsfile #X #120 #"./images/everything-happens-to-me.eps"
+    }
+  }
+}
+
+\bookpart {
+  \tocItem \markup "I Want To Be Happy - Irving Caesar"
+
+  \markup {
+    \general-align #X #LEFT {
+      \epsfile #X #120 #"./images/i-want-to-be-happy.eps"
+    }
+  }
+}

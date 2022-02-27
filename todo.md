@@ -1,3 +1,4 @@
+- restructure templates to account for multiple staves easily
 - fix spellings for alt chords
 - fix spellings for 7sus4 / 9sus4 chords
 - figure out how to control stave spacing per song (via overrides)

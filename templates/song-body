@@ -1,6 +1,8 @@
 \score {
-  <<
+  %%PIANOSTAFF%% <<
     %%CHORDS%%
+
+    %%PRE_STAVES%%
 
     %%VOICES%%
 

@@ -16,7 +16,8 @@ pub struct Song {
 
     // body
     pub chords: String,
-    pub voices: String,
+    pub voices: Vec<String>,
+    pub pre_staves: String,
     pub lyrics: Vec<String>,
     pub post_section: String,
 
@@ -27,6 +28,7 @@ pub struct Song {
     pub dedication: Option<String>,
     pub footer: Option<String>,
     pub instrument: Option<String>,
+    pub is_piano_staff: Option<String>,
     pub meter: Option<String>,
     pub poet: Option<String>,
     pub subsubtitle: Option<String>,
@@ -42,8 +44,9 @@ impl Song {
             .collect::<Vec<&str>>();
 
         let mut chords = String::new();
-        let mut voices = String::new();
+        let mut voices = vec![];
         let mut lyrics = vec![];
+        let mut pre_staves = String::new();
         let mut post_section = String::new();
 
         for part in parts {
@@ -53,7 +56,12 @@ impl Song {
             }
 
             if part.contains("numericTimeSignature") {
-                voices.push_str(part);
+                voices.push(part.to_string());
+                continue;
+            }
+
+            if part.contains("pre-stave") {
+                pre_staves.push_str(part);
                 continue;
             }
 
@@ -74,6 +82,7 @@ impl Song {
             chords: chords,
             voices: voices,
             lyrics: lyrics,
+            pre_staves: pre_staves,
             post_section: post_section,
 
             title: metadata.remove("title")
@@ -90,6 +99,7 @@ impl Song {
             subsubtitle: metadata.remove("subsubtitle"),
             subtitle: metadata.remove("subtitle"),
             tagline: metadata.remove("tagline"),
+            is_piano_staff: metadata.remove("pianostaff"),
         }
     }
 
@@ -106,9 +116,13 @@ impl Song {
             .replace("%%TRANSPOSE%%", &self.transpose)
             .replace("%%CHORDS%%", &self.chords);
 
-        let voices = crate::VOICE_TEMPLATE.get().unwrap()
-            .replace("%%TRANSPOSE%%", &self.transpose)
-            .replace("%%NOTES%%", &self.voices);
+        let mut voices = String::new();
+        for voicepart in &self.voices {
+            let formatted_voice = crate::VOICE_TEMPLATE.get().unwrap()
+                .replace("%%TRANSPOSE%%", &self.transpose)
+                .replace("%%NOTES%%", &voicepart);
+            voices.push_str(&formatted_voice);
+        }
 
         let mut lyrics = String::new();
         for lyricspart in &self.lyrics {
@@ -134,10 +148,17 @@ impl Song {
             .replace("%%SUBTITLE%%", &self.subtitle.unwrap_or(String::new()))
             .replace("%%TAGLINE%%", &self.tagline.unwrap_or(String::new()));
 
+        let pianostaff = match &self.is_piano_staff {
+            Some(_) => String::from("\\new PianoStaff"),
+            None => String::new(),
+        };
+
         let song_body = crate::SONG_BODY_TEMPLATE.get().unwrap()
             .replace("%%CHORDS%%", &chords)
             .replace("%%VOICES%%", &voices)
+            .replace("%%PIANOSTAFF%%", &pianostaff)
             .replace("%%LYRICS%%", &lyrics)
+            .replace("%%PRE_STAVES%%", &self.pre_staves)
             .replace("%%POST_SECTION%%", &self.post_section);
 
         let toc_title = format!("{} - {}", self.title, self.composer);

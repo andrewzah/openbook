@@ -111,24 +111,24 @@
   }
 }
 
-\layout {
-  \context {
-    \Score
-    \remove "Bar_number_engraver"
-  }
-}
+%\layout {
+%  \context {
+%    \Score
+%  }
+%}
 
 \layout {
   % make only the first clef visible
   \override Score.Clef #'break-visibility = #'#(#f #f #f)
 
   % make only the first time signature visible
-  \override Score.KeySignature #'break-visibility = #'#(#f #f #f)  
+  \override Score.KeySignature #'break-visibility = #'#(#f #f #f)
 
   % allow single-staff system bars
   \override Score.SystemStartBar #'collapse-height = #1
 
-  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 3)
+  % show measures
+  %\override Score.BarNumber.break-visibility = ##(#t #t #t)
 
   \context {
     \Score {

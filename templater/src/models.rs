@@ -2,29 +2,39 @@ use std::fs::File;
 use std::collections::HashMap;
 use std::io::Write;
 
+use crate::capitalize_first_letter_ascii;
+
 pub struct TemplaterConfig {
     // e.g. If someone enters 'Bb', lilypond expects
     // 'd'. In the intro page I want to display the
     // user-specified key (e.g. "for Bb instruments")
-    pub transpose_display_key: String,
-    pub transpose_actual_key: String,
+    pub transpose_text: TransposeText,
+}
+
+// lilypond expects this format: "c c"
+// but we also want to show the key in the pdf
+#[derive(Debug, Clone)]
+pub struct TransposeText {
+    pub display_text: String,
+    pub lilypond_text: String,
 }
 
 #[derive(Debug)]
 pub struct Song {
-    pub transpose: String,
+    pub transpose_text: TransposeText,
 
     // body
     pub chords: String,
     pub voices: Vec<String>,
     pub pre_staves: String,
     pub lyrics: Vec<String>,
+    pub pre_section: String,
     pub post_section: String,
 
     // header 
     pub arranger: Option<String>,
     pub composer: String,
-    pub copyright: Option<String>,
+    //pub copyright: Option<String>,
     pub dedication: Option<String>,
     pub footer: Option<String>,
     pub instrument: Option<String>,
@@ -38,7 +48,7 @@ pub struct Song {
 }
 
 impl Song {
-    pub fn new(front_matter: Vec<&str>, document: &str, transpose: &str) -> Self {
+    pub fn new(front_matter: Vec<&str>, document: &str, transpose_text: TransposeText) -> Self {
         let mut metadata = Song::parse_frontmatter(front_matter);
         let parts = document.split("---")
             .collect::<Vec<&str>>();
@@ -47,6 +57,7 @@ impl Song {
         let mut voices = vec![];
         let mut lyrics = vec![];
         let mut pre_staves = String::new();
+        let mut pre_section = String::new();
         let mut post_section = String::new();
 
         for part in parts {
@@ -70,6 +81,11 @@ impl Song {
                 continue;
             }
 
+            if part.contains("pre-section") {
+                pre_section.push_str(part);
+                continue;
+            }
+
             if part.contains("post-section") {
                 post_section.push_str(part);
                 continue;
@@ -77,12 +93,13 @@ impl Song {
         }
 
         Song {
-            transpose: String::from(transpose),
+            transpose_text: transpose_text,
 
             chords: chords,
             voices: voices,
             lyrics: lyrics,
             pre_staves: pre_staves,
+            pre_section: pre_section,
             post_section: post_section,
 
             title: metadata.remove("title")
@@ -90,7 +107,7 @@ impl Song {
             composer: metadata.remove("composer")
                 .unwrap_or(String::from("UNKNOWN COMPOSER")),
             arranger: metadata.remove("arranger"),
-            copyright: metadata.remove("copyright"),
+            //copyright: metadata.remove("copyright"),
             dedication: metadata.remove("dedication"),
             footer: metadata.remove("footer"),
             instrument: metadata.remove("instrument"),
@@ -113,13 +130,13 @@ impl Song {
 
     pub fn write(self, file: &mut File) {
         let chords = crate::CHORDS_TEMPLATE.get().unwrap()
-            .replace("%%TRANSPOSE%%", &self.transpose)
+            .replace("%%TRANSPOSE%%", &self.transpose_text.lilypond_text)
             .replace("%%CHORDS%%", &self.chords);
 
         let mut voices = String::new();
         for voicepart in &self.voices {
             let formatted_voice = crate::VOICE_TEMPLATE.get().unwrap()
-                .replace("%%TRANSPOSE%%", &self.transpose)
+                .replace("%%TRANSPOSE%%", &self.transpose_text.lilypond_text)
                 .replace("%%NOTES%%", &voicepart);
             voices.push_str(&formatted_voice);
         }
@@ -140,7 +157,7 @@ impl Song {
             .replace("%%COMPOSER%%", &format!("Music by {}", &self.composer))
             .replace("%%POET%%", &poet)
             .replace("%%ARRANGER%%", &self.arranger.unwrap_or(String::new()))
-            .replace("%%COPYRIGHT%%", &self.copyright.unwrap_or(String::new()))
+            .replace("%%COPYRIGHT%%", &capitalize_first_letter_ascii(&self.transpose_text.display_text))
             .replace("%%DEDICATION%%", &self.dedication.unwrap_or(String::new()))
             .replace("%%INSTRUMENT%%", &self.instrument.unwrap_or(String::new()))
             .replace("%%METER%%", &self.meter.unwrap_or(String::new()))
@@ -159,6 +176,7 @@ impl Song {
             .replace("%%PIANOSTAFF%%", &pianostaff)
             .replace("%%LYRICS%%", &lyrics)
             .replace("%%PRE_STAVES%%", &self.pre_staves)
+            .replace("%%PRE_SECTION%%", &self.pre_section)
             .replace("%%POST_SECTION%%", &self.post_section);
 
         let toc_title = format!("{} - {}", self.title, self.composer);

@@ -11,6 +11,13 @@
   meter = "Medium"
 }
 
+\markup {
+  \with-dimensions #'(-5 . 5) #'(5 . -5) {
+    \epsfile #X #8 #"../images/flood-in-franklin-park.eps"
+  }
+}
+
+
 \score {
   <<
     \new ChordNames="Chords" {

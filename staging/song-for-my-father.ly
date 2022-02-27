@@ -7,7 +7,8 @@
 \header {
   title = "Song For My Father"
   subsubtitle = "October 26, 1964"
-  composer = "Horace Silver"
+  composer = "Music by Horace Silver"
+  poet = "Lyrics by Such and Such Guy"
   meter = "Medium Latin"
 }
 

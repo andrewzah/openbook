@@ -22,6 +22,13 @@ meter: Funky
   d1:m7 | a1:7sus4 | d1:m7
 }
 ---
+%% pre-section
+\markup {
+  \with-dimensions #'(-5 . 5) #'(-5 . -5) {
+    \epsfile #X #8 #"./images/flood-in-franklin-park.eps"
+  }
+}
+---
 \key c \major
 \time 4/4
 \numericTimeSignature
@@ -90,10 +97,3 @@ r4. <a' b'>8_\osgB
 <b' d'' g''>8~^\fermata <b' d'' g''>2
 
 \songEndBar
----
-% post-section
-\markup {
-  \general-align #X #LEFT {
-    \epsfile #X #10 #"./images/flood-in-franklin-park.eps"
-  }
-}

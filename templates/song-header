@@ -1,14 +1,16 @@
 \header {
   arranger = "%%ARRANGER%%"
   composer = "%%COMPOSER%%"
-  copyright = "%%COPYRIGHT%%"
   dedication = "%%DEDICATION%%"
   footer = "%%FOOTER%%"
-  instrument = "%%INSTRUMENT%%"
+  %%instrument = "%%INSTRUMENT%%"
   meter = "%%METER%%"
   poet = "%%POET%%"
   subsubtitle = "%%SUBSUBTITLE%%"
-  subtitle = "%%SUBTITLE%%"
+  %%subtitle = "%%SUBTITLE%%"
   tagline = "%%TAGLINE%%"
   title = "%%TITLE%%"
+
+  %% TODO: make this better
+  copyright = "(For %%COPYRIGHT%% Instruments)"
 }

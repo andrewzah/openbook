@@ -62,18 +62,20 @@ fn main() {
             std::process::exit(1);
         }
     };
-    let transpose = args.transpose.unwrap_or(String::from("c"));
+    let transpose_arg = args.transpose.unwrap_or(String::from("c"));
 
-    let transpose_actual = match transpose_actual(&transpose) {
+    let lilypond_transpose_text = match transpose_actual(&transpose_arg) {
         Some(v) => v,
         None => {
-            eprintln!("Transposing instrument key '{}' specified is invalid.", &transpose);
+            eprintln!("Transpose input '{}' specified is invalid or not supported (yet).", &transpose_arg);
             std::process::exit(0);
         }
     };
     let conf = TemplaterConfig {
-        transpose_display_key: transpose,
-        transpose_actual_key: transpose_actual,
+        transpose_text: TransposeText {
+            display_text: transpose_arg,
+            lilypond_text: lilypond_transpose_text,
+        }
     };
     init_static(&conf);
 
@@ -87,12 +89,12 @@ fn main() {
                 .strip_whitespace();
             let (front_matter, document): (Vec<&str>, &str) = extractor.split();
 
-            Song::new(front_matter, document, &conf.transpose_actual_key)
+            Song::new(front_matter, document, conf.transpose_text.clone())
         })
         .collect();
     songs.sort_by(|a, b| a.title.cmp(&b.title));
 
-    let filename = format!("openbook-{}.ly", &conf.transpose_display_key);
+    let filename = format!("openbook-{}.ly", &conf.transpose_text.display_text);
     let mut outfile = File::create(filename).expect("Unable to create output file");
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
@@ -118,7 +120,7 @@ fn transpose_actual(input: &str) -> Option<String> {
 fn init_static(conf: &TemplaterConfig) {
     let intro_template = fs::read_to_string("./templates/intro")
         .expect("Unable to read intro template")
-        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose_display_key));
+        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose_text.display_text));
     INTRO_TEMPLATE.set(intro_template).expect("Unable to set INTRO_TEMPLATE");
 
     let bookpart_template = fs::read_to_string("./templates/bookpart")
@@ -135,7 +137,7 @@ fn init_static(conf: &TemplaterConfig) {
 
     let voice_template = fs::read_to_string("./templates/voice")
         .expect("Unable to read voice template")
-        .replace("%%TRANSPOSE%%", &conf.transpose_actual_key);
+        .replace("%%TRANSPOSE%%", &conf.transpose_text.lilypond_text);
     VOICE_TEMPLATE.set(voice_template).expect("Unable to set VOICE_TEMPLATE");
 
     let lyrics_template = fs::read_to_string("./templates/lyrics")

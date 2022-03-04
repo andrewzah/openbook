@@ -11,7 +11,6 @@
   - all blues
   - cantaloupe island
   - cariba
-  - d natural blues
   - four on six
   - linus and lucy
   - impressions
@@ -92,7 +91,6 @@
   - song for my father
   - sophisticated lady
   - spain
-  - st thomas
   - stardust
   - stars fell on alabama
   - stompin at the savoy

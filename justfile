@@ -13,7 +13,7 @@ build-rust:
   cd ./templater/
   just build-release
 
-buildall: build-rust
+buildall: build-rust qr
   rm -f openbook-c.* openbook-bb.* openbook-eb.* openbook-bass.*
 
   ./templater/target/release/templater

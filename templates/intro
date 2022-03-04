@@ -30,7 +30,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
         \fill-line { \huge \bold "Tune copyright: © belong to their respective holders." }
         \null
         \null
-        \null
+        \fill-line { "Openbook Version: 0.7.1" }
         \fill-line { \small \buildtime }
       }
     }

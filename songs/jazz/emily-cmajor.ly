@@ -2,21 +2,21 @@ title: Emily
 subsubtitle: From The Americanization of Emily (1964)
 composer: Johnny Mandel
 poet: Johnny Mercer
-meter: Ballad
+meter: Slow Waltz
 time: 3/4
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions
 
   c2.:maj7 | a2.:m7 | d2.:m7 | g2.:7 |
-  c2. | g2:m7/c c4:7.9- | f2.:maj7 | f2.:m6 |
-  a2.:/cis | fis2.:m7 | b2.:m7 | b2:m7/e e4:7.9- |
+  c2.:maj7 | g2:m7/c c4:7.9- | f2.:maj7 | f2.:m6 |
+  a2.:maj7/cis | fis2.:m7 | b2.:m7 | b2:m7/e e4:7.9- |
   a2.:m7 | d2.:9 | d2.:m7/g
   g2.:7.5+.9- | c2.:maj7 | a2.:m7 | d2.:m7 | g2.:m7 |
   c2.:maj9 | c2.:7 | f2.:maj7 | b2:m7/e e4:7.9- | a2.:m7 |
   b2:7.5+.9- b4:7.9- | e2.:m7 | a2:9 cis4:dim7 | d2.:m7 |
   g2.:7 | e2.:m7 | a2.:9 | fis2.:m7.5- | f2.:m7 | e2.:m7 |
-  a2.:9 | d2.:7 | g2.:9 | c2.:6 | \LPC d2:m7 \RPC g4:7
+  a2.:9 | d2.:m7 | g2.:9 | c2.:6 | \LPC d2:m7 \RPC g4:7
 }
 ---
 \relative c' {
@@ -28,21 +28,21 @@ time: 3/4
   | e8 b'8 g2
   | e8 b'8 g2~
   | g4 e4. d8
-  | c4. d8 e4 \endLine
+  | c4. d8 e4 
+  | a2 g4 \endLine
 
-  | a2 g4
   | c,2.~
   | c2 d4
   | e8 a,8 a2
-  | e'8 a,8 a2 \endLine
+  | e'8 a,8 a2
+  | e'8 a,8 a2~ \endLine
 
-  | e'8 a,8 a2~
   | a4 a4 b4
   | c4 d4 e4
   | d'4 c4 a4
-  | d,2. \endLine
+  | d,2.
+  | dis2. \endLine
 
-  | dis2.
   | e8 b'8 g2
   | e8 b'8 g2
   | e8 b'8 g2~

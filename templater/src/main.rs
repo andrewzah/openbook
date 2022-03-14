@@ -112,6 +112,7 @@ fn transpose_actual(input: &str) -> Option<String> {
         "c" => Some("c c".into()),
         "bb" => Some("c d".into()),
         "eb" => Some("ees c".into()),
+        "xf" => Some("c g".into()),
         _ => None,
     }
 }

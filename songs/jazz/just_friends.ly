@@ -2,20 +2,20 @@ title: Just Friends
 subsubtitle: 1931
 composer: John Klenner
 poet: Sam M. Lewis
-meter: Medium. Swing
+meter: Medium Swing
 ---
 \chordmode {
   \partial 2 s2
 
   \bar "|:"
 
-  c1:maj7 | c2:maj7 c2:6 | c1:maj7 |
+  c1:maj7 | c2:maj7 c2:6 | c1:m7 |
   f1:7 | g1:maj7 | g1:maj7 | bes1:m7 |
   ees1:7 | a1:m7 | d1:7 | g1:maj7 |
   e1:m7 | a1:9 | a1:9 | a1:m7 | 
-  d2:7 g2:7 | c1:maj7 | c2:maj7 c2:6 |
+  d2:7 g2:7 | c1:maj7 | c1:6 |
   c1:m7 | f1:7 | g1:maj7 | g1:maj7 |
-  bes1:7 | ees1:7 | a1:m7 | d1:7 |
+  bes1:m7 | ees1:7 | a1:m7 | d1:7 |
   fis2:m7.5- b2:7 | e1:m7 | a1:9 | a2:m7 d2:7 |
   g1:6 | \LPC d2:7sus4 \RPC g2:7 |
 }
@@ -26,6 +26,8 @@ meter: Medium. Swing
   \numericTimeSignature
 
   \partial 2 b2 |
+  \bar "|"
+
   b1~ |
   b2 \tuplet 3/2 { a4 b4 a4 } |
   ees1~ |

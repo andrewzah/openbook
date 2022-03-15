@@ -6,10 +6,10 @@
 
 \header {
   title = ""
-  subsubtitle = ""
   composer = ""
-  poet = ""
+  subsubtitle = ""
   meter = ""
+  poet = ""
 }
 
 \score {
@@ -25,13 +25,18 @@
 
   \new Voice="Voice" {
     \transpose c c {
-      \relative c' {
-        \key bes \major
-        \time 4/4
-        \numericTimeSignature
+      \key c \major
+      \time 4/4
+      \numericTimeSignature
 
-        \songEndBar
+      \repeat volta 2 {
+
+      } \alternative {
+        {}
+        {}
       }
+
+      \songEndBar
     }
   }
 

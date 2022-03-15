@@ -62,4 +62,8 @@ jazzChordExceptions=#(append
     ;ignatzekExceptions
 )
 
+% show parens around chord name
+% usage: \once \set chordNameFunction = #parenthesis-ignatzek-chord-names
+#(define (parenthesis-ignatzek-chord-names in-pitches bass inversion context) (markup #:line ("(" (ignatzek-chord-names in-pitches bass inversion context) ")")))
+
 % usage: chordNameExceptions = #jazzChordExceptions

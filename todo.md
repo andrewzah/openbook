@@ -1,115 +1,130 @@
+- write about page to explain ideology of this book
+- write jazz chord symbol notation page
+- clarify tempo meanings (what exactly does "bright" mean vs "fast" or "medium up" ?)
+
+- generate indexes for author/year/type
+- midi generation
 - restructure templates to account for multiple staves easily
+  - possibly overhaul template system to just add %%TRANSPOSE%% manually, idk
+- figure out how to control stave spacing per song (via overrides)
+
+- fix spellings for half-diminished chords (use proper symbol to reduce clutter)
+  - very low priority: make optional
 - fix spellings for alt chords
 - fix spellings for 7sus4 / 9sus4 chords
-- figure out how to control stave spacing per song (via overrides)
 - fix ImproVoice embellishments/markings
-- standards:
-  (priority)
-  - constellation
-  - afro blue
-  - airegin
-  - all blues
-  - cantaloupe island
-  - cariba
-  - four on six
-  - linus and lucy
-  - impressions
-  - road song
-  - twisted blues
-  - watermelon man
-  - west coast blues
 
-  - tune up
-  - train samba
-  - take five
-  - take the 'a' train
-  - there is no greater love
-  - swedish pastry (barney kessel)
-  - sweet georgia bright (charles lloyd)
-  - 64 Bars On Wilshire
-  - 7 steps to heaven
-  - Love Is Here To Stay
-  - Slow Boat To China
-  - Speak Low
-  - all of you
-  - april in paris
-  - autumn in new york
-  - bag's groove
-  - bemsha swing
-  - blue monk
-  - bluesette
-  - bright mississippi
-  - bright size life
-  - bye-ya
-  - ceora
-  - cool blues
-  - corcovado
-  - days of wine and roses
-  - e.s.p
-  - evidence
-  - fly me to the moon
-  - groovin' high
-  - hackensack
-  - here's that rainy day
-  - honeysuckle rose
-  - hornin' in
-  - i don't stand a ghost of a chance
-  - i remember clifford
-  - if i were a bell
-  - in walked bud
-  - insensatez / how insensitive
-  - isfahan
-  - it's only a paper moon
-  - jackie-ing
-  - jordu
-  - just you, just me
-  - kim
-  - lush life
-  - maiden voyage
-  - minority
-  - mr. P.C.
-  - my favorite things
-  - my one and only love
-  - nagasaki
-  - night and day
-  - nutty
-  - oleo
-  - on green dolphin st
-  - one note samba
-  - out of nowhere
-  - pannonica
-  - perdido
-  - played twice
-  - question & answer
-  - red clay
-  - reflections
-  - rhythm-a-ning
-  - round midnight
-  - skippy
-  - solar
-  - something tells me
-  - song for my father
-  - sophisticated lady
-  - spain
-  - stardust
-  - stars fell on alabama
-  - stompin at the savoy
-  - straight, No Chaser
-  - sweet georgia brown
-  - tea for two
-  - tenor madness
-  - that's all
-  - triste
-  - up jumped spring
-  - walkin'
-  - waltz for debby
-  - well you needn't
-  - what is this thing called love?
-  - when it's sleepy time down south
-  - when your lover has gone
-  - work
-  - yesterdays
+### standards
+- constellation
+- afro blue
+- airegin
+- all blues
+- cantaloupe island
+- cariba
+- four on six
+- linus and lucy
+- impressions
+- road song
+- twisted blues
+- watermelon man
+- west coast blues
+- 64 Bars On Wilshire
+- 7 steps to heaven
+- Love Is Here To Stay
+- Slow Boat To China
+- Speak Low
+- all of you
+- april in paris
+- autumn in new york
+- bag's groove
+- bemsha swing
+- blue monk
+- bluesette
+- bright mississippi
+- bright size life
+- bye-ya
+- ceora
+- cool blues
+- corcovado
+- days of wine and roses
+- e.s.p
+- evidence
+- fly me to the moon
+- groovin' high
+- hackensack
+- here's that rainy day
+- honeysuckle rose
+- hornin' in
+- i don't stand a ghost of a chance
+- i remember clifford
+- if i were a bell
+- in walked bud
+- insensatez / how insensitive
+- isfahan
+- it's only a paper moon
+- jackie-ing
+- jordu
+- just you, just me
+- kim
+- lush life
+- maiden voyage
+- minority
+- my favorite things
+- my one and only love
+- nagasaki
+- night and day
+- nutty
+- oleo
+- on green dolphin st
+- one note samba
+- out of nowhere
+- pannonica
+- perdido
+- played twice
+- question & answer
+- red clay
+- reflections
+- rhythm-a-ning
+- round midnight
+- skippy
+- solar
+- something tells me
+- song for my father
+- sophisticated lady
+- spain
+- stardust
+- stars fell on alabama
+- stompin at the savoy
+- straight, No Chaser
+- swedish pastry (barney kessel)
+- sweet georgia bright (charles lloyd)
+- sweet georgia brown
+- take five
+- take the 'a' train
+- tea for two
+- tenor madness
+- that's all
+- there is no greater love
+- train samba
+- triste
+- tune up
+- up jumped spring
+- walkin'
+- waltz for debby
+- well you needn't
+- what is this thing called love?
+- when it's sleepy time down south
+- when your lover has gone
+- work
+- yesterdays
 
+### later down the line
+* https://en.wikipedia.org/wiki/List_of_1920s_jazz_standards
+* https://en.wikipedia.org/wiki/List_of_1930s_jazz_standards
+* https://en.wikipedia.org/wiki/List_of_1940s_jazz_standards
+* https://en.wikipedia.org/wiki/List_of_post-1950_jazz_standards
+
+### non-jazz/other/misc songs
 - archive https://thevideogamerealbook.tumblr.com transcriptions
   - https://thevideogamerealbook.tumblr.com/post/75931565697/so-where-i-live-the-cold-weather-is-still
   - https://thevideogamerealbook.tumblr.com/post/80097188248/this-is-air-mans-stage-from-megaman-ii-i
@@ -121,8 +136,3 @@
   - https://thevideogamerealbook.tumblr.com/post/87462265837/surprisingly-this-one-took-a-long-time-to-make-it
   - https://thevideogamerealbook.tumblr.com/post/87923309515/when-i-was-in-10th-grade-i-discovered-an-album
 - animal crossing: 5pm
-
-https://en.wikipedia.org/wiki/List_of_1920s_jazz_standards
-https://en.wikipedia.org/wiki/List_of_1930s_jazz_standards
-https://en.wikipedia.org/wiki/List_of_1940s_jazz_standards
-https://en.wikipedia.org/wiki/List_of_post-1950_jazz_standards

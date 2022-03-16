@@ -8,31 +8,17 @@
   - possibly overhaul template system to just add %%TRANSPOSE%% manually, idk
 - figure out how to control stave spacing per song (via overrides)
 
-- fix spellings for half-diminished chords (use proper symbol to reduce clutter)
+- [x] fix spellings for half-diminished chords (use proper symbol to reduce clutter)
   - very low priority: make optional
 - fix spellings for alt chords
 - fix spellings for 7sus4 / 9sus4 chords
 - fix ImproVoice embellishments/markings
 
 ### standards
-- constellation
+- 7 steps to heaven
 - afro blue
 - airegin
 - all blues
-- cantaloupe island
-- cariba
-- four on six
-- linus and lucy
-- impressions
-- road song
-- twisted blues
-- watermelon man
-- west coast blues
-- 64 Bars On Wilshire
-- 7 steps to heaven
-- Love Is Here To Stay
-- Slow Boat To China
-- Speak Low
 - all of you
 - april in paris
 - autumn in new york
@@ -43,13 +29,16 @@
 - bright mississippi
 - bright size life
 - bye-ya
+- cantaloupe island
+- cariba
 - ceora
-- cool blues
+- constellation
 - corcovado
 - days of wine and roses
 - e.s.p
 - evidence
 - fly me to the moon
+- four on six
 - groovin' high
 - hackensack
 - here's that rainy day
@@ -58,6 +47,7 @@
 - i don't stand a ghost of a chance
 - i remember clifford
 - if i were a bell
+- impressions
 - in walked bud
 - insensatez / how insensitive
 - isfahan
@@ -66,6 +56,8 @@
 - jordu
 - just you, just me
 - kim
+- linus and lucy
+- love Is Here To Stay
 - lush life
 - maiden voyage
 - minority
@@ -85,20 +77,22 @@
 - red clay
 - reflections
 - rhythm-a-ning
+- road song
 - round midnight
 - skippy
+- slow Boat To China
 - solar
 - something tells me
 - song for my father
 - sophisticated lady
 - spain
+- speak Low
 - stardust
 - stars fell on alabama
 - stompin at the savoy
 - straight, No Chaser
 - swedish pastry (barney kessel)
 - sweet georgia bright (charles lloyd)
-- sweet georgia brown
 - take five
 - take the 'a' train
 - tea for two
@@ -108,13 +102,17 @@
 - train samba
 - triste
 - tune up
+- twisted blues
 - up jumped spring
 - walkin'
 - waltz for debby
+- watermelon man
 - well you needn't
+- west coast blues
 - what is this thing called love?
 - when it's sleepy time down south
 - when your lover has gone
+- [whispering](https://en.wikipedia.org/wiki/Whispering_(song))
 - work
 - yesterdays
 

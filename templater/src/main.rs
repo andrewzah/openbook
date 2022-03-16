@@ -77,7 +77,6 @@ fn main() {
             lilypond_text: lilypond_transpose_text,
         }
     };
-    init_static(&conf);
 
     let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from("./songs"), "ly")
         .iter_mut()
@@ -93,6 +92,8 @@ fn main() {
         })
         .collect();
     songs.sort_by(|a, b| a.title.cmp(&b.title));
+
+    init_static(&conf, songs.len());
 
     let filename = format!("openbook-{}.ly", &conf.transpose_text.display_text);
     let mut outfile = File::create(filename).expect("Unable to create output file");
@@ -118,10 +119,11 @@ fn transpose_actual(input: &str) -> Option<String> {
 }
 
 // set templates in memory
-fn init_static(conf: &TemplaterConfig) {
+fn init_static(conf: &TemplaterConfig, num_songs: usize) {
     let intro_template = fs::read_to_string("./templates/intro")
         .expect("Unable to read intro template")
-        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose_text.display_text));
+        .replace("%%TRANSPOSE%%", &capitalize_first_letter_ascii(&conf.transpose_text.display_text))
+        .replace("%%NUM_TUNES%%", &format!("{}", num_songs));
     INTRO_TEMPLATE.set(intro_template).expect("Unable to set INTRO_TEMPLATE");
 
     let bookpart_template = fs::read_to_string("./templates/bookpart")

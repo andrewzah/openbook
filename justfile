@@ -20,8 +20,8 @@ buildall: build-rust qr
   ./templater/target/release/templater --transpose bb
   ./templater/target/release/templater --transpose eb
 
-  lilypond openbook-c.ly
-  lilypond openbook-bb.ly
+  lilypond openbook-c.ly &
+  lilypond openbook-bb.ly &
   lilypond openbook-eb.ly
 
 qr:

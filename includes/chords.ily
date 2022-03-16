@@ -11,6 +11,7 @@
               (markup "<")))))))
 
 whiteTriangle = \markup { \triangle ##f }
+halfDiminished = \markup { "ø" }
 jazzChordDefinitions={
   %<c e g a>-\markup { \super { "6" } }
   <c e g b>-\markup {
@@ -35,7 +36,7 @@ jazzChordDefinitions={
   <c ees g bes>-\markup { "-" \super { "7" } }
   <c ees g bes d'>-\markup { "-" \super { "9" } }
   <c ees g bes f'>-\markup { "-" \super { "7(11)" } }
-  <c ees ges bes>-\markup { "-" \super { "7 " \flat "5" } }
+  <c ees ges bes>-\markup { "ø" \super { "7" } }
 
   %% minor-major7
   <c ees g b>-\markup { "-" \super { \whiteTriangle "7" } }

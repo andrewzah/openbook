@@ -9,7 +9,7 @@ boxMark =
  #})
 
 endLine = \break
-partBar = \bar "||"
+partBar = \bar ".."
 songEndBar = \bar "|."
 voltaStartBar = \bar "[|:"
 voltaEndBar = \bar ":|]"
@@ -17,6 +17,9 @@ voltaEndBar = \bar ":|]"
 overrideCodaSize = \once \override Score.RehearsalMark #'font-size = #4
 coda = \markup { \musicglyph "scripts.coda" }
 codaMark = \mark \coda
+
+segno = \markup { \musicglyph "scripts.segno" }
+segnoMark = \mark \segno
 
 %% Parentheses for optional chords
 %% https://lists.gnu.org/archive/html/lilypond-user/2009-03/msg00037.html

@@ -1,9 +1,9 @@
 \version "2.22.1"
 
-\include "./includes/globals.ily"
-\include "./includes/symbols.ily"
-\include "./includes/functions.ily"
-\include "./includes/chords.ily"
+\include "../includes/globals.ily"
+\include "../includes/symbols.ily"
+\include "../includes/functions.ily"
+\include "../includes/chords.ily"
 
 buildtime = #(strftime "%c" (localtime (current-time)))
 
@@ -69,7 +69,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \null
       \line{ \abs-fontsize #14 "Version 0.7.5" }
       \null
-      \line{ \abs-fontsize #14 "Containing %%NUM_TUNES%% Tunes" }
+      \line{ \abs-fontsize #14 "Containing 53 Tunes" }
       \null
       \line{ \abs-fontsize #14 "Website:" }
       \line{ \abs-fontsize #14
@@ -82,6 +82,8 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     }}}
   }
 
+
   \markuplist \table-of-contents
   \pageBreak
+}
 

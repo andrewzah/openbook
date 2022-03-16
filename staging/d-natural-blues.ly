@@ -11,11 +11,11 @@
   meter = "Medium"
 }
 
-\markup {
-  \with-dimensions #'(-5 . 5) #'(5 . -5) {
-    \epsfile #X #8 #"../images/flood-in-franklin-park.eps"
-  }
-}
+%\markup {
+%  \with-dimensions #'(-5 . 5) #'(5 . -5) {
+%    \epsfile #X #8 #"../images/flood-in-franklin-park.eps"
+%  }
+%}
 
 
 \score {
@@ -71,7 +71,7 @@
         g'8 g'8 \tuplet 3/2 { g'8 d'8 f'8 } r4 a'8 c''8 |
         d''8 f''4. d''8 c''8 a'8 d'8 | \endLine
 
-        aes'8 g'8 \tuplet 3/2 { fis'8 d'8 fis'8 } r4 d'8 f'8 |
+        aes'8^\markup{"test"} g'8 \tuplet 3/2 { fis'8 d'8 fis'8 } r4 d'8 f'8 |
         g'8 a'4.~ a'8 d'8 aes'8 g'8 |
         f'8 d'4.~ d'8 a'4 g'8 | \endLine
 

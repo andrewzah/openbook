@@ -15,6 +15,14 @@
 - fix ImproVoice embellishments/markings
 
 ### standards
+- jacky's place
+- chick's tune (contrafact on you stepped out of a dream)
+- the kicker
+- dexterity
+- blues for alice
+- confirmation
+- dewey square
+- milestones
 - 7 steps to heaven
 - afro blue
 - airegin

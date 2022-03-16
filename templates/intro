@@ -31,7 +31,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \null
       \null
       \null
-      \line{ \abs-fontsize #20 "For Concert Instruments" }
+      \line{ \abs-fontsize #20 "For %%TRANSPOSE%% Instruments" }
       \null
       \null
       \null

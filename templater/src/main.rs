@@ -11,6 +11,7 @@
 use std::path::PathBuf;
 use std::fs::{self, File};
 use std::io::Write;
+use std::io::{Error, ErrorKind};
 
 use extract_frontmatter::{Extractor};
 use once_cell::sync::OnceCell;
@@ -64,18 +65,15 @@ fn main() {
     };
     let transpose_arg = args.transpose.unwrap_or(String::from("c"));
 
-    let lilypond_transpose_text = match transpose_actual(&transpose_arg) {
-        Some(v) => v,
-        None => {
-            eprintln!("Transpose input '{}' specified is invalid or not supported (yet).", &transpose_arg);
+    let transpose_text = match transpose_text(&transpose_arg) {
+        Ok(v) => v,
+        Err(e) => {
+            eprintln!("{}", &e);
             std::process::exit(0);
         }
     };
     let conf = TemplaterConfig {
-        transpose_text: TransposeText {
-            display_text: transpose_arg,
-            lilypond_text: lilypond_transpose_text,
-        }
+        transpose_text: transpose_text,
     };
 
     let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from("./songs"), "ly")
@@ -108,13 +106,28 @@ fn main() {
     writeln!(outfile, "{}", "}").unwrap();
 }
 
-fn transpose_actual(input: &str) -> Option<String> {
+fn transpose_text(input: &str) -> Result<TransposeText, Error> {
     match input {
-        "c" => Some("c c".into()),
-        "bb" => Some("c d".into()),
-        "eb" => Some("ees c".into()),
-        "xf" => Some("c g".into()),
-        _ => None,
+        "c" => Ok(TransposeText {
+            display_text: "Concert".into(),
+            lilypond_text: "c c".into(),
+        }),
+        "bb" => Ok(TransposeText {
+            display_text: "Bb".into(),
+            lilypond_text: "c d".into(),
+        }),
+        // todo: transpose up/down based on highest
+        // detected pitch. waiting on this until
+        // I convert all relative pitch tunes to absolute
+        "eb" => Ok(TransposeText {
+            display_text: "Eb".into(),
+            lilypond_text: "ees c".into(),
+        }),
+        "testing-f" => Ok(TransposeText {
+            display_text: "Testing".into(),
+            lilypond_text: "c g".into(),
+        }),
+        _ => Err(Error::new(ErrorKind::Other, format!("Unable to parse transpose input of [{}]", &input))),
     }
 }
 

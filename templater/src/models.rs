@@ -1,5 +1,5 @@
-use std::fs::File;
 use std::collections::HashMap;
+use std::fs::File;
 use std::io::Write;
 
 use crate::capitalize_first_letter_ascii;
@@ -31,7 +31,7 @@ pub struct Song {
     pub pre_section: String,
     pub post_section: String,
 
-    // header 
+    // header
     pub arranger: Option<String>,
     pub composer: String,
     //pub copyright: Option<String>,
@@ -50,8 +50,7 @@ pub struct Song {
 impl Song {
     pub fn new(front_matter: Vec<&str>, document: &str, transpose_text: TransposeText) -> Self {
         let mut metadata = Song::parse_frontmatter(front_matter);
-        let parts = document.split("---")
-            .collect::<Vec<&str>>();
+        let parts = document.split("---").collect::<Vec<&str>>();
 
         let mut chords = String::new();
         let mut voices = vec![];
@@ -102,9 +101,11 @@ impl Song {
             pre_section,
             post_section,
 
-            title: metadata.remove("title")
+            title: metadata
+                .remove("title")
                 .unwrap_or_else(|| String::from("UNKNOWN TITLE")),
-            composer: metadata.remove("composer")
+            composer: metadata
+                .remove("composer")
                 .unwrap_or_else(|| String::from("UNKNOWN COMPOSER")),
             arranger: metadata.remove("arranger"),
             //copyright: metadata.remove("copyright"),
@@ -124,18 +125,24 @@ impl Song {
         front_matter
             .into_iter()
             .map(|e| e.split(':').collect::<Vec<&str>>())
-            .fold(HashMap::new(),
-                |mut acc, vec| { acc.insert(vec[0].to_string(), vec[1].trim_start().to_string()); acc })
+            .fold(HashMap::new(), |mut acc, vec| {
+                acc.insert(vec[0].to_string(), vec[1].trim_start().to_string());
+                acc
+            })
     }
 
     pub fn write(self, file: &mut File) {
-        let chords = crate::CHORDS_TEMPLATE.get().unwrap()
+        let chords = crate::CHORDS_TEMPLATE
+            .get()
+            .unwrap()
             .replace("%%TRANSPOSE%%", &self.transpose_text.lilypond_text)
             .replace("%%CHORDS%%", &self.chords);
 
         let mut voices = String::new();
         for voicepart in &self.voices {
-            let formatted_voice = crate::VOICE_TEMPLATE.get().unwrap()
+            let formatted_voice = crate::VOICE_TEMPLATE
+                .get()
+                .unwrap()
                 .replace("%%TRANSPOSE%%", &self.transpose_text.lilypond_text)
                 .replace("%%NOTES%%", voicepart);
             voices.push_str(&formatted_voice);
@@ -143,7 +150,9 @@ impl Song {
 
         let mut lyrics = String::new();
         for lyricspart in &self.lyrics {
-            let formatted_lyrics = crate::LYRICS_TEMPLATE.get().unwrap()
+            let formatted_lyrics = crate::LYRICS_TEMPLATE
+                .get()
+                .unwrap()
                 .replace("%%LYRICS%%", lyricspart);
             lyrics.push_str(&formatted_lyrics);
         }
@@ -152,12 +161,17 @@ impl Song {
             Some(p) => format!("Lyrics by {}", p),
             None => String::new(),
         };
-        let song_header = crate::SONG_HEADER_TEMPLATE.get().unwrap()
+        let song_header = crate::SONG_HEADER_TEMPLATE
+            .get()
+            .unwrap()
             .replace("%%TITLE%%", &self.title)
             .replace("%%COMPOSER%%", &format!("Music by {}", &self.composer))
             .replace("%%POET%%", &poet)
             .replace("%%ARRANGER%%", &self.arranger.unwrap_or_default())
-            .replace("%%COPYRIGHT%%", &capitalize_first_letter_ascii(&self.transpose_text.display_text))
+            .replace(
+                "%%COPYRIGHT%%",
+                &capitalize_first_letter_ascii(&self.transpose_text.display_text),
+            )
             .replace("%%DEDICATION%%", &self.dedication.unwrap_or_default())
             .replace("%%INSTRUMENT%%", &self.instrument.unwrap_or_default())
             .replace("%%METER%%", &self.meter.unwrap_or_default())
@@ -170,7 +184,9 @@ impl Song {
             None => String::new(),
         };
 
-        let song_body = crate::SONG_BODY_TEMPLATE.get().unwrap()
+        let song_body = crate::SONG_BODY_TEMPLATE
+            .get()
+            .unwrap()
             .replace("%%CHORDS%%", &chords)
             .replace("%%VOICES%%", &voices)
             .replace("%%PIANOSTAFF%%", &pianostaff)
@@ -180,7 +196,9 @@ impl Song {
             .replace("%%POST_SECTION%%", &self.post_section);
 
         let toc_title = format!("{} - {}", self.title, self.composer);
-        let bookpart = crate::BOOKPART_TEMPLATE.get().unwrap()
+        let bookpart = crate::BOOKPART_TEMPLATE
+            .get()
+            .unwrap()
             .replace("%%TITLE%%", &toc_title)
             .replace("%%SONG_HEADER%%", &song_header)
             .replace("%%SONG_BODY%%", &song_body);

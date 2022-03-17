@@ -1,5 +1,5 @@
-use std::path::{Path, PathBuf};
 use std::ffi::OsStr;
+use std::path::{Path, PathBuf};
 
 pub fn capitalize_first_letter_ascii(s: &str) -> String {
     let mut c = s.chars();
@@ -43,18 +43,18 @@ mod test {
     #[test]
     fn it_recursively_gets_ly_files() {
         let paths = get_files_by_ext(&PathBuf::from("./test/"), "ly");
-        let mut filenames: Vec<Option<&str>> = paths
-            .iter()
-            .map(|p| p.to_str())
-            .collect();
+        let mut filenames: Vec<Option<&str>> = paths.iter().map(|p| p.to_str()).collect();
         filenames.sort_by(|a, b| a.unwrap().cmp(b.unwrap()));
 
-        assert_eq!(filenames, vec![
-            Some("./test/crazeology.ly"),
-            Some("./test/directory/emily.ly"),
-            Some("./test/misty.ly"),
-            Some("./test/nardis.ly"),
-            Some("./test/nows_the_time.ly"),
-        ]);
+        assert_eq!(
+            filenames,
+            vec![
+                Some("./test/crazeology.ly"),
+                Some("./test/directory/emily.ly"),
+                Some("./test/misty.ly"),
+                Some("./test/nardis.ly"),
+                Some("./test/nows_the_time.ly"),
+            ]
+        );
     }
 }

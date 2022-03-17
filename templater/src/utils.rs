@@ -21,11 +21,9 @@ pub fn get_files_by_ext<P: AsRef<Path>>(path: &P, ext: &str) -> Vec<PathBuf> {
         if file_type.is_dir() {
             let mut nested_paths = get_files_by_ext(&entry_path, ext);
             paths.append(&mut nested_paths);
-        } else {
-            if let Some(cmp_ext) = entry_path.extension().and_then(OsStr::to_str) {
-                if ext == cmp_ext {
-                    paths.push(entry_path.to_owned());
-                }
+        } else if let Some(cmp_ext) = entry_path.extension().and_then(OsStr::to_str) {
+            if ext == cmp_ext {
+                paths.push(entry_path.to_owned());
             }
         }
     }

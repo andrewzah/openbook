@@ -93,19 +93,19 @@ impl Song {
         }
 
         Song {
-            transpose_text: transpose_text,
+            transpose_text,
 
-            chords: chords,
-            voices: voices,
-            lyrics: lyrics,
-            pre_staves: pre_staves,
-            pre_section: pre_section,
-            post_section: post_section,
+            chords,
+            voices,
+            lyrics,
+            pre_staves,
+            pre_section,
+            post_section,
 
             title: metadata.remove("title")
-                .unwrap_or(String::from("UNKNOWN TITLE")),
+                .unwrap_or_else(|| String::from("UNKNOWN TITLE")),
             composer: metadata.remove("composer")
-                .unwrap_or(String::from("UNKNOWN COMPOSER")),
+                .unwrap_or_else(|| String::from("UNKNOWN COMPOSER")),
             arranger: metadata.remove("arranger"),
             //copyright: metadata.remove("copyright"),
             dedication: metadata.remove("dedication"),
@@ -123,7 +123,7 @@ impl Song {
     fn parse_frontmatter(front_matter: Vec<&str>) -> HashMap<String, String> {
         front_matter
             .into_iter()
-            .map(|e| e.split(":").collect::<Vec<&str>>())
+            .map(|e| e.split(':').collect::<Vec<&str>>())
             .fold(HashMap::new(),
                 |mut acc, vec| { acc.insert(vec[0].to_string(), vec[1].trim_start().to_string()); acc })
     }
@@ -137,14 +137,14 @@ impl Song {
         for voicepart in &self.voices {
             let formatted_voice = crate::VOICE_TEMPLATE.get().unwrap()
                 .replace("%%TRANSPOSE%%", &self.transpose_text.lilypond_text)
-                .replace("%%NOTES%%", &voicepart);
+                .replace("%%NOTES%%", voicepart);
             voices.push_str(&formatted_voice);
         }
 
         let mut lyrics = String::new();
         for lyricspart in &self.lyrics {
             let formatted_lyrics = crate::LYRICS_TEMPLATE.get().unwrap()
-                .replace("%%LYRICS%%", &lyricspart);
+                .replace("%%LYRICS%%", lyricspart);
             lyrics.push_str(&formatted_lyrics);
         }
 
@@ -156,14 +156,14 @@ impl Song {
             .replace("%%TITLE%%", &self.title)
             .replace("%%COMPOSER%%", &format!("Music by {}", &self.composer))
             .replace("%%POET%%", &poet)
-            .replace("%%ARRANGER%%", &self.arranger.unwrap_or(String::new()))
+            .replace("%%ARRANGER%%", &self.arranger.unwrap_or_default())
             .replace("%%COPYRIGHT%%", &capitalize_first_letter_ascii(&self.transpose_text.display_text))
-            .replace("%%DEDICATION%%", &self.dedication.unwrap_or(String::new()))
-            .replace("%%INSTRUMENT%%", &self.instrument.unwrap_or(String::new()))
-            .replace("%%METER%%", &self.meter.unwrap_or(String::new()))
-            .replace("%%SUBSUBTITLE%%", &self.subsubtitle.unwrap_or(String::new()))
-            .replace("%%SUBTITLE%%", &self.subtitle.unwrap_or(String::new()))
-            .replace("%%TAGLINE%%", &self.tagline.unwrap_or(String::new()));
+            .replace("%%DEDICATION%%", &self.dedication.unwrap_or_default())
+            .replace("%%INSTRUMENT%%", &self.instrument.unwrap_or_default())
+            .replace("%%METER%%", &self.meter.unwrap_or_default())
+            .replace("%%SUBSUBTITLE%%", &self.subsubtitle.unwrap_or_default())
+            .replace("%%SUBTITLE%%", &self.subtitle.unwrap_or_default())
+            .replace("%%TAGLINE%%", &self.tagline.unwrap_or_default());
 
         let pianostaff = match &self.is_piano_staff {
             Some(_) => String::from("\\new PianoStaff"),

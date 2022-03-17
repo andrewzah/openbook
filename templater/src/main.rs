@@ -63,7 +63,7 @@ fn main() {
             std::process::exit(1);
         }
     };
-    let transpose_arg = args.transpose.unwrap_or(String::from("c"));
+    let transpose_arg = args.transpose.unwrap_or_else(|| String::from("c"));
 
     let transpose_text = match transpose_text(&transpose_arg) {
         Ok(v) => v,
@@ -73,7 +73,7 @@ fn main() {
         }
     };
     let conf = TemplaterConfig {
-        transpose_text: transpose_text,
+        transpose_text,
     };
 
     let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from("./songs"), "ly")
@@ -103,7 +103,8 @@ fn main() {
         song.write(&mut outfile);
     }
 
-    writeln!(outfile, "{}", "}").unwrap();
+    // }} escapes } apparently
+    writeln!(outfile, "}}").unwrap();
 }
 
 fn transpose_text(input: &str) -> Result<TransposeText, Error> {

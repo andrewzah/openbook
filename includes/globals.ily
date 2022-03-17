@@ -111,11 +111,14 @@
   }
 }
 
-%\layout {
-%  \context {
-%    \Score
-%  }
-%}
+\layout {
+  \context {
+    \Score
+    startRepeatType = #"[|:"
+    endRepeatType = #":|]"
+    doubleRepeatType = #":|][|:"
+  }
+}
 
 \layout {
   % make only the first clef visible

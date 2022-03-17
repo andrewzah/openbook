@@ -29,6 +29,7 @@ jazzChordDefinitions={
   <c e ges bes des'>-\markup { "7" \super { " (" \flat "9 " \flat "5)" } }
   <c e gis bes d'>-\markup { \super { "9(" \super { \sharp } "5)" } }
   <c e gis bes dis'>-\markup { \super { "7(" \super { \sharp } " 9 " \super { \sharp } " 5)" } }
+  <c e g bes f'>-\markup { \super { "7  (11)" } }
 
   %% minor
   <c ees g>-\markup { "-" }

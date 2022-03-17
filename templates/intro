@@ -67,7 +67,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \line{ \abs-fontsize #20 "Meta Information" }
       \null
       \null
-      \line{ \abs-fontsize #14 "Version 0.7.5" }
+      \line{ \abs-fontsize #14 "Version 0.7.7" }
       \null
       \line{ \abs-fontsize #14 "Containing %%NUM_TUNES%% Tunes" }
       \null

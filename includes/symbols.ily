@@ -13,6 +13,7 @@ partBar = \bar ".."
 songEndBar = \bar "|."
 voltaStartBar = \bar "[|:"
 voltaEndBar = \bar ":|]"
+doubleVoltaBar = \bar ":|][|:"
 
 overrideCodaSize = \once \override Score.RehearsalMark #'font-size = #4
 coda = \markup { \musicglyph "scripts.coda" }

@@ -8,7 +8,7 @@ meter: Swing
   \set chordNameExceptions = #jazzChordExceptions
   \set chordChanges = ##t
 
-  \partial 2. r2.
+  \partial 2. s2.
 
   \repeat volta 2 {
     a1:m7 | d1:7 | g1:maj7 | c1:maj7 |

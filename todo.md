@@ -120,6 +120,7 @@
 - [whispering](https://en.wikipedia.org/wiki/Whispering_(song))
 - work
 - yesterdays
+- you (harold adamson / walter donaldson, 1939 in sonny rollins' contemporary leaders)
 
 ### later down the line
 * https://en.wikipedia.org/wiki/List_of_1920s_jazz_standards

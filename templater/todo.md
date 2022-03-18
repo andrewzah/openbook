@@ -1,0 +1,3 @@
+- [ ] smarter transposition handling
+- [ ] legit error handling
+- [ ] remove all unwrap() calls

@@ -71,8 +71,6 @@
 - nagasaki
 - night and day
 - nutty
-- oleo
-- on green dolphin st
 - one note samba
 - out of nowhere
 - pannonica

@@ -10,15 +10,16 @@
 
 use std::fs::{self, File};
 use std::io::Write;
-use std::io::{Error, ErrorKind};
 use std::path::PathBuf;
 
 use extract_frontmatter::Extractor;
 use once_cell::sync::OnceCell;
 
+mod errors;
 mod models;
 mod utils;
 
+use crate::errors::TemplaterError;
 use crate::models::*;
 use crate::utils::*;
 
@@ -33,12 +34,14 @@ static LYRICS_TEMPLATE: OnceCell<String> = OnceCell::new();
 #[derive(Debug)]
 struct AppArgs {
     transpose: Option<String>,
+    songs_dir: Option<String>,
 }
 
-fn parse_args() -> Result<AppArgs, pico_args::Error> {
+fn parse_args() -> Result<AppArgs, TemplaterError> {
     let mut pargs = pico_args::Arguments::from_env();
     let args = AppArgs {
         transpose: pargs.opt_value_from_str("--transpose")?,
+        songs_dir: pargs.opt_value_from_str("--songs-dir")?,
     };
 
     // Help has a higher priority and should be handled separately.
@@ -55,26 +58,15 @@ fn parse_args() -> Result<AppArgs, pico_args::Error> {
     Ok(args)
 }
 
-fn main() {
-    let args = match parse_args() {
-        Ok(v) => v,
-        Err(e) => {
-            eprintln!("Error: {}.", e);
-            std::process::exit(1);
-        }
-    };
+fn main() -> Result<(), TemplaterError> {
+    let args = parse_args()?;
     let transpose_arg = args.transpose.unwrap_or_else(|| String::from("c"));
+    let songs_dir = args.songs_dir.unwrap_or_else(|| String::from("./songs"));
+    let transpose_text = transpose_text(&transpose_arg)?;
 
-    let transpose_text = match transpose_text(&transpose_arg) {
-        Ok(v) => v,
-        Err(e) => {
-            eprintln!("{}", &e);
-            std::process::exit(0);
-        }
-    };
-    let conf = TemplaterConfig { transpose_text };
+    let conf = TemplaterConfig { transpose_text, };
 
-    let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from("./songs"), "ly")
+    let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from(songs_dir), "ly")
         .iter_mut()
         .map(|path| {
             let input = fs::read_to_string(path).unwrap();
@@ -85,9 +77,10 @@ fn main() {
             Song::new(front_matter, document, conf.transpose_text.clone())
         })
         .collect();
+    println!("[info]: songs found: {}", songs.len());
     songs.sort_by(|a, b| a.title.cmp(&b.title));
 
-    init_static(&conf, songs.len());
+    init_static(&conf, songs.len())?;
 
     let filename = format!("openbook-{}.ly", &conf.transpose_text.display_text);
     let mut outfile = File::create(filename).expect("Unable to create output file");
@@ -101,9 +94,11 @@ fn main() {
 
     // }} escapes } apparently
     writeln!(outfile, "}}").unwrap();
+
+    Ok(())
 }
 
-fn transpose_text(input: &str) -> Result<TransposeText, Error> {
+fn transpose_text(input: &str) -> Result<TransposeText, TemplaterError> {
     match input {
         "c" => Ok(TransposeText {
             display_text: "Concert".into(),
@@ -124,60 +119,39 @@ fn transpose_text(input: &str) -> Result<TransposeText, Error> {
             display_text: "Testing".into(),
             lilypond_text: "c g".into(),
         }),
-        _ => Err(Error::new(
-            ErrorKind::Other,
-            format!("Unable to parse transpose input of [{}]", &input),
-        )),
+        _ => Err(TemplaterError::from_str(&format!("Transposing '{}' not supported.", input))),
     }
 }
 
 // set templates in memory
-fn init_static(conf: &TemplaterConfig, num_songs: usize) {
-    let intro_template = fs::read_to_string("./templates/intro")
-        .expect("Unable to read intro template")
+fn init_static(conf: &TemplaterConfig, num_songs: usize) -> Result<(), TemplaterError> {
+    let intro_template = fs::read_to_string("./templates/intro")?
         .replace(
             "%%TRANSPOSE%%",
             &capitalize_first_letter_ascii(&conf.transpose_text.display_text),
         )
         .replace("%%NUM_TUNES%%", &format!("{}", num_songs));
-    INTRO_TEMPLATE
-        .set(intro_template)
-        .expect("Unable to set INTRO_TEMPLATE");
 
-    let bookpart_template =
-        fs::read_to_string("./templates/bookpart").expect("Unable to read bookpart template");
-    BOOKPART_TEMPLATE
-        .set(bookpart_template)
-        .expect("Unable to set BOOKPART_TEMPLATE");
+    INTRO_TEMPLATE.set(intro_template)?;
 
-    let song_body_template =
-        fs::read_to_string("./templates/song-body").expect("Unable to read song body template");
-    SONG_BODY_TEMPLATE
-        .set(song_body_template)
-        .expect("Unable to set SONG_BODY_TEMPLATE");
+    let bookpart_template = fs::read_to_string("./templates/bookpart")?;
+    BOOKPART_TEMPLATE.set(bookpart_template)?;
 
-    let song_header_template =
-        fs::read_to_string("./templates/song-header").expect("Unable to read song header template");
-    SONG_HEADER_TEMPLATE
-        .set(song_header_template)
-        .expect("Unable to set SONG_HEADER_TEMPLATE");
+    let song_body_template = fs::read_to_string("./templates/song-body")?;
+    SONG_BODY_TEMPLATE.set(song_body_template)?;
 
-    let voice_template = fs::read_to_string("./templates/voice")
-        .expect("Unable to read voice template")
+    let song_header_template = fs::read_to_string("./templates/song-header")?;
+    SONG_HEADER_TEMPLATE.set(song_header_template)?;
+
+    let voice_template = fs::read_to_string("./templates/voice")?
         .replace("%%TRANSPOSE%%", &conf.transpose_text.lilypond_text);
-    VOICE_TEMPLATE
-        .set(voice_template)
-        .expect("Unable to set VOICE_TEMPLATE");
+    VOICE_TEMPLATE.set(voice_template)?;
 
-    let lyrics_template =
-        fs::read_to_string("./templates/lyrics").expect("Unable to read lyrics template");
-    LYRICS_TEMPLATE
-        .set(lyrics_template)
-        .expect("Unable to set LYRICS_TEMPLATE");
+    let lyrics_template = fs::read_to_string("./templates/lyrics")?;
+    LYRICS_TEMPLATE.set(lyrics_template)?;
 
-    let chords_template =
-        fs::read_to_string("./templates/chords").expect("Unable to read chords template");
-    CHORDS_TEMPLATE
-        .set(chords_template)
-        .expect("Unable to set CHORDS_TEMPLATE");
+    let chords_template = fs::read_to_string("./templates/chords")?;
+    CHORDS_TEMPLATE.set(chords_template)?;
+
+    Ok(())
 }

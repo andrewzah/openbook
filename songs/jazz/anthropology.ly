@@ -56,9 +56,9 @@ meter: Bop
     a8 g8 e8 d8~ d4. a8 |
     \tuplet 3/2 { c16 d16 c16 } g8 bes8 c8 r4 r8 ees8~ |
     ees4 d8 c8 b8 d8 c8 a8 |
-    c4 bes8 c8 r4 r8 f8 \bar "||" \endLine
+    c4 bes8 a8 r4 r8 f8 \bar "||" \endLine
 
-    bes,8 d8 c8 bes8 f'8 cis8 d8 f8 |
+    bes8 d8 c8 bes8 ees8 cis8 d8 f8 |
     r4 r8 ees8 r8 f8 ees4 |
     r8 d8 ees8 d8 c8 a8 bes8 d8 |
     c8 g8 bes8 a8 r4 r8 bes8~ | \endLine

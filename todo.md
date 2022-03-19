@@ -2,6 +2,7 @@
 - write jazz chord symbol notation page
 - clarify tempo meanings (what exactly does "bright" mean vs "fast" or "medium up" ?)
 
+- do a pass on fonts
 - generate indexes for author/year/type
 - midi generation
 - restructure templates to account for multiple staves easily
@@ -15,21 +16,15 @@
 - fix ImproVoice embellishments/markings
 
 ### standards
-- jacky's place
-- chick's tune (contrafact on you stepped out of a dream)
-- the kicker
-- dexterity
-- confirmation
 - 7 steps to heaven
 - afro blue
 - airegin
-- all blues
+- all blues - (in staging)
 - all of you
 - april in paris
 - autumn in new york
 - bag's groove
 - bemsha swing
-- blue monk
 - bluesette
 - bright mississippi
 - bright size life
@@ -37,9 +32,12 @@
 - cantaloupe island
 - cariba
 - ceora
+- chick's tune (contrafact on you stepped out of a dream)
+- confirmation
 - constellation
 - corcovado
 - days of wine and roses
+- dexterity
 - e.s.p
 - evidence
 - fly me to the moon
@@ -58,6 +56,7 @@
 - isfahan
 - it's only a paper moon
 - jackie-ing
+- jacky's place
 - jordu
 - just you, just me
 - kim
@@ -101,6 +100,7 @@
 - tea for two
 - tenor madness
 - that's all
+- the kicker
 - there is no greater love
 - train samba
 - triste
@@ -115,7 +115,6 @@
 - what is this thing called love?
 - when it's sleepy time down south
 - when your lover has gone
-- [whispering](https://en.wikipedia.org/wiki/Whispering_(song))
 - work
 - yesterdays
 - you (harold adamson / walter donaldson, 1939 in sonny rollins' contemporary leaders)

@@ -1,3 +1,5 @@
+- update anthropology (accent marks, absolute pitches)
+
 - write about page to explain ideology of this book
 - write jazz chord symbol notation page
 - clarify tempo meanings (what exactly does "bright" mean vs "fast" or "medium up" ?)

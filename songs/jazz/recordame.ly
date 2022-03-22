@@ -42,8 +42,8 @@ meter: Bossa Nova
     r4 r8 c8 d4 c8 f,8~ | \endLine
 
     f1 |
-    r8 ees'8 f8 c8~ c4 bes8 g8 |
-    ees2 ees8 d8 ees8 bes'8~ | \endLine
+    r8 ees8 f8 c'8~ c4 bes8 g8 |
+    ees2~ ees8 d8 ees8 bes'8~ | \endLine
 
     bes2 aes4-. f8 des8~ |
     des1 |

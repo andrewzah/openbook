@@ -16,7 +16,7 @@ meter: Medium Swing
 \time 4/4
 \numericTimeSignature
 
-f''4 c''8 a''8 e''4 c''8 a'8 |
+f''4 c''8 a'8 e''4 c''8 a'8 |
 d''8 e''8 b'8 d''8
   cis''8 bes'8 g'8 a'8~ |
 a'4 f'8 d'8

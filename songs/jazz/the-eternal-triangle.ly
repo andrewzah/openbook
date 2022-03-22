@@ -8,7 +8,7 @@ meter: Up
   \set chordChanges = ##t
 
   \repeat volta 2 {
-    bes1 | c2:m f2:7 | bes1 | c2:m f2:7 |
+    bes1:maj7 | c2:m f2:7 | bes1:maj7 | c2:m f2:7 |
     bes1:7 | ees2:maj7 e2:dim |
   } \alternative {
     {
@@ -22,7 +22,7 @@ meter: Up
   b1:m7 | e1:7 | bes1:m7 | ees1:7 |
   a2:m7 d2:7 | aes2:m7 des2:7 | g2:m7 c2:7 | ges2:m7 ces2:7 |
 
-  bes1 | c2:m f2:7 | bes1 | c2:m f2:7 |
+  bes1:maj7 | c2:m f2:7 | bes1:maj7 | c2:m f2:7 |
   bes1:7 | ees2:maj7 e2:dim | bes1 | c4:m f4:7 bes2 |
 }
 ---

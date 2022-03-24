@@ -20,7 +20,6 @@
 ### standards
 - 7 steps to heaven
 - afro blue
-- airegin
 - all blues - (in staging)
 - all of you
 - april in paris
@@ -103,7 +102,6 @@
 - tenor madness
 - that's all
 - the kicker
-- there is no greater love
 - train samba
 - triste
 - tune up

@@ -109,7 +109,6 @@
 - watermelon man
 - well you needn't
 - west coast blues
-- what is this thing called love?
 - when it's sleepy time down south
 - when your lover has gone
 - work

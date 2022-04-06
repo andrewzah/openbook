@@ -49,7 +49,7 @@ meter: Bop
   }
 
   \once \override Score.RehearsalMark.font-size = #5
-  \mark \markup { \musicglyph #"scripts.coda" }
+  \codaMark
   bes8 a8 f8 d8 a'8 a4.~ |
   a1^\fermata | \songEndBar
   s1^\markup{ \caps { After Solos, D.C. Al Coda (Take Repeat)} } |

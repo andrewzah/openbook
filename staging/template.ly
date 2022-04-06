@@ -7,9 +7,9 @@
 \header {
   title = ""
   composer = ""
+  poet = ""
   subsubtitle = ""
   meter = ""
-  poet = ""
 }
 
 \score {

@@ -17,21 +17,19 @@
 - fix spellings for 7sus4 / 9sus4 chords
 - fix ImproVoice embellishments/markings
 
-### standards
+#### general standards
 - 7 steps to heaven
 - afro blue
 - all blues - (in staging)
 - all of you
 - april in paris
 - autumn in new york
-- bag's groove
 - bemsha swing
 - bluesette
 - bright mississippi
 - bright size life
 - bye-ya
 - cantaloupe island
-- ceora
 - chick's tune (contrafact on you stepped out of a dream)
 - constellation
 - corcovado
@@ -47,6 +45,7 @@
 - if i were a bell
 - impressions
 - in walked bud
+- indiana
 - insensatez / how insensitive
 - isfahan
 - it's only a paper moon
@@ -66,7 +65,6 @@
 - night and day
 - nutty
 - one note samba
-- out of nowhere
 - pannonica
 - perdido
 - played twice
@@ -77,7 +75,6 @@
 - road song
 - round midnight
 - skippy
-- slow Boat To China
 - solar
 - something tells me
 - song for my father
@@ -130,3 +127,46 @@
   - https://thevideogamerealbook.tumblr.com/post/87462265837/surprisingly-this-one-took-a-long-time-to-make-it
   - https://thevideogamerealbook.tumblr.com/post/87923309515/when-i-was-in-10th-grade-i-discovered-an-album
 - animal crossing: 5pm
+
+#### blues
+* alright, okay, you win
+* billi's bounce
+* birk's works
+* blues by five
+* blues in the closet
+* bluesette
+* cheryl
+* chi-chi
+* equinox
+* footprints
+* freddie freeloader
+* freight trane
+* one for daddy-o
+* sandu
+* scotch & water
+* stolen moments
+* take the coltrane
+* the blues walk
+* things ain't what they used to be
+* turnaround
+* unit seven
+* walkin'
+* watermelon man
+* west coast blues
+* when will the blues leave?
+* a simple matter of conviction
+* all members
+* barbados
+* blues connotation
+* boogie stop shuffle
+* butch and butch
+* eighty-one
+* homestretch
+* royal garden blues
+* society red
+* soul surge
+* swingin shepherd blues
+* the sidewinder
+* third floor richard
+* twelve more bars to go
+* two bass hit

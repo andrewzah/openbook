@@ -6,7 +6,8 @@ meter: Medium Swing
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions
   \set chordChanges = ##t
-  f1:6 | e2:m7 a2:7.9- | d2:m7 g2:7 |
+
+  f1:7 | e2:m7 a2:7.9- | d2:m7 g2:7 |
   c2:m7 f2:7 | bes1:7 | bes2:m7 ees2:7 |
   a2:m7 d2:7 | aes2:m7 des2:7 | g1:m7 |
   c1:7 | a2:m7 d2:m7 | g2:m7 c2:7 |

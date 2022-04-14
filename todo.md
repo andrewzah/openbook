@@ -18,6 +18,8 @@
 - fix ImproVoice embellishments/markings
 
 #### general standards
+- my romance
+- bluebird
 - 7 steps to heaven
 - afro blue
 - all blues - (in staging)

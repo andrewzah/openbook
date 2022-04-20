@@ -36,28 +36,29 @@ meter: Medium Up Swing
   \time 4/4
   \numericTimeSignature
 
+  \boxMark "Head"
   \partial 1 r8 d8 e8 fis8 g8 a8 b8 c8
 
   \repeat volta 2 {
     \voltaStartBar
 
-    d8 b4 d8 bes4 d8 b8 |
-    r8 d8 bes4 d8 bes4 d8 |
-    a2 b4. a8 | \endLine
+    d8 b4-. d8 bes4-. d8 b8 |
+    r8 d8 bes4-. d8 bes4-. d8 |
+    a2 bes4. a8 | \endLine
 
     r8 d,8 e8 fis8 g8 a8 b8 c8 |
-    d8 b4 d8 bes4 d8 b8 |
-    r8 d8 bes4 d8 bes4 d8 |
-    a2 b4. a8 | \endLine
+    d8 b4-. d8 bes4-. d8 b8 |
+    r8 d8 bes4-. d8 bes4-. d8 |
+    a2 bes4. a8 | \endLine
 
     r8 d,8 a'8 fis8 g8 a8 b8 d8 |
-    g8 e4 g8 ees4 g8 e8 |
-    r8 g8 ees4 g8 ees4 g8 |
+    g8 e4-. g8 ees4-. g8 e8 |
+    r8 g8 ees4-. g8 ees4-. g8 |
     d1 | \endLine
 
-    f8 d4 f8 des2 |
-    d8 b4 d8 bes4 d8 b8 |
-    r8 d8 bes4 d8 bes4 d8 |
+    fis8 d4 fis8 des2 |
+    d8 b4-. d8 bes4-. d8 b8 |
+    r8 d8 bes4-. d8 bes4-. d8 |
   } \alternative {
     {
       a2. r4 | \endLine
@@ -72,13 +73,12 @@ meter: Medium Up Swing
     }
   }
 
+  \boxMark "Solos"
   \voltaStartBar
   \new ImproVoice {
-    \repeat unfold 4 { c4 c4 c4 c4 } \endLine
-    \repeat unfold 4 { c4 c4 c4 c4 } \endLine
-    \repeat unfold 4 { c4 c4 c4 c4 } \endLine
-    \repeat unfold 3 { c4 c4 c4 c4 }
-    c4 c4 c4 c4 \endLine
+    \repeat unfold 5 { c4 c4 c4 c4 } \endLine
+    \repeat unfold 6 { c4 c4 c4 c4 } \endLine
+    \repeat unfold 5 { c4 c4 c4 c4 } \endLine
   }
   \voltaEndBar
 

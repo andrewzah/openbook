@@ -31,7 +31,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \null
       \null
       \null
-      \line{ \abs-fontsize #20 "For Concert Instruments" }
+      \line{ \abs-fontsize #20 "For %%TRANSPOSE%% Instruments" }
       \null
       \null
       \null
@@ -67,21 +67,134 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \line{ \abs-fontsize #20 "Meta Information" }
       \null
       \null
-      \line{ \abs-fontsize #14 "Version 0.7.5" }
+      \line{ \abs-fontsize #14 "Version 0.8.0" }
       \null
-      \line{ \abs-fontsize #14 "Containing 53 Tunes" }
+      \line{ \abs-fontsize #14 "Containing %%NUM_TUNES%% Tunes" }
       \null
       \line{ \abs-fontsize #14 "Website:" }
       \line{ \abs-fontsize #14
         \with-url #"https://andrewzah.com/openbook" https://andrewzah.com/openbook
       }
       \null
+      \line{ \abs-fontsize #14 "Git repo:" }
+      \line{ \abs-fontsize #14
+        \with-url #"https://github.com/andrewzah/openbook" https://github.com/andrewzah/openbook
+      }
       \null
       \line{ \abs-fontsize #14 "Compiled on:" }
       \line{ \abs-fontsize #13 \buildtime }
     }}}
   }
 
+  \bookpart {
+    \markup { \fill-line { \center-column {
+      \null
+      \null
+      \line{ \abs-fontsize #20 "About This Book" }
+      \null
+    }}}
+
+    \markup {
+      \column {
+        \wordwrap \abs-fontsize #12 {
+          The name 'Openbook' comes from 'Open-Source' software.
+          This refers to software that has publicly available source code, is free (as in freedom & beer),
+          and is licensed to allow derivatives.
+
+          Everything written for this project to make this book, apart from the songs themselves, is licensed under the AGPL-3.0 License.
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          Accordingly, this book will always remain free and open to modification. All the song files are written in plaintext, so no proprietary software is required to view them. All the tooling used is Open Source. So there is no worry of future versions of software being unable to read files or losing files that are binary blobs to corruption due to bit rot.
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          This project was initially inspired by \with-url #"https://github.com/veltzer/openbook" \underline "Mark Veltzer's OpenBook". I chose to go my own way because I wanted a much more simple pre-processing and build system. And I hate python.
+        }
+
+        \vspace #1.5
+        \bold \abs-fontsize #15 { "Raison d'Etre" }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          I want beautiful, easy to read sheet music, available in a non-proprietary format.
+        }
+
+        \vspace #0.5
+        \wordwrap \abs-fontsize #12 {
+          I don't want to depend on proprietary software for my sheetmusic.
+        }
+
+        \vspace #0.5
+        \wordwrap \abs-fontsize #12 {
+          I want to be able to fix mistakes found in the realbook.
+        }
+
+        \vspace #0.5
+        \wordwrap \abs-fontsize #12 {
+          I want to be able to dynamically generate pdfs with select standards.
+        }
+
+        \vspace #0.5
+        \wordwrap \abs-fontsize #12 {
+          Like Mark Veltzer, I believe in libre (aka free as in freedom) software.
+        }
+
+        \vspace #1.5
+        \bold \abs-fontsize #15 { "Tools Used" }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Lilypond}, to render files into this beautiful sheet music + book, and to handle transposition. This project would not be possible otherwise.
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Frescobaldi}, a GUI frontend for Lilypond, to quickly iterate on songs before moving them to template files for \italic {Rust}'s preprocessing.
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Rust}, a programming language, to apply pre-processing to the song files to automatically: sort them by name, update properties for transposition, create indices by composer/lyricist/year, etc. The choice for Rust was totally arbitrary;  just about any programming language would've sufficed.
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Just}, an alternative build tool to \italic {Make}.
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Neovim}, to write out the songs with syntax highlighting.
+        }
+
+        \vspace #1.5
+        \bold \abs-fontsize #15 { "References (todo: proper citations)" }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Hal Leonard's Real Book, 5th & 6th Edition, C Instruments, Volume I & II}
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Hal Leonard's Vocal Real Book, High Voice, Volume I & II}
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {Charlie Parker Omnibook}
+        }
+
+        \vspace #1
+        \wordwrap \abs-fontsize #12 {
+          \italic {SheetMusicDirect.com}
+        }
+      }
+    }
+  }
 
   \markuplist \table-of-contents
   \pageBreak

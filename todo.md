@@ -1,10 +1,10 @@
 - update anthropology (accent marks, absolute pitches)
 
-- write about page to explain ideology of this book
 - write jazz chord symbol notation page
-- clarify tempo meanings (what exactly does "bright" mean vs "fast" or "medium up" ?)
-
+- update intro page text to flow across multiple pages (break into multiple columns?)
+- clarify and standardize tempo meanings (what exactly does "bright" mean vs "fast" or "medium up" ?)
 - do a pass on fonts
+
 - generate indexes for author/year/type
 - midi generation
 - restructure templates to account for multiple staves easily
@@ -18,8 +18,6 @@
 - fix ImproVoice embellishments/markings
 
 #### general standards
-- my romance
-- bluebird
 - 7 steps to heaven
 - afro blue
 - all blues - (in staging)
@@ -27,6 +25,7 @@
 - april in paris
 - autumn in new york
 - bemsha swing
+- bluebird
 - bluesette
 - bright mississippi
 - bright size life
@@ -56,6 +55,7 @@
 - jordu
 - just you, just me
 - kim
+- limehouse blues
 - linus and lucy
 - love Is Here To Stay
 - lush life
@@ -63,6 +63,7 @@
 - minority
 - my favorite things
 - my one and only love
+- my romance
 - nagasaki
 - night and day
 - nutty

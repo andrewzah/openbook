@@ -1,12 +1,17 @@
 c: build-rust qr
   rm -f openbook-C.*
-  ./templater/target/release/templater
+  ./templater/target/release/templater --lyrics
   lilypond openbook-Concert.ly
 
 bb: build-rust qr
-  rm -f openbook-bb.*
-  ./templater/target/release/templater --transpose bb
-  lilypond openbook-bb.ly
+  rm -f openbook-Bb.*
+  ./templater/target/release/templater --transpose bb --lyrics
+  lilypond openbook-Bb.ly
+
+eb: build-rust qr
+  rm -f openbook-Eb.*
+  ./templater/target/release/templater --transpose eb --lyrics
+  lilypond openbook-Eb.ly
 
 build-rust:
   #!/bin/sh

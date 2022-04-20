@@ -48,7 +48,7 @@ pub struct Song {
 }
 
 impl Song {
-    pub fn new(front_matter: Vec<&str>, document: &str, transpose_text: TransposeText) -> Self {
+    pub fn new(front_matter: Vec<&str>, document: &str, transpose_text: TransposeText, include_lyrics: bool) -> Self {
         let mut metadata = Song::parse_frontmatter(front_matter);
         let parts = document.split("---").collect::<Vec<&str>>();
 
@@ -75,7 +75,7 @@ impl Song {
                 continue;
             }
 
-            if part.contains("lyricmode") {
+            if part.contains("lyricmode") && include_lyrics {
                 lyrics.push(part.to_string());
                 continue;
             }

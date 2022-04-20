@@ -33,20 +33,23 @@ static LYRICS_TEMPLATE: OnceCell<String> = OnceCell::new();
 
 #[derive(Debug)]
 struct AppArgs {
-    transpose: Option<String>,
-    songs_dir: Option<String>,
+    transpose: String,
+    songs_dir: String,
+    lyrics: bool,
 }
 
 fn parse_args() -> Result<AppArgs, TemplaterError> {
     let mut pargs = pico_args::Arguments::from_env();
     let args = AppArgs {
-        transpose: pargs.opt_value_from_str("--transpose")?,
-        songs_dir: pargs.opt_value_from_str("--songs-dir")?,
+        transpose: pargs.opt_value_from_str("--transpose")?.unwrap_or("c".into()),
+        songs_dir: pargs.opt_value_from_str("--songs-dir")?.unwrap_or(String::from("./songs")),
+        lyrics: pargs.contains("--lyrics"),
     };
 
     // Help has a higher priority and should be handled separately.
     if pargs.contains(["-h", "--help"]) {
-        print!("args:\n--transpose: pass in bb/eb/bass");
+        println!("args:\n    --transpose: pass in bb/eb");
+        println!("    --lyrics: include lyrics");
         std::process::exit(0);
     }
 
@@ -60,13 +63,11 @@ fn parse_args() -> Result<AppArgs, TemplaterError> {
 
 fn main() -> Result<(), TemplaterError> {
     let args = parse_args()?;
-    let transpose_arg = args.transpose.unwrap_or_else(|| String::from("c"));
-    let songs_dir = args.songs_dir.unwrap_or_else(|| String::from("./songs"));
-    let transpose_text = transpose_text(&transpose_arg)?;
+    let transpose_text = transpose_text(&args.transpose)?;
 
     let conf = TemplaterConfig { transpose_text, };
 
-    let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from(songs_dir), "ly")
+    let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from(&args.songs_dir), "ly")
         .iter_mut()
         .map(|path| {
             let input = fs::read_to_string(path).unwrap();
@@ -74,7 +75,7 @@ fn main() -> Result<(), TemplaterError> {
             extractor.select_by_terminator("---").strip_whitespace();
             let (front_matter, document): (Vec<&str>, &str) = extractor.split();
 
-            Song::new(front_matter, document, conf.transpose_text.clone())
+            Song::new(front_matter, document, conf.transpose_text.clone(), args.lyrics)
         })
         .collect();
     println!("[info]: songs found: {}", songs.len());
@@ -108,12 +109,9 @@ fn transpose_text(input: &str) -> Result<TransposeText, TemplaterError> {
             display_text: "Bb".into(),
             lilypond_text: "c d".into(),
         }),
-        // todo: transpose up/down based on highest
-        // detected pitch. waiting on this until
-        // I convert all relative pitch tunes to absolute
         "eb" => Ok(TransposeText {
             display_text: "Eb".into(),
-            lilypond_text: "ees c".into(),
+            lilypond_text: "c a".into(),
         }),
         "testing-f" => Ok(TransposeText {
             display_text: "Testing".into(),

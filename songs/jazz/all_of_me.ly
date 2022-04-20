@@ -4,18 +4,16 @@ meter: Medium Swing
 ---
 \chordmode {
   \boxMark "A"
-  c1:maj c1:maj
-  e:7 e:7
-  a:7 a:7 d:m7 d:m7
-  e:7 e:7 a:m7 a:m7
-  d:7 d:7 d:m7 g:7
+  c1:maj | c1:maj | e1:7 | e:7 |
+  a1:7 | a1:7 | d1:m7 | d1:m7 |
+  e1:7 | e1:7 | a1:m7 | a1:m7 |
+  d1:7 | d1:7 | d1:m7 | g1:7 |
 
   \boxMark "B"
-  c1:maj c1:maj e:7 e:7
-  a:7 a:7 d:m7 d:m7
-
-  f1:7 f:m7 c2:maj e:m7 a1:7
-  d:m7 g:7 c2:6 \LPC ees:dim d2:m7 \RPC g:7
+  c1:maj | c1:maj | e1:7 | e1:7 |
+  a1:7 | a1:7 | d1:m7 | d1:m7 |
+  f1:7 | f1:m7 | c2:maj e2:m7 | a1:7 |
+  d1:m7 | g:7 | c2:6 \LPC ees2:dim | d2:m7 \RPC g2:7 |
 }
 ---
 \relative c' {

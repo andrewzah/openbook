@@ -34,6 +34,7 @@
 - chick's tune (contrafact on you stepped out of a dream)
 - constellation
 - corcovado
+- driftin' - herbie hancock
 - e.s.p
 - evidence
 - four on six
@@ -77,6 +78,7 @@
 - rhythm-a-ning
 - road song
 - round midnight
+- segment - parker
 - skippy
 - solar
 - something tells me

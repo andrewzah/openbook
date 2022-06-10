@@ -72,7 +72,7 @@ meter: Medium Swing
   g1~
   g4 
 
-  \override ParenthesesItem.font-size = #5
+  \override Parentheses.font-size = #5
   \startParenthesis \parenthesize d4
   g4
   \endParenthesis \parenthesize a4

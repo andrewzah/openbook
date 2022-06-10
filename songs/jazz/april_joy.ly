@@ -63,7 +63,7 @@ meter: Medium - Even 8ths
   a4 d,8 d'8~ d2~
   d2
 
-  \override ParenthesesItem.font-size = #5
+  \override Parentheses.font-size = #5
   \startParenthesis \parenthesize r16
   g,,16 c16 d16 f16 e16 d16
   \endParenthesis \parenthesize c16

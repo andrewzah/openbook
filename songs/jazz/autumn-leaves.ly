@@ -71,7 +71,7 @@ meter: Swing
     fis'2 g'4 b4 |
     e'1 |
 
-    \override ParenthesesItem.font-size = #5
+    \override Parentheses.font-size = #5
     \startParenthesis \parenthesize r4
     e'4 fis'4
     \endParenthesis \parenthesize g'4

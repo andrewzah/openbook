@@ -1,3 +1,4 @@
+\version "2.23.9"
 \include "functions.ily"
 
 % Don't have textedit:// links for every note in the pdf file.
@@ -114,9 +115,9 @@
 \layout {
   \context {
     \Score
-    startRepeatType = #"[|:"
-    endRepeatType = #":|]"
-    doubleRepeatType = #":|][|:"
+    startRepeatBarType = #"[|:"
+    endRepeatBarType = #":|]"
+    doubleRepeatBarType = #":|][|:"
   }
 }
 

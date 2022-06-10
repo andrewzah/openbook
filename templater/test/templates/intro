@@ -1,4 +1,4 @@
-\version "2.22.1"
+\version "2.23.9"
 
 \include "./test/includes/globals.ily"
 \include "./test/includes/symbols.ily"

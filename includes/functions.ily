@@ -86,12 +86,14 @@ embiggenChordNames = #(define-scheme-function (size) (number?)
 %It's probably possible to automate a bit more but that is the general idea.
 
 startParenthesis = {
+  \once \override Parentheses.font-size = #2
   \once \override Parentheses.stencils = #(lambda (grob)
         (let ((par-list (parentheses-interface::calc-parenthesis-stencils grob)))
           (list (car par-list) point-stencil )))
 }
 
 endParenthesis = {
+  \once \override Parentheses.font-size = #2
   \once \override Parentheses.stencils = #(lambda (grob)
         (let ((par-list (parentheses-interface::calc-parenthesis-stencils grob)))
           (list point-stencil (cadr par-list))))

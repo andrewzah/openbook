@@ -1,7 +1,7 @@
 title: Confirmation
 composer: Charlie Parker
-subsubtitle: 1945
-meter: Bop
+year: 1945
+meter: Fast
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

@@ -1,7 +1,8 @@
 title: Ceora
 composer: Lee Morgan
-subsubtitle: 1967
-meter: Medium Bossa
+year: 1967
+meter: Medium
+style: Bossa
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

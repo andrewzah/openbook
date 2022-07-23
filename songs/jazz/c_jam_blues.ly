@@ -1,8 +1,11 @@
 title: C Jam Blues
-subsubtitle: 1942
 composer: Duke Ellington
-meter: Medium Swing
+year: 1942
+meter: Fast
+type: blues
 ---
+% night train - oscar peterson
+% blues in orbit - duke ellington
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions
 

@@ -1,8 +1,11 @@
 title: Blues For Alice
 composer: Charlie Parker
-subsubtitle: 1951
-meter: Medium Swing
+year: 1951
+meter: Medium Up
+type: bird blues
 ---
+% BIRD - Charlie Parker Quintet
+% The Magnificent Charlie Parker - ''
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions
   \set chordChanges = ##t

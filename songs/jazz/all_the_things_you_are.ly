@@ -1,6 +1,9 @@
 title: All The Things You Are
 composer: Jerome Kern
 poet: Oscar Hammerstein II
+meter: Medium Up
+year: 1939
+structure: AABA*
 ---
 % subtitle: From Very Warm for May (1939)
 \chordmode {

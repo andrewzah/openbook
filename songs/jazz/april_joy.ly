@@ -1,6 +1,8 @@
 title: April Joy
 composer: Pat Metheny
-meter: Medium - Even 8ths
+meter: Medium Up
+style: (Even 8ths)
+year: 1978
 ---
 \chordmode {
   \set additionalPitchPrefix = #"add"

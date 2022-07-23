@@ -1,8 +1,8 @@
 title: Autumn Leaves
-subsubtitle: 1945
 composer: Joseph Kosma
 poet: Jacques Prévert & Johnny Mercer
-meter: Swing
+meter: Medium
+year: 1945
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

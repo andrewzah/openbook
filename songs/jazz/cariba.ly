@@ -1,6 +1,8 @@
 title: Cariba
 composer: John L. (Wes) Montgomery
-meter: Bossa Nova
+meter: Medium Up
+style: Latin
+reference: Full House - John L. (Wes) Montgomery
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

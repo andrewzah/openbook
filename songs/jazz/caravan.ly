@@ -1,7 +1,10 @@
 title: Caravan
-composer: Duke Ellington
-meter: Afro-Latin
+composer: Duke Ellington & Juan Tizol
+poet: Irving Mills
+meter: Latin
+year: 1936
 ---
+% https://en.wikipedia.org/wiki/Caravan_(Juan_Tizol_and_Duke_Ellington_song)
 \chordmode {
   \boxMark "A"
   c1:7 | des1:7 | c1:7 | c1:7

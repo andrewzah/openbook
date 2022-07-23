@@ -1,8 +1,8 @@
 title: Avalon
 composer: Al Jolson, Buddy DeSylva, Vincent Rose
 poet: Al Jolson, Buddy DeSylva, Vincent Rose
-subsubtitle: (1920)
 meter: Medium Up
+year: 1920
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

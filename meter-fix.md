@@ -1,0 +1,104 @@
+Fast Swing: 264 – 336, and up
+Up Swing: 206 – 252
+Medium Up Swing: 160 – 205
+Medium Swing: 120 – 159
+Moderate Swing: 104 – 119
+Slow Swing (walking ballad): 84 – 103
+Medium or just Ballad: 63 – 83
+Slow Ballad: 70 and slower
+
+---
+
+- [ ] 64-bars-on-wilshire
+- [ ] airegin
+- [ ] all-gods-chillun-got-rhythm
+- [x] all_of_me
+- [x] all_the_things_you_are
+- [x] anthropology
+- [x] april_joy
+- [x] au_privave
+- [x] autumn-leaves
+- [x] avalon
+- [x] bags-groove
+- [x] bernies-tune
+- [x] blue-monk
+- [x] blue_n_boogie
+- [x] blues-for-alice
+- [x] buzzy
+- [x] c_jam_blues
+- [x] caravan
+- [x] cariba
+- [x] ceora
+- [ ] confirmation
+- [ ] cool-blues
+- [ ] crazeology
+- [ ] d-natural-blues
+- [ ] days-of-wine-and-roses
+- [ ] dewey_square
+- [ ] dexterity
+- [ ] donna_lee
+- [ ] embraceable_you
+- [ ] emily-cmajor
+- [ ] everything-happens-to-me
+- [ ] fine-and-dandy
+- [ ] fly-me-to-the-moon
+- [ ] four
+- [ ] full_house
+- [ ] garys-notebook
+- [ ] got-a-match
+- [ ] groovin-high
+- [ ] heres-that-rainy-day
+- [ ] how-deep-is-the-ocean
+- [ ] how_high_the_moon
+- [ ] i-want-to-be-happy
+- [ ] i-wish-you-love
+- [ ] i_got_rhythm
+- [ ] ill-remember-april
+- [ ] impressions
+- [ ] isotope
+- [ ] just_friends
+- [ ] just_in_time
+- [ ] lester-leaps-in
+- [ ] lover
+- [ ] meet-the-flintstones
+- [ ] milestones
+- [ ] misty
+- [ ] mr-pc
+- [ ] naima
+- [ ] nardis
+- [ ] nows_the_time
+- [ ] old_devil_moon
+- [ ] oleo
+- [ ] on-a-slow-boat-to-china
+- [ ] on_green_dolphin_street
+- [ ] ornithology
+- [ ] out-of-nowhere
+- [ ] parkers-mood
+- [ ] pentup-house
+- [ ] perhaps
+- [ ] recordame
+- [ ] relaxin-at-the-camarillo
+- [ ] rhythm-a-ning
+- [ ] satin_doll
+- [ ] scrapple_from_the_apple
+- [ ] smile
+- [ ] song-for-my-father
+- [ ] sonnymoon-for-two
+- [ ] st-thomas
+- [ ] stablemates
+- [ ] steeplechase
+- [ ] stella_by_starlight
+- [ ] strike-up-the-band
+- [ ] sweet-georgia-brown
+- [ ] tea-for-two
+- [ ] thats-all
+- [ ] the-days-of-wine-and-roses
+- [ ] the-eternal-triangle
+- [ ] the-nearness-of-you
+- [ ] the_song_is_you
+- [ ] there-is-no-greater-love
+- [ ] there-will-never-be-another-you
+- [ ] totem-pole
+- [ ] what-is-this-thing-called-love
+- [ ] whispering
+- [ ] yardbird-suite

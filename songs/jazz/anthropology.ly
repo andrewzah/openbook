@@ -1,7 +1,7 @@
 title: Anthropology
-subsubtitle: 1945
 composer: Charlie Parker
-meter: Bop
+meter: Fast
+year: 1945
 ---
 \chordmode {
   \repeat volta 2 {

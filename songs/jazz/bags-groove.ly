@@ -1,7 +1,8 @@
 title: Bags' Groove
 composer: Milt Jackson
-subsubtitle: 1952
-meter: Medium Swing
+year: 1952
+meter: Medium
+type: blues
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

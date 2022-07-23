@@ -1,6 +1,7 @@
 title: Buzzy
 composer: Charlie Parker
-meter: Medium Up Swing
+meter: Up
+type: blues
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

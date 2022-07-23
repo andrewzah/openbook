@@ -1,6 +1,8 @@
 title: Blue Monk
 composer: Thelonious Monk
-subsubtitle: 1954
+year: 1954
+meter: Medium
+type: blues
 ---
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions

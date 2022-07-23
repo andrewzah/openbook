@@ -1,6 +1,8 @@
 title: All Of Me
-composer: Seymour Simons & Gerald Marks
-meter: Medium Swing
+composer: Gerald Marks & Seymour Simons
+meter: Medium
+structure: ABAC
+year: 1931
 ---
 \chordmode {
   \boxMark "A"
@@ -20,7 +22,6 @@ meter: Medium Swing
   \key c \major
   \time 4/4
   \numericTimeSignature
-    %\tempo 4 = 130
 
     c'4 g8 e8~ e2~
     | e2 \tuplet 3/2 { c'4 d c }

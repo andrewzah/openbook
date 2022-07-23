@@ -1,7 +1,13 @@
 title: Bernie's Tune
 composer: Bernie Miller
-subsubtitle: 1953
+poet: Jerry Leiber & Mike Stoller
+year: 1953
+meter: Up
+partial-contrafact: I Got Rhythm
 ---
+%references:
+%  - The Best of the Gerry Mulligan Quartet with Chet Baker
+%  - Carnegie Hall Concert - Gerry Mulligan & Chet Baker
 \chordmode {
   \set chordNameExceptions = #jazzChordExceptions
   \set chordChanges = ##t

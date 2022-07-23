@@ -1,14 +1,18 @@
-### about
+## community
+
+* [discord](https://discord.gg/X6kQmXSwah)
+
+## about
 This is an open source, free (as in both freedom & beer) collection of jazz standards and other songs in leadsheet form.
 
 The required tools to build this are **lilypond** and **rust**.
 
 The goal is to support a few things for dynamic building:
-* - [ ] easy transposing for different transposing instruments via a CLI flag
+* - [x] easy transposing for different transposing instruments via a CLI flag
 * - [ ] filtering for specific songs to create a setlist
-* - [ ] creating additional tables of contents, for grouping by meter, tempo, composer etc.
+* - [ ] creating additional indices, for grouping by meter, tempo, composer etc.
 
-### project structure
+## project structure
 
 All finished song files are located in `songs`, work-in-progress songs are located in `staging`.
 
@@ -32,7 +36,7 @@ front_matter: 'separated by ---'
 ```
 The front matter needs to be first, but the other blocks separated by `---` can be in any order. Only 1 block for chords is expected, but voices/lyrics can have any number of blocks (although this isn't really tested so far).
 
-### compiling this book
+## compiling this book
 The easiest method is with `just`, a modern alternative to `make`.
 
 ```
@@ -45,10 +49,10 @@ $ just build
 
 If you don't have (or don't want to use) `just`, you can run the commands from the justfile manually.
 
-### contributing
+## contributing
 Submit a pull request or open an issue.
 
-### other projects & sources
+## other projects & sources
 These projects either provided examples or are just similar in nature.
 
 - [veltzer/openbook](https://github.com/veltzer/openbook) by [@veltzer - Mark Veltzer](https://github.com/veltzer)
@@ -63,8 +67,8 @@ These projects either provided examples or are just similar in nature.
 - The Real Vocal Bbook (I & II) by Hal Leonard
 - The Charlie Parker Omnibook
 
-### contributors
-- Andrew Zah - <zah@andrewzah.com>
+## contributors
+- Andrew Zah - <zah@andrewzah.com> (songs, code)
 
-### LICENSE
+## LICENSE
 [GNU Affero General Public License v3.0](./LICENSE)

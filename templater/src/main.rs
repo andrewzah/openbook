@@ -83,13 +83,18 @@ fn main() -> Result<(), TemplaterError> {
 
     init_static(&conf, songs.len())?;
 
-    let filename = format!("openbook-{}.ly", &conf.transpose_text.display_text);
-    let mut outfile = File::create(filename).expect("Unable to create output file");
+    let final_filename = format!("openbook-{}.ly", &conf.transpose_text.display_text);
+    let mut outfile = File::create(final_filename).expect("Unable to create output file");
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
 
+    fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
     for song in songs {
         println!("Handling {}", song.title);
+
+        let song_filename = format!("./.cache/{}-{}.ly", song.title, &conf.transpose_text.display_text);
+        let song_file = File::create(song_filename).expect("Unable to create songfile!"); 
+
         song.write(&mut outfile);
     }
 

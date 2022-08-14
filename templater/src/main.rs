@@ -88,7 +88,7 @@ fn main() -> Result<(), TemplaterError> {
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
 
-    fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
+    //fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
     for song in songs {
         println!("Handling {}", song.title);
 

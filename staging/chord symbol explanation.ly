@@ -1,30 +1,22 @@
-#(define (chordNamer pitch)
-    (let* ((alt (ly:pitch-alteration pitch)))
-  (make-line-markup
-    (list (make-simple-markup
-            (vector-ref #("C" "D" "E" "F" "G" "A" "B") 
-              (ly:pitch-notename pitch)))
-          (if (= alt 0)
-            (markup "")
-            (if (= alt FLAT)
-              (markup ">")
-              (markup "<")))))))
+\version "2.23.9"
+
+\markup "The chord symbols used in this book."
 
 whiteTriangle = \markup { \triangle ##f }
 halfDiminished = \markup { "ø" }
 jazzChordDefinitions={
-    <c e g b>-\markup {
+  <c e g b>-\markup {
     \super {
       \override #'(thickness . 0.3)
       \whiteTriangle
       "7"
     }
   }
-
+  
   %% power chords
   <c g>-\markup {\super {"5"} }
   <c g c'>-\markup {\super {"5"} }
-
+  
   %% major
   <c e g b>-\markup {\super { \whiteTriangle "7" } }
   <c e g b f'>-\markup {\super { \whiteTriangle "7(11)" } }
@@ -81,8 +73,48 @@ jazzChordExceptions=#(append
     ;ignatzekExceptions
 )
 
-% show parens around chord name
-% usage: \once \set chordNameFunction = #parenthesis-ignatzek-chord-names
-#(define (parenthesis-ignatzek-chord-names in-pitches bass inversion context) (markup #:line ("(" (ignatzek-chord-names in-pitches bass inversion context) ")")))
 
-% usage: chordNameExceptions = #jazzChordExceptions
+chordmusic = \relative {
+  \chordmode {
+    c4 c4:5 c4:5.8 c4:6 |
+    c4:m c4:aug c2:dim |
+    
+    \break
+    
+    c2:maj7 c2:7 |
+    c2:m7 c2:m9 |
+    c2:m11 c2:m13
+    
+    \break
+    
+    c4:7.11
+    c4:maj7.13
+    c4:maj7.11.13-
+    c4:m9.13
+    
+    \break
+    
+    c4:maj7
+    c'4:maj7/e
+    c'4:maj7/g
+    c'4:maj7/b
+    
+    \break
+    
+    c2:sus2
+    c2:sus4
+    c2:7sus4
+    
+    <c' ees' ges' bes' des'' fes'' aes''>
+  }
+}
+<<
+  \new ChordNames {
+    \set chordNameExceptions = #jazzChordExceptions
+
+    \chordmusic
+  }
+  {
+    \chordmusic
+  }
+>>

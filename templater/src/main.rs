@@ -35,6 +35,8 @@ static LYRICS_TEMPLATE: OnceCell<String> = OnceCell::new();
 struct AppArgs {
     transpose: String,
     songs_dir: String,
+    song_names: Option<String>,
+    composers: Option<String>,
     lyrics: bool,
 }
 
@@ -43,6 +45,8 @@ fn parse_args() -> Result<AppArgs, TemplaterError> {
     let args = AppArgs {
         transpose: pargs.opt_value_from_str("--transpose")?.unwrap_or("c".into()),
         songs_dir: pargs.opt_value_from_str("--songs-dir")?.unwrap_or(String::from("./songs")),
+        song_names: pargs.opt_value_from_str("--song-names")?,
+        composers: pargs.opt_value_from_str("--composers")?,
         lyrics: pargs.contains("--lyrics"),
     };
 
@@ -50,6 +54,8 @@ fn parse_args() -> Result<AppArgs, TemplaterError> {
     if pargs.contains(["-h", "--help"]) {
         println!("args:\n    --transpose: pass in bb/eb");
         println!("    --lyrics: include lyrics");
+        println!("    --composers: quoted, comma delimited list of composers to filter by");
+        println!("    --song-names: quoted, comma delimited list of song names to filter by");
         std::process::exit(0);
     }
 
@@ -83,6 +89,30 @@ fn main() -> Result<(), TemplaterError> {
         })
         .collect();
     println!("[info]: songs found: {}", songs.len());
+
+    if let Some(song_names) = args.song_names {
+        let song_names: Vec<&str> = song_names.split(",").collect();
+
+        songs = songs
+            .into_iter()
+            .filter(|song| song_names.contains(&song.title.to_lowercase().as_str()))
+            .collect();
+    }
+
+    if let Some(composers) = args.composers {
+        let composers: Vec<&str> = composers.split(",").collect();
+
+        songs = songs
+            .into_iter()
+            .filter(|song| composers.contains(&song.composer.to_lowercase().as_str()))
+            .collect();
+    }
+
+    if songs.is_empty() {
+        println!("0 songs were selected. Check your filters (--song-names | --composers).");
+        std::process::exit(1);
+    }
+
     songs.sort_by(|a, b| a.title.cmp(&b.title));
 
     init_static(&conf, songs.len())?;
@@ -92,7 +122,7 @@ fn main() -> Result<(), TemplaterError> {
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
 
-    fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
+    //fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
     for song in songs {
         println!("Handling {}", song.title);
 

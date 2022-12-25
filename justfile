@@ -1,6 +1,6 @@
-c: build-rust qr
+c: build-rust
   rm -f openbook-C.*
-  ./templater/target/release/templater --lyrics
+  ./templater/target/release/templater --song-names "naima,all the things you are,donna lee"
   lilypond openbook-Concert.ly
 
 bb: build-rust qr

@@ -2,6 +2,7 @@
 *.eps
 *-tmp*
 *.pdf
+.cache
 /templater/target
 openbook-*.ly
 /templater/openbook-*.ly

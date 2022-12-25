@@ -11,8 +11,10 @@
 use std::fs::{self, File};
 use std::io::Write;
 use std::path::PathBuf;
+use std::collections::HashMap;
 
 use extract_frontmatter::{Extractor,config::{Modifier,Splitter}};
+use itertools::Itertools;
 use once_cell::sync::OnceCell;
 
 mod errors;
@@ -122,6 +124,21 @@ fn main() -> Result<(), TemplaterError> {
     let mut outfile = File::create(final_filename).expect("Unable to create output file");
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
+
+    //let songs_by_meter: Vec<_> = songs
+    //    .clone()
+    //    .into_iter()
+    //    .into_group_map_by(|song| song.meter.clone())
+    //    .into_iter()
+    //    .filter(|(k, _v)| Option::is_some(&k))
+    //    .map(|(k, v)| (k, v))
+    //    .sorted_by(|a, b| Ord::cmp(&a.0, &b.0))
+    //    .collect();
+
+    //for (k, v) in songs_by_meter {
+    //    println!("k: {:?}", k);
+    //    println!("  -> v: {:?}", v.into_iter().map(|s| s.title).collect::<Vec<String>>());
+    //}
 
     //fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
     for song in songs {

@@ -19,7 +19,7 @@ pub struct TransposeText {
     pub lilypond_text: String,
 }
 
-#[derive(Debug)]
+#[derive(Clone,Debug)]
 pub struct Song {
     pub transpose_text: TransposeText,
 

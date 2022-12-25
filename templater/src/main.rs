@@ -12,7 +12,7 @@ use std::fs::{self, File};
 use std::io::Write;
 use std::path::PathBuf;
 
-use extract_frontmatter::Extractor;
+use extract_frontmatter::{Extractor,config::{Modifier,Splitter}};
 use once_cell::sync::OnceCell;
 
 mod errors;
@@ -71,9 +71,13 @@ fn main() -> Result<(), TemplaterError> {
         .iter_mut()
         .map(|path| {
             let input = fs::read_to_string(path).unwrap();
-            let mut extractor = Extractor::new(&input);
-            extractor.select_by_terminator("---").strip_whitespace();
-            let (front_matter, document): (Vec<&str>, &str) = extractor.split();
+
+            let mut extractor = Extractor::new(Splitter::DelimiterLine("---"));
+            extractor.with_modifier(Modifier::TrimWhitespace);
+
+            let (front_matter, document) = extractor.extract(&input);
+            let front_matter = front_matter.into_owned();
+            let front_matter = front_matter.split("\n").collect::<Vec<&str>>();
 
             Song::new(front_matter, document, conf.transpose_text.clone(), args.lyrics)
         })
@@ -88,7 +92,7 @@ fn main() -> Result<(), TemplaterError> {
 
     write!(outfile, "{}", INTRO_TEMPLATE.get().unwrap()).unwrap();
 
-    //fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
+    fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
     for song in songs {
         println!("Handling {}", song.title);
 

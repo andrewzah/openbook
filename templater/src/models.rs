@@ -158,15 +158,31 @@ impl Song {
         }
 
         let poet = match self.poet {
-            Some(p) => format!("Lyrics by {}", p),
+            Some(p) => String::from(p),
             None => String::new(),
         };
+
+        let composerpoet = match &self.composer == &poet {
+            true => {
+                format!("composer = \"Music & Lyrics by {}\"", &self.composer)
+            },
+            false => {
+                match &poet.is_empty() {
+                    true => {
+                        format!("composer = \"Music by {}\"\n", &self.composer)
+                    },
+                    false => {
+                        format!("composer = \"Music by {}\"\npoet = \"Lyrics by {}\"", &self.composer, &poet)
+                    }
+                }
+            }
+        };
+
         let song_header = crate::SONG_HEADER_TEMPLATE
             .get()
             .unwrap()
             .replace("%%TITLE%%", &self.title)
-            .replace("%%COMPOSER%%", &format!("Music by {}", &self.composer))
-            .replace("%%POET%%", &poet)
+            .replace("%%COMPOSERPOET%%", &composerpoet)
             .replace("%%ARRANGER%%", &self.arranger.unwrap_or_default())
             .replace(
                 "%%COPYRIGHT%%",

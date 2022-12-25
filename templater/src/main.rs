@@ -88,7 +88,7 @@ fn main() -> Result<(), TemplaterError> {
             Song::new(front_matter, document, conf.transpose_text.clone(), args.lyrics)
         })
         .collect();
-    println!("[info]: songs found: {}", songs.len());
+    println!("[info]: total songs found: {}", songs.len());
 
     if let Some(song_names) = args.song_names {
         let song_names: Vec<&str> = song_names.split(",").collect();
@@ -113,6 +113,7 @@ fn main() -> Result<(), TemplaterError> {
         std::process::exit(1);
     }
 
+    println!("[info]: songs remaining after filtering: {}", songs.len());
     songs.sort_by(|a, b| a.title.cmp(&b.title));
 
     init_static(&conf, songs.len())?;

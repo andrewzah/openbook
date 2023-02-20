@@ -1,6 +1,7 @@
 c: build-rust
   rm -f openbook-C.*
-  ./templater/target/release/templater --song-names "avalon,all the things you are,donna lee"
+  #./templater/target/release/templater --song-names "rhythm-a-ning,satin doll,sonnymoon for two,tea for two,smile,pent up house,all of me,bags' groove,d natural blues,flood in franklin park,buzzy,lester leaps in,mr. p.c.,(meet) the flintstones"
+  ./templater/target/release/templater
   lilypond openbook-Concert.ly
 
 bb: build-rust qr
@@ -34,3 +35,8 @@ qr:
 
 v:
   mupdf openbook-Concert.pdf
+
+vgm:
+  ./templater/target/release/templater --songs-dir ./songs/videogames
+  lilypond openbook-Concert.ly
+  mv openbook-Concert.pdf openbook-vgm-concert.pdf

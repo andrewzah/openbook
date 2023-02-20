@@ -58,6 +58,7 @@ fn parse_args() -> Result<AppArgs, TemplaterError> {
         println!("    --lyrics: include lyrics");
         println!("    --composers: quoted, comma delimited list of composers to filter by");
         println!("    --song-names: quoted, comma delimited list of song names to filter by");
+        println!("    --song-dir");
         std::process::exit(0);
     }
 
@@ -78,6 +79,7 @@ fn main() -> Result<(), TemplaterError> {
     let mut songs: Vec<Song> = get_files_by_ext(&PathBuf::from(&args.songs_dir), "ly")
         .iter_mut()
         .map(|path| {
+            println!("Handling {}", &path.display());
             let input = fs::read_to_string(path).unwrap();
 
             let mut extractor = Extractor::new(Splitter::DelimiterLine("---"));

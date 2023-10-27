@@ -1,7 +1,3 @@
-## community
-
-* [discord](https://discord.gg/X6kQmXSwah)
-
 ## about
 This is an open source, free (as in both freedom & beer) collection of jazz standards and other songs in leadsheet form.
 

@@ -11,10 +11,9 @@
 use std::fs::{self, File};
 use std::io::Write;
 use std::path::PathBuf;
-use std::collections::HashMap;
+
 
 use extract_frontmatter::{Extractor,config::{Modifier,Splitter}};
-use itertools::Itertools;
 use once_cell::sync::OnceCell;
 
 mod errors;

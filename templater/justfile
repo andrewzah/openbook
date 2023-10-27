@@ -1,11 +1,11 @@
-build:
+b:
   cargo build
 
-build-release:
+br:
   cargo build --release
 
-run:
+r:
   cargo run
 
-fmt:
+f:
   cargo fmt

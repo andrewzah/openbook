@@ -17,7 +17,7 @@ eb: build-rust qr
 build-rust:
   #!/bin/sh
   cd ./templater/
-  just build-release
+  just br
 
 buildall: build-rust qr
   rm -f openbook-C.* openbook-bb.* openbook-eb.* openbook-bass.*

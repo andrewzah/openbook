@@ -145,11 +145,9 @@ fn main() -> Result<(), TemplaterError> {
     //fs::create_dir("./.cache").expect("Unable to create .cache dir! Check your permissions.");
     for song in songs {
         println!("Handling {}", song.title);
-
-        let song_filename = format!("./.cache/{}-{}.ly", song.title, &conf.transpose_text.display_text);
-        let song_file = File::create(song_filename).expect("Unable to create songfile!"); 
-
         song.write(&mut outfile);
+    //    let song_filename = format!("./.cache/{}-{}.ly", song.title, &conf.transpose_text.display_text);
+    //    let song_file = File::create(song_filename).expect("Unable to create songfile!"); 
     }
 
     // }} escapes } apparently

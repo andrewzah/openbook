@@ -27,10 +27,10 @@ meter: Up Tempo
   %\override Score.RehearsalMark.font-size = #+4
 
   %% part "A"
-  r2 \tuplet 3/2 { g''8 aes8 g8 } f8 e8
-  ees! des c bes a c, ees f
-  \tuplet 3/2 { ges aes ges } f ees d f aes c
-  g! f r4 r e!8 d! \endLine
+  r2 \tuplet 3/2 { g''8 aes8 g8 } f8 e8 |
+  ees! des c bes a c, ees f |
+  \tuplet 3/2 { ges aes ges } f ees d f aes c |
+  g! f r4 r e!8 d! \endLine |
 
   ees! a, bes des! f aes c ees
   des e, f c' b g ees des

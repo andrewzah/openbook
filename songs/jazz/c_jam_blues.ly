@@ -34,7 +34,7 @@ type: blues
   r1_\markup{ "AFTER SOLOS, DC. AL" \raise #1 { \musicglyph "scripts.coda" }} | \endLine
 
   %% coda
-  \once \override Score.RehearsalMark #'font-size = #4
+  \overrideCodaSize
   \mark \markup { \musicglyph "scripts.coda" }
 
   \new ImproVoiceTwo {

@@ -13,10 +13,10 @@
 
  #(define fonts
     (set-global-fonts
-      ;#:roman "SwingText"
-      ;#:sans "JazzCord"
+      ;#:roman "lilyjazz-text"
       ;#:typewriter "SwingText"
       ;#:music "lilyjazz"
+      ;#:sans "lilyjazz-chord"
       ;#:brace "lilyjazz"
       ; unnecessary if the staff size is default
       ;#:factor (/ staff-height pt 20)
@@ -68,7 +68,27 @@
   %bookTitleMarkup = \markup {}
 }
 
-% TODO: figure out how to merge these two \Score blocks
+% "jazz" todo: test
+%\layout {
+%  \override Score.Hairpin.thickness = #2
+%  \override Score.Stem.thickness = #2
+%  \override Score.TupletBracket.thickness = #2
+%  \override Score.VoltaBracket.thickness = #2
+%  \override Score.SystemStartBar.thickness = #4
+%  \override StaffGroup.SystemStartBracket.padding = #0.25
+%  \override ChoirStaff.SystemStartBracket.padding = #0.25
+%  %\override Staff.Tie.thickness = #3
+%  \override Staff.Tie.line-thickness = #2
+%  \override Staff.Slur.thickness = #3
+%  \override Staff.PhrasingSlur.thickness = #3
+%  \override Staff.BarLine.hair-thickness = #4
+%  \override Staff.BarLine.thick-thickness = #8
+%  \override Staff.MultiMeasureRest.hair-thickness = #3
+%  \override Staff.MultiMeasureRestNumber.font-size = #2
+%  \override LyricHyphen.thickness = #3
+%  \override LyricExtender.thickness = #3
+%  \override PianoPedalBracket.thickness = #2
+%}
 
 \layout {
   \context {
@@ -123,13 +143,13 @@
 
 \layout {
   % make only the first clef visible
-  \override Score.Clef #'break-visibility = #'#(#f #f #f)
+  \override Score.Clef.break-visibility = #'#(#f #f #f)
 
   % make only the first time signature visible
-  \override Score.KeySignature #'break-visibility = #'#(#f #f #f)
+  \override Score.KeySignature.break-visibility = #'#(#f #f #f)
 
   % allow single-staff system bars
-  \override Score.SystemStartBar #'collapse-height = #1
+  \override Score.SystemStartBar.collapse-height = #1
 
   % show measures
   %\override Score.BarNumber.break-visibility = ##(#t #t #t)
@@ -144,11 +164,11 @@
 
       % chord styles
       %\override ChordNames . ChordName #'font-size = #2
-      \override ChordNames . ChordName #'font-name = #"lilyjazzchord"
+      \override ChordNames.ChordName.font-name = #"lilyjazzchord"
       %\override ChordName #'font-size = #'1
 
       % lyrics
-      \override LyricText #'font-size = #'1
+      \override LyricText.font-size = #'1
 
       %\override  Score.LeftEdge.break-visibility = #all-visible
     }

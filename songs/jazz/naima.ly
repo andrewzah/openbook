@@ -45,7 +45,7 @@ meter: Ballad
   }
 
   %% coda
-  \once \override Score.RehearsalMark #'font-size = #4
+  \overrideCodaSize
   \mark \markup { \musicglyph "scripts.coda" }
   | ees2 f2
   | g2 aes2

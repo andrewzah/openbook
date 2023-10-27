@@ -1,17 +1,17 @@
 c: build-rust
   rm -f openbook-C.*
   #./templater/target/release/templater --song-names "rhythm-a-ning,satin doll,sonnymoon for two,tea for two,smile,pent up house,all of me,bags' groove,d natural blues,flood in franklin park,buzzy,lester leaps in,mr. p.c.,(meet) the flintstones"
-  ./templater/target/release/templater
+  ./templater/target/release/templater --songs-dir "./songs/jazz"
   lilypond openbook-Concert.ly
 
 bb: build-rust qr
   rm -f openbook-Bb.*
-  ./templater/target/release/templater --transpose bb --lyrics
+  ./templater/target/release/templater --transpose bb --lyrics --songs-dir "./songs/jazz"
   lilypond openbook-Bb.ly
 
 eb: build-rust qr
   rm -f openbook-Eb.*
-  ./templater/target/release/templater --transpose eb --lyrics
+  ./templater/target/release/templater --transpose eb --lyrics --songs-dir "./songs/jazz"
   lilypond openbook-Eb.ly
 
 build-rust:

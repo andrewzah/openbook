@@ -97,16 +97,16 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     \markup {
       \column {
         \wordwrap \abs-fontsize #12 {
-          The name 'Openbook' comes from 'Open-Source' software.
+          The name 'Openbook' comes from 'Open Source' software.
           This refers to software that has publicly available source code, is free (as in freedom & beer),
           and is licensed to allow derivatives.
 
-          Everything written for this project to make this book, apart from the songs themselves, is licensed under the AGPL-3.0 License.
+          Everything written to make this book, apart from the songs themselves, is licensed under the AGPL-3.0 License.
         }
 
         \vspace #1
         \wordwrap \abs-fontsize #12 {
-          Accordingly, this book will always remain free and open to modification. All the song files are written in plaintext, so no proprietary software is required to view them. All the tooling used is Open Source. So there is no worry of future versions of software being unable to read files or losing files that are binary blobs to corruption due to bit rot.
+          Accordingly, this book will always remain free and open to modification. All the song files are written in plaintext, so no proprietary software is required to view them. All the tooling used is Open Source. So there is no worry of future versions of software being unable or unwilling to read files, or losing binary blob files that are corrupted due to bit rot.
         }
 
         \vspace #1
@@ -115,31 +115,26 @@ buildtime = #(strftime "%c" (localtime (current-time)))
         }
 
         \vspace #1.5
-        \bold \abs-fontsize #15 { "Raison d'Etre" }
+        \bold \abs-fontsize #15 { "Reasons for this document" }
 
         \vspace #1
         \wordwrap \abs-fontsize #12 {
-          I want beautiful, easy to read sheet music, available in a non-proprietary format.
+          I want beautiful, easy to read sheet music, rendered and stored in a non-proprietary format.
         }
 
         \vspace #0.5
         \wordwrap \abs-fontsize #12 {
-          I don't want to depend on proprietary software for my sheetmusic.
+          I want to be able to fix mistakes found in realbooks and fakebooks.
         }
 
         \vspace #0.5
         \wordwrap \abs-fontsize #12 {
-          I want to be able to fix mistakes found in the realbook.
+          I want to use free software whenever possible.
         }
 
         \vspace #0.5
         \wordwrap \abs-fontsize #12 {
-          I want to be able to dynamically generate pdfs with select standards.
-        }
-
-        \vspace #0.5
-        \wordwrap \abs-fontsize #12 {
-          Like Mark Veltzer, I believe in libre (aka free as in freedom) software.
+          I don't want to depend on proprietary software for my sheet music.
         }
 
         \vspace #1.5

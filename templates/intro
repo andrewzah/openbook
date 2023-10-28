@@ -66,10 +66,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \null
       \line{ \abs-fontsize #20 "Meta Information" }
       \null
+      \line{ \abs-fontsize #14 "This build contains %%NUM_TUNES%% tunes." }
       \null
       \line{ \abs-fontsize #14 "Version 0.8.0" }
-      \null
-      \line{ \abs-fontsize #14 "Containing %%NUM_TUNES%% Tunes" }
       \null
       \line{ \abs-fontsize #14 "Website:" }
       \line{ \abs-fontsize #14
@@ -83,6 +82,9 @@ buildtime = #(strftime "%c" (localtime (current-time)))
       \null
       \line{ \abs-fontsize #14 "Compiled on:" }
       \line{ \abs-fontsize #13 \buildtime }
+      \null
+      \line{ All tune \char ##x00A9 belong to their respective owners. }
+      \line{ To-do: Help is needed to properly attribute all tunes. }
     }}}
   }
 
@@ -97,7 +99,7 @@ buildtime = #(strftime "%c" (localtime (current-time)))
     \markup {
       \column {
         \wordwrap \abs-fontsize #12 {
-          The name 'Openbook' comes from 'Open Source' software.
+          The name 'Openbook' comes from \with-url #"https://opensource.org/osd/" \underline "'Open Source'" software.
           This refers to software that has publicly available source code, is free (as in freedom & beer),
           and is licensed to allow derivatives.
 

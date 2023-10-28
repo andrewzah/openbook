@@ -38,6 +38,6 @@ f'8 g'8 f'8 e'8
   ees'8 f8 cis'8 d'8~ |
 d'4 f'8 g'8
   f'8 e'8 ees'8 f8 |
-cis'8 d'4. d'2 |
+cis'8 d'4.~ d'2 |
 
 \songEndBar
